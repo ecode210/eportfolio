@@ -1,0 +1,50 @@
+name: portfolio_update
+description: My personal portfolio 2022
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  get: ^4.6.5
+  google_fonts: ^3.0.1
+  flutter_screenutil: ^5.5.3+2
+  font_awesome_flutter: ^10.1.0
+  flutter_svg: ^1.0.3
+  bouncing_widget: ^2.0.0
+  animated_text_kit: ^4.2.1
+  get_storage: ^2.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/svg/
+    - assets/png/
+    - assets/jpg/
+    - assets/game/
+    - assets/game/cacti/
+    - assets/game/dino/
+    - assets/game/ptera/
+
+  fonts:
+    - family: Joyride
+      fonts:
+        - asset: assets/font/Joyride.otf
+    - family: Joyride Outline
+      fonts:
+        - asset: assets/font/Joyride-Outline.otf
