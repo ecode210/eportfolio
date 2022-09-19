@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:portfolio_update/constants.dart';
@@ -19,78 +18,24 @@ class Projects extends GetWidget<PortfolioController> {
       padding: EdgeInsets.fromLTRB(100.w, 150.h, 100.w, 50.h),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              50.horizontalSpace,
-              Container(
-                height: 450.h,
-                width: 180.w,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.r),
-                  image: const DecorationImage(
-                    image: AssetImage("assets/jpg/BetaLife-01.jpg"),
-                    fit: BoxFit.cover,
-                    alignment: Alignment.topCenter,
-                  ),
-                ),
-              ),
-              Container(
-                height: 450.h,
-                width: 180.w,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.r),
-                  image: const DecorationImage(
-                    image: AssetImage("assets/jpg/BetaLife-02.jpg"),
-                    fit: BoxFit.cover,
+          Obx(() {
+            return AnimatedSwitcher(
+              duration: const Duration(milliseconds: 300),
+              switchInCurve: Curves.easeIn,
+              switchOutCurve: Curves.easeOut,
+              child: controller.projectImages[controller.projectIndex.value],
+              transitionBuilder: (child, animation) {
+                return FadeTransition(
+                  opacity: animation,
+                  child: ScaleTransition(
+                    scale: animation,
                     alignment: Alignment.bottomCenter,
+                    child: child,
                   ),
-                ),
-              ),
-              Container(
-                height: 450.h,
-                width: 180.w,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.r),
-                  image: const DecorationImage(
-                    image: AssetImage("assets/jpg/BetaLife-03.jpg"),
-                    fit: BoxFit.cover,
-                    alignment: Alignment.topCenter,
-                  ),
-                ),
-              ),
-              Container(
-                height: 450.h,
-                width: 180.w,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.r),
-                  image: const DecorationImage(
-                    image: AssetImage("assets/jpg/BetaLife-04.jpg"),
-                    fit: BoxFit.cover,
-                    alignment: Alignment.topCenter,
-                  ),
-                ),
-              ),
-              Container(
-                height: 450.h,
-                width: 180.w,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.r),
-                  image: const DecorationImage(
-                    image: AssetImage("assets/jpg/BetaLife-05.jpg"),
-                    fit: BoxFit.cover,
-                    alignment: Alignment.topCenter,
-                  ),
-                ),
-              ),
-              50.horizontalSpace,
-            ],
-          ),
+                );
+              },
+            );
+          }),
           30.verticalSpace,
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -104,24 +49,32 @@ class Projects extends GetWidget<PortfolioController> {
                   size: 25.sp,
                 ),
                 isHover: controller.previous,
-                onTap: () {},
+                onTap: () {
+                  if (controller.projectIndex.value <= 0) {
+                    controller.projectIndex.value = 2;
+                  } else {
+                    controller.projectIndex.value--;
+                  }
+                },
               ),
               20.horizontalSpace,
-              Container(
-                height: 130.h,
-                width: 130.h,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.r),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20.r),
-                  child: SvgPicture.asset(
-                    "assets/svg/BetaLife.svg",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+              Obx(() {
+                return AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 300),
+                  switchInCurve: Curves.easeIn,
+                  switchOutCurve: Curves.easeOut,
+                  child: controller.projectIcons[controller.projectIndex.value],
+                  transitionBuilder: (child, animation) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: ScaleTransition(
+                        scale: animation,
+                        child: child,
+                      ),
+                    );
+                  },
+                );
+              }),
               20.horizontalSpace,
               StackedButton(
                 height: 70.h,
@@ -132,19 +85,35 @@ class Projects extends GetWidget<PortfolioController> {
                   size: 25.sp,
                 ),
                 isHover: controller.next,
-                onTap: () {},
+                onTap: () {
+                  if (controller.projectIndex.value >= 2) {
+                    controller.projectIndex.value = 0;
+                  } else {
+                    controller.projectIndex.value++;
+                  }
+                },
               ),
             ],
           ),
           30.verticalSpace,
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 100.w),
-            child: Text(
-              "BetaLife is a health-tech solution aimed at improving life expectancy, allowing real-time communications, improving health-care processes, facilitating faster emergency response, enhancing patient safety and supporting healthier lifestyles. I worked as the Lead Mobile Developer on this project, developing the frontend and managing the network requests. BetaLife is available on both Google Play Store and Apple App Store.",
-              textAlign: TextAlign.center,
-              style: Get.textTheme.subtitle1,
-            ),
-          ),
+          Obx(() {
+            return AnimatedSwitcher(
+              duration: const Duration(milliseconds: 300),
+              switchInCurve: Curves.easeIn,
+              switchOutCurve: Curves.easeOut,
+              child: controller.projectDescriptions[controller.projectIndex.value],
+              transitionBuilder: (child, animation) {
+                return FadeTransition(
+                  opacity: animation,
+                  child: ScaleTransition(
+                    scale: animation,
+                    alignment: Alignment.topCenter,
+                    child: child,
+                  ),
+                );
+              },
+            );
+          }),
         ],
       ),
     );

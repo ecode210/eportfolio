@@ -14,6 +14,7 @@ import 'package:portfolio_update/view/pages/projects.dart';
 import 'package:portfolio_update/view/pages/services.dart';
 import 'package:portfolio_update/view/widgets/section_button.dart';
 import 'package:portfolio_update/view/widgets/stacked_button.dart';
+import 'package:preload_page_view/preload_page_view.dart';
 
 class Dashboard extends GetWidget<PortfolioController> {
   const Dashboard({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class Dashboard extends GetWidget<PortfolioController> {
     Timer(
       const Duration(milliseconds: 1),
       () {
-        controller.pageController.jumpToPage(6);
+        controller.pageController.jumpToPage(3);
       },
     );
     return RawKeyboardListener(
@@ -46,11 +47,11 @@ class Dashboard extends GetWidget<PortfolioController> {
           child: Stack(
             alignment: Alignment.topCenter,
             children: [
-              PageView(
-                physics: const PageScrollPhysics(),
+              PreloadPageView(
                 scrollDirection: Axis.vertical,
                 pageSnapping: true,
                 controller: controller.pageController,
+                preloadPagesCount: 7,
                 onPageChanged: (value) {
                   controller.changeColor(value);
                   controller.page.value = value;
