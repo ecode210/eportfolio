@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:blobs/blobs.dart';
+import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -108,10 +109,13 @@ class Home extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    child: Image.asset(
-                      "assets/png/header shot.png",
-                      height: 900.h,
-                      fit: BoxFit.fitHeight,
+                    child: Crab(
+                      tag: "header",
+                      child: Image.asset(
+                        "assets/png/header shot.png",
+                        height: 900.h,
+                        fit: BoxFit.fitHeight,
+                      ),
                     ),
                   ),
                 ],

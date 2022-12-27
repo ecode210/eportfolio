@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,6 +17,7 @@ import 'package:portfolio_update/view/game/ground.dart';
 class PortfolioController extends GetxController with GetTickerProviderStateMixin {
   // Dashboard
   PageController pageController = PageController(initialPage: 0);
+  CoastController coastController = CoastController(initialPage: 0);
   Rx<bool> stackLogo = false.obs;
   Rx<bool> stackContactUs = false.obs;
   var stackHeader = [false, false, false, false].obs;

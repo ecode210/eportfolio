@@ -1,3 +1,4 @@
+import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -187,6 +188,18 @@ class Services extends GetWidget<PortfolioController> {
                 ],
               ),
             ],
+          ),
+        ),
+        Positioned(
+          top: -1024.h,
+          left: 0,
+          child: Crab(
+            tag: "header",
+            child: Image.asset(
+              "assets/png/header shot.png",
+              height: 900.h,
+              fit: BoxFit.fitHeight,
+            ),
           ),
         ),
       ],

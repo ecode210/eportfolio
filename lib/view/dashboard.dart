@@ -1,3 +1,4 @@
+import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,23 +46,43 @@ class Dashboard extends GetWidget<PortfolioController> {
           child: Stack(
             alignment: Alignment.topCenter,
             children: [
-              PageView(
+              Coast(
+                controller: controller.coastController,
                 scrollDirection: Axis.vertical,
-                pageSnapping: true,
-                controller: controller.pageController,
+                physics: const AlwaysScrollableScrollPhysics(),
                 onPageChanged: (value) {
                   controller.changeColor(value);
                   controller.page.value = value;
                 },
-                children: const [
-                  Home(),
-                  About(),
-                  Services(),
-                  Projects(),
-                  ContactUs(),
-                  Footer(),
+                beaches: [
+                  Beach(builder: (context) => const Home()),
+                  Beach(builder: (context) => const About()),
+                  Beach(builder: (context) => const Services()),
+                  Beach(builder: (context) => const Projects()),
+                  Beach(builder: (context) => const ContactUs()),
+                  Beach(builder: (context) => const Footer()),
+                ],
+                observers: [
+                  CrabController(),
                 ],
               ),
+              // PageView(
+              //   scrollDirection: Axis.vertical,
+              //   pageSnapping: true,
+              //   controller: controller.pageController,
+              //   onPageChanged: (value) {
+              //     controller.changeColor(value);
+              //     controller.page.value = value;
+              //   },
+              //   children: const [
+              //     Home(),
+              //     About(),
+              //     Services(),
+              //     Projects(),
+              //     ContactUs(),
+              //     Footer(),
+              //   ],
+              // ),
               Container(
                 height: 124.h,
                 width: 1440.w,

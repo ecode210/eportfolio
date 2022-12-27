@@ -1,4 +1,5 @@
 import 'package:blobs/blobs.dart';
+import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -66,10 +67,13 @@ class About extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    child: Image.asset(
-                      "assets/png/header shot.png",
-                      height: 900.h,
-                      fit: BoxFit.fitHeight,
+                    child: Crab(
+                      tag: "header",
+                      child: Image.asset(
+                        "assets/png/header shot.png",
+                        height: 900.h,
+                        fit: BoxFit.fitHeight,
+                      ),
                     ),
                   ),
                 ],
