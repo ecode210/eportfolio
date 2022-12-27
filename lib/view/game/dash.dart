@@ -17,7 +17,7 @@ class Dash extends GetWidget<PortfolioController> {
       child: Container(
         height: 270.h,
         width: 1240.w,
-        color: terColor,
+        color: priColor.withOpacity(0),
         child: Obx(() {
           return Stack(
             alignment: Alignment.center,

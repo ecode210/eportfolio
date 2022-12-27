@@ -12,11 +12,10 @@ import 'package:portfolio_update/view/game/dino.dart';
 import 'package:portfolio_update/view/game/game_constants.dart';
 import 'package:portfolio_update/view/game/game_object.dart';
 import 'package:portfolio_update/view/game/ground.dart';
-import 'package:preload_page_view/preload_page_view.dart';
 
 class PortfolioController extends GetxController with GetTickerProviderStateMixin {
   // Dashboard
-  PreloadPageController pageController = PreloadPageController(initialPage: 0);
+  PageController pageController = PageController(initialPage: 0);
   Rx<bool> stackLogo = false.obs;
   Rx<bool> stackContactUs = false.obs;
   var stackHeader = [false, false, false, false].obs;

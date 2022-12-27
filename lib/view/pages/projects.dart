@@ -11,111 +11,127 @@ class Projects extends GetWidget<PortfolioController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 1024.h,
-      width: 1440.w,
-      color: priColor,
-      padding: EdgeInsets.fromLTRB(100.w, 150.h, 100.w, 50.h),
-      child: Column(
-        children: [
-          Obx(() {
-            return AnimatedSwitcher(
-              duration: const Duration(milliseconds: 300),
-              switchInCurve: Curves.easeIn,
-              switchOutCurve: Curves.easeOut,
-              child: controller.projectImages[controller.projectIndex.value],
-              transitionBuilder: (child, animation) {
-                return FadeTransition(
-                  opacity: animation,
-                  child: ScaleTransition(
-                    scale: animation,
-                    alignment: Alignment.bottomCenter,
-                    child: child,
-                  ),
-                );
-              },
-            );
-          }),
-          30.verticalSpace,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Container(
+          height: 1024.h,
+          width: 1440.w,
+          color: priColor,
+          child: Image.asset(
+            "assets/png/pattern.png",
+            color: secColor.withOpacity(0.07),
+            height: 1024.h,
+            width: 1440.w,
+            fit: BoxFit.cover,
+          ),
+        ),
+        Container(
+          height: 1024.h,
+          width: 1440.w,
+          padding: EdgeInsets.fromLTRB(100.w, 150.h, 100.w, 50.h),
+          child: Column(
             children: [
-              StackedButton(
-                height: 70.h,
-                width: 100.w,
-                title: FaIcon(
-                  FontAwesomeIcons.arrowLeftLong,
-                  color: Colors.white,
-                  size: 25.sp,
-                ),
-                isHover: controller.previous,
-                onTap: () {
-                  if (controller.projectIndex.value <= 0) {
-                    controller.projectIndex.value = 2;
-                  } else {
-                    controller.projectIndex.value--;
-                  }
-                },
-              ),
-              20.horizontalSpace,
               Obx(() {
                 return AnimatedSwitcher(
                   duration: const Duration(milliseconds: 300),
                   switchInCurve: Curves.easeIn,
                   switchOutCurve: Curves.easeOut,
-                  child: controller.projectIcons[controller.projectIndex.value],
+                  child: controller.projectImages[controller.projectIndex.value],
                   transitionBuilder: (child, animation) {
                     return FadeTransition(
                       opacity: animation,
                       child: ScaleTransition(
                         scale: animation,
+                        alignment: Alignment.bottomCenter,
                         child: child,
                       ),
                     );
                   },
                 );
               }),
-              20.horizontalSpace,
-              StackedButton(
-                height: 70.h,
-                width: 100.w,
-                title: FaIcon(
-                  FontAwesomeIcons.arrowRightLong,
-                  color: Colors.white,
-                  size: 25.sp,
-                ),
-                isHover: controller.next,
-                onTap: () {
-                  if (controller.projectIndex.value >= 2) {
-                    controller.projectIndex.value = 0;
-                  } else {
-                    controller.projectIndex.value++;
-                  }
-                },
+              30.verticalSpace,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  StackedButton(
+                    height: 70.h,
+                    width: 100.w,
+                    title: FaIcon(
+                      FontAwesomeIcons.arrowLeftLong,
+                      color: Colors.white,
+                      size: 25.sp,
+                    ),
+                    isHover: controller.previous,
+                    onTap: () {
+                      if (controller.projectIndex.value <= 0) {
+                        controller.projectIndex.value = 2;
+                      } else {
+                        controller.projectIndex.value--;
+                      }
+                    },
+                  ),
+                  20.horizontalSpace,
+                  Obx(() {
+                    return AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      switchInCurve: Curves.easeIn,
+                      switchOutCurve: Curves.easeOut,
+                      child: controller.projectIcons[controller.projectIndex.value],
+                      transitionBuilder: (child, animation) {
+                        return FadeTransition(
+                          opacity: animation,
+                          child: ScaleTransition(
+                            scale: animation,
+                            child: child,
+                          ),
+                        );
+                      },
+                    );
+                  }),
+                  20.horizontalSpace,
+                  StackedButton(
+                    height: 70.h,
+                    width: 100.w,
+                    title: FaIcon(
+                      FontAwesomeIcons.arrowRightLong,
+                      color: Colors.white,
+                      size: 25.sp,
+                    ),
+                    isHover: controller.next,
+                    onTap: () {
+                      if (controller.projectIndex.value >= 2) {
+                        controller.projectIndex.value = 0;
+                      } else {
+                        controller.projectIndex.value++;
+                      }
+                    },
+                  ),
+                ],
               ),
+              30.verticalSpace,
+              Obx(() {
+                return AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 300),
+                  switchInCurve: Curves.easeIn,
+                  switchOutCurve: Curves.easeOut,
+                  child: controller.projectDescriptions[controller.projectIndex.value],
+                  transitionBuilder: (child, animation) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: ScaleTransition(
+                        scale: animation,
+                        alignment: Alignment.topCenter,
+                        child: child,
+                      ),
+                    );
+                  },
+                );
+              }),
             ],
           ),
-          30.verticalSpace,
-          Obx(() {
-            return AnimatedSwitcher(
-              duration: const Duration(milliseconds: 300),
-              switchInCurve: Curves.easeIn,
-              switchOutCurve: Curves.easeOut,
-              child: controller.projectDescriptions[controller.projectIndex.value],
-              transitionBuilder: (child, animation) {
-                return FadeTransition(
-                  opacity: animation,
-                  child: ScaleTransition(
-                    scale: animation,
-                    alignment: Alignment.topCenter,
-                    child: child,
-                  ),
-                );
-              },
-            );
-          }),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

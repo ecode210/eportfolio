@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:portfolio_update/constants.dart';
 import 'package:portfolio_update/controller/portfolio_controller.dart';
+import 'package:portfolio_update/view/pages/about.dart';
 import 'package:portfolio_update/view/pages/contact_us.dart';
 import 'package:portfolio_update/view/pages/footer.dart';
 import 'package:portfolio_update/view/pages/home.dart';
@@ -14,24 +13,23 @@ import 'package:portfolio_update/view/pages/projects.dart';
 import 'package:portfolio_update/view/pages/services.dart';
 import 'package:portfolio_update/view/widgets/section_button.dart';
 import 'package:portfolio_update/view/widgets/stacked_button.dart';
-import 'package:preload_page_view/preload_page_view.dart';
 
 class Dashboard extends GetWidget<PortfolioController> {
   const Dashboard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Timer(
-      const Duration(milliseconds: 1),
-      () {
-        controller.pageController.jumpToPage(3);
-      },
-    );
+    // Timer(
+    //   const Duration(milliseconds: 1),
+    //   () {
+    //     controller.pageController.jumpToPage(1);
+    //   },
+    // );
     return RawKeyboardListener(
       autofocus: true,
       focusNode: FocusNode(),
       onKey: (event) {
-        if (controller.page.value == 6 && event is RawKeyDownEvent) {
+        if (controller.page.value == 5 && event is RawKeyDownEvent) {
           if (event.isKeyPressed(LogicalKeyboardKey.space) ||
               event.isKeyPressed(LogicalKeyboardKey.keyW) ||
               event.isKeyPressed(LogicalKeyboardKey.arrowUp)) {
@@ -47,31 +45,21 @@ class Dashboard extends GetWidget<PortfolioController> {
           child: Stack(
             alignment: Alignment.topCenter,
             children: [
-              PreloadPageView(
+              PageView(
                 scrollDirection: Axis.vertical,
                 pageSnapping: true,
                 controller: controller.pageController,
-                preloadPagesCount: 7,
                 onPageChanged: (value) {
                   controller.changeColor(value);
                   controller.page.value = value;
                 },
-                children: [
-                  const Home(),
-                  Container(
-                    height: 1024.h,
-                    width: 1440.w,
-                    color: priColor,
-                  ),
-                  Container(
-                    height: 1024.h,
-                    width: 1440.w,
-                    color: terColor,
-                  ),
-                  const Projects(),
-                  const Services(),
-                  const ContactUs(),
-                  const Footer(),
+                children: const [
+                  Home(),
+                  About(),
+                  Services(),
+                  Projects(),
+                  ContactUs(),
+                  Footer(),
                 ],
               ),
               Container(
@@ -151,11 +139,9 @@ class Dashboard extends GetWidget<PortfolioController> {
                     const Spacer(),
                     const SectionButton(title: "about", index: 0),
                     SizedBox(width: 50.w),
-                    const SectionButton(title: "skills", index: 1),
+                    const SectionButton(title: "services", index: 1),
                     SizedBox(width: 50.w),
                     const SectionButton(title: "projects", index: 2),
-                    SizedBox(width: 50.w),
-                    const SectionButton(title: "services", index: 3),
                     SizedBox(width: 50.w),
                     StackedButton(
                       height: 50.h,
@@ -167,7 +153,7 @@ class Dashboard extends GetWidget<PortfolioController> {
                       isHover: controller.stackContactUs,
                       onTap: () {
                         controller.pageController.animateToPage(
-                          5,
+                          4,
                           duration: const Duration(seconds: 1),
                           curve: Curves.easeInOut,
                         );

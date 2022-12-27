@@ -18,7 +18,7 @@ class ResponsiveTextField extends StatelessWidget {
       decoration: InputDecoration(
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.white,
+            color: secColor,
             width: 2.h,
           ),
         ),
@@ -29,7 +29,7 @@ class ResponsiveTextField extends StatelessWidget {
           ),
         ),
         hintText: hint,
-        hintStyle: Get.textTheme.subtitle2!.copyWith(color: Colors.white.withOpacity(0.5)),
+        hintStyle: Get.textTheme.subtitle2!.copyWith(color: Colors.white),
         filled: false,
       ),
     );
