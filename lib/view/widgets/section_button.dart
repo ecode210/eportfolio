@@ -18,8 +18,8 @@ class SectionButton extends GetWidget<PortfolioController> {
         controller.stackHeader[index] = hover;
       },
       onPressed: () {
-        controller.pageController.animateToPage(
-          index + 1,
+        controller.coastController.animateTo(
+          beach: index + 1,
           duration: const Duration(seconds: 1),
           curve: Curves.easeInOut,
         );

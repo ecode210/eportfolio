@@ -16,7 +16,6 @@ import 'package:portfolio_update/view/game/ground.dart';
 
 class PortfolioController extends GetxController with GetTickerProviderStateMixin {
   // Dashboard
-  PageController pageController = PageController(initialPage: 0);
   CoastController coastController = CoastController(initialPage: 0);
   Rx<bool> stackLogo = false.obs;
   Rx<bool> stackContactUs = false.obs;
@@ -39,11 +38,13 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
   Rx<bool> previous = false.obs;
   Rx<bool> next = false.obs;
   RxInt projectIndex = 0.obs;
+  PageController projectImagesController = PageController();
+  RxBool isProjectImagesLoop = false.obs;
   List<Widget> projectIcons = [
     Container(
       key: const ValueKey(0),
-      height: 130.h,
-      width: 130.h,
+      height: 70.h,
+      width: 70.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.r),
@@ -58,10 +59,10 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
     ),
     Container(
       key: const ValueKey(1),
-      height: 130.h,
-      width: 130.h,
+      height: 70.h,
+      width: 70.h,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(20.r),
       ),
       child: ClipRRect(
@@ -74,10 +75,10 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
     ),
     Container(
       key: const ValueKey(2),
-      height: 130.h,
-      width: 130.h,
+      height: 70.h,
+      width: 70.h,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(20.r),
       ),
       child: ClipRRect(
@@ -89,206 +90,207 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
       ),
     ),
   ];
-  List<Widget> projectImages = [
+  List<Widget> projectBadges = [
     Row(
       key: const ValueKey(0),
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        50.horizontalSpace,
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20.r),
-            image: const DecorationImage(
-              image: AssetImage("assets/jpg/BetaLife-01.jpg"),
-              fit: BoxFit.cover,
-              alignment: Alignment.topCenter,
-            ),
-          ),
+        SvgPicture.asset(
+          "assets/svg/PlayStore badge.svg",
+          height: 70.h,
+          fit: BoxFit.fitHeight,
         ),
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20.r),
-            image: const DecorationImage(
-              image: AssetImage("assets/jpg/BetaLife-02.jpg"),
-              fit: BoxFit.cover,
-              alignment: Alignment.bottomCenter,
-            ),
-          ),
+        20.horizontalSpace,
+        SvgPicture.asset(
+          "assets/svg/AppStore badge.svg",
+          height: 70.h,
+          fit: BoxFit.fitHeight,
         ),
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20.r),
-            image: const DecorationImage(
-              image: AssetImage("assets/jpg/BetaLife-03.jpg"),
-              fit: BoxFit.cover,
-              alignment: Alignment.topCenter,
-            ),
-          ),
-        ),
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20.r),
-            image: const DecorationImage(
-              image: AssetImage("assets/jpg/BetaLife-04.jpg"),
-              fit: BoxFit.cover,
-              alignment: Alignment.topCenter,
-            ),
-          ),
-        ),
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20.r),
-            image: const DecorationImage(
-              image: AssetImage("assets/jpg/BetaLife-05.jpg"),
-              fit: BoxFit.cover,
-              alignment: Alignment.topCenter,
-            ),
-          ),
-        ),
-        50.horizontalSpace,
       ],
     ),
     Row(
       key: const ValueKey(1),
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        50.horizontalSpace,
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(20.r),
-          ),
+        Stack(
+          alignment: Alignment.center,
+          children: [
+            SvgPicture.asset(
+              "assets/svg/PlayStore badge.svg",
+              height: 70.h,
+              fit: BoxFit.fitHeight,
+            ),
+            Container(
+              height: 70.h,
+              width: 200.w,
+              color: priColor.withOpacity(0.6),
+              alignment: Alignment.center,
+              child: Text(
+                "COMING SOON",
+                style: Get.textTheme.subtitle1!.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+          ],
         ),
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(20.r),
-          ),
-        ),
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(20.r),
-          ),
-        ),
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(20.r),
-          ),
-        ),
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(20.r),
-          ),
-        ),
-        50.horizontalSpace,
       ],
     ),
     Row(
       key: const ValueKey(2),
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        50.horizontalSpace,
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.circular(20.r),
-          ),
+        SvgPicture.asset(
+          "assets/svg/Website badge.svg",
+          height: 70.h,
+          fit: BoxFit.fitHeight,
         ),
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.circular(20.r),
-          ),
-        ),
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.circular(20.r),
-          ),
-        ),
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.circular(20.r),
-          ),
-        ),
-        Container(
-          height: 450.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: Colors.blue,
-            borderRadius: BorderRadius.circular(20.r),
-          ),
-        ),
-        50.horizontalSpace,
       ],
     ),
+  ];
+  List<String> projectTitles = ["betalife", "helt", "helt vendor"];
+  List<List<Widget>> projectImages = [
+    [
+      Image.asset(
+        "assets/jpg/BetaLife-01.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+      Image.asset(
+        "assets/jpg/Helt-01.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+      Image.asset(
+        "assets/jpg/Helt Vendor-01.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+    ],
+    [
+      Image.asset(
+        "assets/jpg/BetaLife-02.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+      Image.asset(
+        "assets/jpg/Helt-02.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+      Image.asset(
+        "assets/jpg/Helt Vendor-02.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+    ],
+    [
+      Image.asset(
+        "assets/jpg/BetaLife-03.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+      Image.asset(
+        "assets/jpg/Helt-03.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+      Image.asset(
+        "assets/jpg/Helt Vendor-03.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+    ],
+    [
+      Image.asset(
+        "assets/jpg/BetaLife-04.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+      Image.asset(
+        "assets/jpg/Helt-04.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+      Image.asset(
+        "assets/jpg/Helt Vendor-04.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+    ],
+    [
+      Image.asset(
+        "assets/jpg/BetaLife-05.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+      Image.asset(
+        "assets/jpg/Helt-05.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+      Image.asset(
+        "assets/jpg/Helt Vendor-05.jpg",
+        height: 1024.h,
+        fit: BoxFit.cover,
+      ),
+    ],
   ];
   List<Widget> projectDescriptions = [
-    Padding(
+    SizedBox(
       key: const ValueKey(0),
-      padding: EdgeInsets.symmetric(horizontal: 100.w),
       child: Text(
-        "BetaLife is a health-tech solution aimed at improving life expectancy, allowing real-time communications, improving health-care processes, facilitating faster emergency response, enhancing patient safety and supporting healthier lifestyles. I worked as the Lead Mobile Developer on this project, developing the frontend and managing the network requests. BetaLife is available on both Google Play Store and Apple App Store.",
-        textAlign: TextAlign.center,
+        "Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
         style: Get.textTheme.subtitle1,
       ),
     ),
-    Padding(
+    SizedBox(
       key: const ValueKey(1),
-      padding: EdgeInsets.symmetric(horizontal: 100.w),
       child: Text(
-        "Helt offers health subscription services and lets customers pay for products/services that they utilize often to keep up with their productivity and health goals. These subscriptions are offered by partnerships with local vendors. I developed the frontend (Flutter) and backend (Golang & Firebase) as the FullStack Mobile Developer. This project included various 3rd-party APIs such as OneSignal, PayStack, Medium, and others. Helt is in its testing phase.",
-        textAlign: TextAlign.center,
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
         style: Get.textTheme.subtitle1,
       ),
     ),
-    Padding(
+    SizedBox(
       key: const ValueKey(2),
-      padding: EdgeInsets.symmetric(horizontal: 100.w),
       child: Text(
-        "BetaLife is a health-tech solution aimed at improving life expectancy, allowing real-time communications, improving health-care processes, facilitating faster emergency response, enhancing patient safety and supporting healthier lifestyles. I worked as the Lead Mobile Developer on this project, developing the frontend and managing the network requests. BetaLife is available on both Google Play Store and Apple App Store.",
-        textAlign: TextAlign.center,
+        "Auctor pulvinar nunc sed est et arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
         style: Get.textTheme.subtitle1,
       ),
     ),
   ];
+
+  void projectSlideshow(int value) {
+    if (value == 3) {
+      isProjectImagesLoop.value = true;
+      Future.doWhile(() async {
+        if (!isProjectImagesLoop.value) {
+          return false;
+        }
+        await Future.delayed(const Duration(seconds: 5));
+        if (!isProjectImagesLoop.value) {
+          return false;
+        }
+
+        if (projectImagesController.page! >= 4) {
+          projectImagesController.animateToPage(
+            0,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+          );
+        } else {
+          projectImagesController.nextPage(
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+          );
+        }
+
+        return isProjectImagesLoop.value;
+      });
+    } else {
+      isProjectImagesLoop.value = false;
+    }
+  }
 
   // Contact Us
   TextEditingController nameController = TextEditingController();
@@ -485,7 +487,7 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
 
   @override
   void dispose() {
-    pageController.dispose();
+    coastController.dispose();
     nameController.dispose();
     emailController.dispose();
     messageController.dispose();

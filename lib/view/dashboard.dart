@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,12 +22,15 @@ class Dashboard extends GetWidget<PortfolioController> {
 
   @override
   Widget build(BuildContext context) {
-    // Timer(
-    //   const Duration(milliseconds: 1),
-    //   () {
-    //     controller.pageController.jumpToPage(1);
-    //   },
-    // );
+    Timer(
+      const Duration(milliseconds: 100),
+      () {
+        controller.coastController.animateTo(
+          beach: 3,
+          duration: const Duration(seconds: 2),
+        );
+      },
+    );
     return RawKeyboardListener(
       autofocus: true,
       focusNode: FocusNode(),
@@ -53,6 +58,7 @@ class Dashboard extends GetWidget<PortfolioController> {
                 onPageChanged: (value) {
                   controller.changeColor(value);
                   controller.page.value = value;
+                  controller.projectSlideshow(value);
                 },
                 beaches: [
                   Beach(builder: (context) => const Home()),
@@ -66,23 +72,6 @@ class Dashboard extends GetWidget<PortfolioController> {
                   CrabController(),
                 ],
               ),
-              // PageView(
-              //   scrollDirection: Axis.vertical,
-              //   pageSnapping: true,
-              //   controller: controller.pageController,
-              //   onPageChanged: (value) {
-              //     controller.changeColor(value);
-              //     controller.page.value = value;
-              //   },
-              //   children: const [
-              //     Home(),
-              //     About(),
-              //     Services(),
-              //     Projects(),
-              //     ContactUs(),
-              //     Footer(),
-              //   ],
-              // ),
               Container(
                 height: 124.h,
                 width: 1440.w,
@@ -97,8 +86,8 @@ class Dashboard extends GetWidget<PortfolioController> {
                         controller.stackLogo.value = hover;
                       },
                       onPressed: () {
-                        controller.pageController.animateToPage(
-                          0,
+                        controller.coastController.animateTo(
+                          beach: 0,
                           duration: const Duration(seconds: 1),
                           curve: Curves.easeInOut,
                         );
@@ -173,8 +162,8 @@ class Dashboard extends GetWidget<PortfolioController> {
                       ),
                       isHover: controller.stackContactUs,
                       onTap: () {
-                        controller.pageController.animateToPage(
-                          4,
+                        controller.coastController.animateTo(
+                          beach: 4,
                           duration: const Duration(seconds: 1),
                           curve: Curves.easeInOut,
                         );
