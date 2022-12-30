@@ -77,30 +77,54 @@ class Footer extends GetWidget<PortfolioController> {
                         30.verticalSpace,
                         Row(
                           children: [
-                            FaIcon(
-                              FontAwesomeIcons.solidEnvelope,
-                              color: secColor,
-                              size: 20.sp,
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: FaIcon(
+                                  FontAwesomeIcons.solidEnvelope,
+                                  color: secColor,
+                                  size: 20.sp,
+                                ),
+                              ),
                             ),
                             10.horizontalSpace,
-                            Text(
-                              "olawoleaeo@gmail.com",
-                              style: Get.textTheme.subtitle1,
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: Text(
+                                  "olawoleaeo@gmail.com",
+                                  style: Get.textTheme.subtitle1,
+                                ),
+                              ),
                             ),
                           ],
                         ),
                         30.verticalSpace,
                         Row(
                           children: [
-                            FaIcon(
-                              FontAwesomeIcons.phone,
-                              color: secColor,
-                              size: 20.sp,
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: FaIcon(
+                                  FontAwesomeIcons.phone,
+                                  color: secColor,
+                                  size: 20.sp,
+                                ),
+                              ),
                             ),
                             10.horizontalSpace,
-                            Text(
-                              "+234 813 831 3912",
-                              style: Get.textTheme.subtitle1,
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: Text(
+                                  "+234 813 831 3912",
+                                  style: Get.textTheme.subtitle1,
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -119,45 +143,81 @@ class Footer extends GetWidget<PortfolioController> {
                         30.verticalSpace,
                         Row(
                           children: [
-                            SvgPicture.asset(
-                              "assets/svg/LinkedIn front.svg",
-                              width: 50.w,
-                              fit: BoxFit.fitWidth,
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: SvgPicture.asset(
+                                  "assets/svg/LinkedIn front.svg",
+                                  width: 50.w,
+                                  fit: BoxFit.fitWidth,
+                                ),
+                              ),
                             ),
                             10.horizontalSpace,
-                            Text(
-                              "Olawole Oyedele Emmanuel",
-                              style: Get.textTheme.subtitle1,
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: Text(
+                                  "Olawole Oyedele Emmanuel",
+                                  style: Get.textTheme.subtitle1,
+                                ),
+                              ),
                             ),
                           ],
                         ),
                         30.verticalSpace,
                         Row(
                           children: [
-                            SvgPicture.asset(
-                              "assets/svg/Instagram front.svg",
-                              width: 50.w,
-                              fit: BoxFit.fitWidth,
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: SvgPicture.asset(
+                                  "assets/svg/Github front.svg",
+                                  width: 50.w,
+                                  fit: BoxFit.fitWidth,
+                                ),
+                              ),
                             ),
                             10.horizontalSpace,
-                            Text(
-                              "@call.me.wole",
-                              style: Get.textTheme.subtitle1,
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: Text(
+                                  "@ecode210",
+                                  style: Get.textTheme.subtitle1,
+                                ),
+                              ),
                             ),
                           ],
                         ),
                         30.verticalSpace,
                         Row(
                           children: [
-                            SvgPicture.asset(
-                              "assets/svg/Twitter front.svg",
-                              width: 50.w,
-                              fit: BoxFit.fitWidth,
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: SvgPicture.asset(
+                                  "assets/svg/Twitter front.svg",
+                                  width: 50.w,
+                                  fit: BoxFit.fitWidth,
+                                ),
+                              ),
                             ),
                             10.horizontalSpace,
-                            Text(
-                              "@e__code",
-                              style: Get.textTheme.subtitle1,
+                            MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: Text(
+                                  "@ecode210",
+                                  style: Get.textTheme.subtitle1,
+                                ),
+                              ),
                             ),
                           ],
                         ),

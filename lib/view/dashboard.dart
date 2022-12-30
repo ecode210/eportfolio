@@ -26,7 +26,7 @@ class Dashboard extends GetWidget<PortfolioController> {
       const Duration(milliseconds: 100),
       () {
         controller.coastController.animateTo(
-          beach: 3,
+          beach: 5,
           duration: const Duration(seconds: 2),
         );
       },
