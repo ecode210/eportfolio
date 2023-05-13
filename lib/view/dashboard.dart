@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,15 +20,15 @@ class Dashboard extends GetWidget<PortfolioController> {
 
   @override
   Widget build(BuildContext context) {
-    Timer(
-      const Duration(milliseconds: 100),
-      () {
-        controller.coastController.animateTo(
-          beach: 5,
-          duration: const Duration(seconds: 2),
-        );
-      },
-    );
+    // Timer(
+    //   const Duration(milliseconds: 100),
+    //   () {
+    //     controller.coastController.animateTo(
+    //       beach: 5,
+    //       duration: const Duration(seconds: 2),
+    //     );
+    //   },
+    // );
     return RawKeyboardListener(
       autofocus: true,
       focusNode: FocusNode(),
@@ -158,7 +156,7 @@ class Dashboard extends GetWidget<PortfolioController> {
                       width: 170.w,
                       title: Text(
                         "contact me",
-                        style: Get.textTheme.bodyText2,
+                        style: Get.textTheme.bodyMedium,
                       ),
                       isHover: controller.stackContactUs,
                       onTap: () {

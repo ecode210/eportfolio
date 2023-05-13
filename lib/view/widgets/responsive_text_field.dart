@@ -14,7 +14,7 @@ class ResponsiveTextField extends StatelessWidget {
       controller: controller,
       cursorRadius: Radius.circular(20.r),
       cursorColor: secColor,
-      style: Get.textTheme.subtitle2,
+      style: Get.textTheme.titleSmall,
       decoration: InputDecoration(
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
@@ -29,7 +29,7 @@ class ResponsiveTextField extends StatelessWidget {
           ),
         ),
         hintText: hint,
-        hintStyle: Get.textTheme.subtitle2!.copyWith(color: Colors.white),
+        hintStyle: Get.textTheme.titleSmall!.copyWith(color: Colors.white),
         filled: false,
       ),
     );

@@ -37,7 +37,7 @@ class ContactUs extends GetWidget<PortfolioController> {
                 children: [
                   Text(
                     "<",
-                    style: Get.textTheme.headline2!.copyWith(
+                    style: Get.textTheme.displayMedium!.copyWith(
                       color: secColor,
                       fontSize: 30.sp,
                       fontWeight: FontWeight.w900,
@@ -46,12 +46,12 @@ class ContactUs extends GetWidget<PortfolioController> {
                   10.horizontalSpace,
                   Text(
                     "let's connect",
-                    style: Get.textTheme.bodyText1!.copyWith(color: secColor),
+                    style: Get.textTheme.bodyLarge!.copyWith(color: secColor),
                   ),
                   10.horizontalSpace,
                   Text(
                     ">",
-                    style: Get.textTheme.headline2!.copyWith(
+                    style: Get.textTheme.displayMedium!.copyWith(
                       color: secColor,
                       fontSize: 30.sp,
                       fontWeight: FontWeight.w900,
@@ -62,7 +62,7 @@ class ContactUs extends GetWidget<PortfolioController> {
               20.verticalSpace,
               Text(
                 "Got a question or proposal, or just want to say hello?",
-                style: Get.textTheme.subtitle1,
+                style: Get.textTheme.titleMedium,
               ),
               100.verticalSpace,
               Row(
@@ -74,7 +74,7 @@ class ContactUs extends GetWidget<PortfolioController> {
                       children: [
                         Text(
                           "Your Name",
-                          style: Get.textTheme.headline3!.copyWith(color: secColor),
+                          style: Get.textTheme.displaySmall!.copyWith(color: secColor),
                         ),
                         ResponsiveTextField(
                           controller: controller.nameController,
@@ -90,7 +90,7 @@ class ContactUs extends GetWidget<PortfolioController> {
                       children: [
                         Text(
                           "Your Email",
-                          style: Get.textTheme.headline3!.copyWith(color: secColor),
+                          style: Get.textTheme.displaySmall!.copyWith(color: secColor),
                         ),
                         ResponsiveTextField(
                           controller: controller.emailController,
@@ -108,7 +108,7 @@ class ContactUs extends GetWidget<PortfolioController> {
                 padding: EdgeInsets.only(left: 100.w),
                 child: Text(
                   "Your Message",
-                  style: Get.textTheme.headline3!.copyWith(color: secColor),
+                  style: Get.textTheme.displaySmall!.copyWith(color: secColor),
                 ),
               ),
               Padding(
@@ -124,7 +124,7 @@ class ContactUs extends GetWidget<PortfolioController> {
                 width: 170.w,
                 title: Text(
                   "send",
-                  style: Get.textTheme.bodyText2!.copyWith(fontSize: 16.sp),
+                  style: Get.textTheme.bodyMedium!.copyWith(fontSize: 16.sp),
                 ),
                 isHover: controller.stackConnect,
                 onTap: () {},

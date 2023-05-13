@@ -119,7 +119,7 @@ class Projects extends GetWidget<PortfolioController> {
                             20.horizontalSpace,
                             AnimatedText(
                               controller.projectTitles[controller.projectIndex.value],
-                              style: Get.textTheme.bodyText1!.copyWith(
+                              style: Get.textTheme.bodyLarge!.copyWith(
                                 color: Colors.white,
                                 fontSize: 25.sp,
                               ),

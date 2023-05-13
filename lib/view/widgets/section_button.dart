@@ -28,7 +28,7 @@ class SectionButton extends GetWidget<PortfolioController> {
         () {
           return Text(
             title,
-            style: Get.textTheme.bodyText2!.copyWith(
+            style: Get.textTheme.bodyMedium!.copyWith(
               color: controller.stackHeader[index]
                   ? secColor
                   : controller.page.value == index + 1

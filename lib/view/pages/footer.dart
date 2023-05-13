@@ -53,14 +53,14 @@ class Footer extends GetWidget<PortfolioController> {
                             10.horizontalSpace,
                             Text(
                               "code",
-                              style: Get.textTheme.bodyText1!.copyWith(fontSize: 25.sp, color: secColor),
+                              style: Get.textTheme.bodyLarge!.copyWith(fontSize: 25.sp, color: secColor),
                             ),
                           ],
                         ),
                         30.verticalSpace,
                         Text(
                           "Plan, Design, Develop, Deploy, and\nMarket your next project with me.",
-                          style: Get.textTheme.subtitle1!.copyWith(fontSize: 14.sp),
+                          style: Get.textTheme.titleMedium!.copyWith(fontSize: 14.sp),
                         ),
                       ],
                     ),
@@ -72,7 +72,7 @@ class Footer extends GetWidget<PortfolioController> {
                         30.verticalSpace,
                         Text(
                           "contact me",
-                          style: Get.textTheme.bodyText1!.copyWith(fontSize: 25.sp, color: secColor),
+                          style: Get.textTheme.bodyLarge!.copyWith(fontSize: 25.sp, color: secColor),
                         ),
                         30.verticalSpace,
                         Row(
@@ -95,7 +95,7 @@ class Footer extends GetWidget<PortfolioController> {
                                 onTap: () {},
                                 child: Text(
                                   "olawoleaeo@gmail.com",
-                                  style: Get.textTheme.subtitle1,
+                                  style: Get.textTheme.titleMedium,
                                 ),
                               ),
                             ),
@@ -122,7 +122,7 @@ class Footer extends GetWidget<PortfolioController> {
                                 onTap: () {},
                                 child: Text(
                                   "+234 813 831 3912",
-                                  style: Get.textTheme.subtitle1,
+                                  style: Get.textTheme.titleMedium,
                                 ),
                               ),
                             ),
@@ -138,7 +138,7 @@ class Footer extends GetWidget<PortfolioController> {
                         30.verticalSpace,
                         Text(
                           "socials",
-                          style: Get.textTheme.bodyText1!.copyWith(fontSize: 25.sp, color: secColor),
+                          style: Get.textTheme.bodyLarge!.copyWith(fontSize: 25.sp, color: secColor),
                         ),
                         30.verticalSpace,
                         Row(
@@ -161,7 +161,7 @@ class Footer extends GetWidget<PortfolioController> {
                                 onTap: () {},
                                 child: Text(
                                   "Olawole Oyedele Emmanuel",
-                                  style: Get.textTheme.subtitle1,
+                                  style: Get.textTheme.titleMedium,
                                 ),
                               ),
                             ),
@@ -188,7 +188,7 @@ class Footer extends GetWidget<PortfolioController> {
                                 onTap: () {},
                                 child: Text(
                                   "@ecode210",
-                                  style: Get.textTheme.subtitle1,
+                                  style: Get.textTheme.titleMedium,
                                 ),
                               ),
                             ),
@@ -215,7 +215,7 @@ class Footer extends GetWidget<PortfolioController> {
                                 onTap: () {},
                                 child: Text(
                                   "@ecode210",
-                                  style: Get.textTheme.subtitle1,
+                                  style: Get.textTheme.titleMedium,
                                 ),
                               ),
                             ),
@@ -239,7 +239,7 @@ class Footer extends GetWidget<PortfolioController> {
                 children: [
                   Text(
                     "Copyright ©2022 Ecode - All rights reserved | Made with   ",
-                    style: Get.textTheme.subtitle1,
+                    style: Get.textTheme.titleMedium,
                   ),
                   SvgPicture.asset(
                     "assets/svg/Flutter.svg",

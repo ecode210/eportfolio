@@ -36,7 +36,7 @@ class Services extends GetWidget<PortfolioController> {
                 children: [
                   Text(
                     "<",
-                    style: Get.textTheme.headline2!.copyWith(
+                    style: Get.textTheme.displayMedium!.copyWith(
                       color: secColor,
                       fontSize: 30.sp,
                       fontWeight: FontWeight.w900,
@@ -45,12 +45,12 @@ class Services extends GetWidget<PortfolioController> {
                   10.horizontalSpace,
                   Text(
                     "services",
-                    style: Get.textTheme.bodyText1!.copyWith(color: secColor),
+                    style: Get.textTheme.bodyLarge!.copyWith(color: secColor),
                   ),
                   10.horizontalSpace,
                   Text(
                     ">",
-                    style: Get.textTheme.headline2!.copyWith(
+                    style: Get.textTheme.displayMedium!.copyWith(
                       color: secColor,
                       fontSize: 30.sp,
                       fontWeight: FontWeight.w900,
@@ -82,13 +82,13 @@ class Services extends GetWidget<PortfolioController> {
                           children: [
                             Text(
                               "app developer",
-                              style: Get.textTheme.bodyText2!.copyWith(fontSize: 18.sp, color: secColor),
+                              style: Get.textTheme.bodyMedium!.copyWith(fontSize: 18.sp, color: secColor),
                             ),
                             20.verticalSpace,
                             Text(
                               "I build mobile, web, and desktop apps that fit seamlessly with your desired project. My focus is on performance, design, responsiveness, and animations.",
                               textAlign: TextAlign.center,
-                              style: Get.textTheme.subtitle1,
+                              style: Get.textTheme.titleMedium,
                             ),
                           ],
                         ),
@@ -123,13 +123,13 @@ class Services extends GetWidget<PortfolioController> {
                           children: [
                             Text(
                               "ui/ux design",
-                              style: Get.textTheme.bodyText2!.copyWith(fontSize: 18.sp, color: secColor),
+                              style: Get.textTheme.bodyMedium!.copyWith(fontSize: 18.sp, color: secColor),
                             ),
                             20.verticalSpace,
                             Text(
                               "I design captivating interfaces and create unique experiences for various scale businesses. My talent and passion both lie in design.",
                               textAlign: TextAlign.center,
-                              style: Get.textTheme.subtitle1,
+                              style: Get.textTheme.titleMedium,
                             ),
                           ],
                         ),
@@ -164,13 +164,13 @@ class Services extends GetWidget<PortfolioController> {
                           children: [
                             Text(
                               "api developer",
-                              style: Get.textTheme.bodyText2!.copyWith(fontSize: 18.sp, color: secColor),
+                              style: Get.textTheme.bodyMedium!.copyWith(fontSize: 18.sp, color: secColor),
                             ),
                             20.verticalSpace,
                             Text(
                               "I develop custom REST API endpoints for consumption on any interface. With my technical knowledge, I know what data to obtain to satisfy your goals.",
                               textAlign: TextAlign.center,
-                              style: Get.textTheme.subtitle1,
+                              style: Get.textTheme.titleMedium,
                             ),
                           ],
                         ),

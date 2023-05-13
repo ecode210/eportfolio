@@ -30,38 +30,38 @@ class MyApp extends StatelessWidget {
           ],
           theme: ThemeData(
             textTheme: TextTheme(
-              headline2: GoogleFonts.montserrat(
+              displayMedium: GoogleFonts.montserrat(
                 textStyle: TextStyle(
                   color: priColor,
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              headline3: GoogleFonts.montserrat(
+              displaySmall: GoogleFonts.montserrat(
                 textStyle: TextStyle(
                   color: priColor,
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              bodyText1: TextStyle(
+              bodyLarge: TextStyle(
                 color: priColor,
                 fontFamily: "Joyride",
                 fontSize: 35.sp,
               ),
-              bodyText2: TextStyle(
+              bodyMedium: TextStyle(
                 color: Colors.white,
                 fontFamily: "Joyride",
                 fontSize: 12.sp,
               ),
-              subtitle1: GoogleFonts.montserrat(
+              titleMedium: GoogleFonts.montserrat(
                 textStyle: TextStyle(
                   color: Colors.white,
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w400,
                 ),
               ),
-              subtitle2: GoogleFonts.montserrat(
+              titleSmall: GoogleFonts.montserrat(
                 textStyle: TextStyle(
                   color: Colors.white,
                   fontSize: 20.sp,

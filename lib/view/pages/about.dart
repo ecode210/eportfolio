@@ -91,7 +91,7 @@ class About extends StatelessWidget {
                       children: [
                         Text(
                           "<",
-                          style: Get.textTheme.headline2!.copyWith(
+                          style: Get.textTheme.displayMedium!.copyWith(
                             color: secColor,
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w900,
@@ -100,7 +100,7 @@ class About extends StatelessWidget {
                         5.horizontalSpace,
                         Text(
                           "bio",
-                          style: Get.textTheme.bodyText1!.copyWith(
+                          style: Get.textTheme.bodyLarge!.copyWith(
                             color: secColor,
                             fontSize: 25.sp,
                           ),
@@ -108,7 +108,7 @@ class About extends StatelessWidget {
                         5.horizontalSpace,
                         Text(
                           ">",
-                          style: Get.textTheme.headline2!.copyWith(
+                          style: Get.textTheme.displayMedium!.copyWith(
                             color: secColor,
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w900,
@@ -122,7 +122,7 @@ class About extends StatelessWidget {
                     width: 600.w,
                     child: Text(
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
-                      style: Get.textTheme.subtitle1,
+                      style: Get.textTheme.titleMedium,
                     ),
                   ),
                   20.verticalSpace,
@@ -133,7 +133,7 @@ class About extends StatelessWidget {
                       children: [
                         Text(
                           "<",
-                          style: Get.textTheme.headline2!.copyWith(
+                          style: Get.textTheme.displayMedium!.copyWith(
                             color: secColor,
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w900,
@@ -142,7 +142,7 @@ class About extends StatelessWidget {
                         5.horizontalSpace,
                         Text(
                           "skills",
-                          style: Get.textTheme.bodyText1!.copyWith(
+                          style: Get.textTheme.bodyLarge!.copyWith(
                             color: secColor,
                             fontSize: 25.sp,
                           ),
@@ -150,7 +150,7 @@ class About extends StatelessWidget {
                         5.horizontalSpace,
                         Text(
                           ">",
-                          style: Get.textTheme.headline2!.copyWith(
+                          style: Get.textTheme.displayMedium!.copyWith(
                             color: secColor,
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w900,

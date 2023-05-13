@@ -38,13 +38,13 @@ class Home extends StatelessWidget {
                 children: [
                   Text(
                     "Hi! I'm Olawole Oyedele Emmanuel",
-                    style: Get.textTheme.headline2!.copyWith(color: Colors.white),
+                    style: Get.textTheme.displayMedium!.copyWith(color: Colors.white),
                   ),
                   SizedBox(height: 10.h),
                   SizedBox(
                     height: 60.h,
                     child: DefaultTextStyle(
-                      style: Get.textTheme.bodyText1!,
+                      style: Get.textTheme.bodyLarge!,
                       child: AnimatedTextKit(
                         isRepeatingAnimation: true,
                         pause: const Duration(seconds: 2),
@@ -53,12 +53,12 @@ class Home extends StatelessWidget {
                           TyperAnimatedText("flutter developer"),
                           TyperAnimatedText(
                             "ui/ux designer",
-                            textStyle: Get.textTheme.bodyText1!.copyWith(color: secColor),
+                            textStyle: Get.textTheme.bodyLarge!.copyWith(color: secColor),
                           ),
                           TyperAnimatedText("backend developer"),
                           TyperAnimatedText(
                             "graphics designer",
-                            textStyle: Get.textTheme.bodyText1!.copyWith(color: secColor),
+                            textStyle: Get.textTheme.bodyLarge!.copyWith(color: secColor),
                           ),
                         ],
                       ),
@@ -69,7 +69,7 @@ class Home extends StatelessWidget {
                     width: 500.w,
                     child: Text(
                       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.",
-                      style: Get.textTheme.subtitle1,
+                      style: Get.textTheme.titleMedium,
                     ),
                   ),
                 ],
