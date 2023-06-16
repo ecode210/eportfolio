@@ -13,6 +13,7 @@ import 'package:portfolio_update/view/game/dino.dart';
 import 'package:portfolio_update/view/game/game_constants.dart';
 import 'package:portfolio_update/view/game/game_object.dart';
 import 'package:portfolio_update/view/game/ground.dart';
+import 'package:portfolio_update/view/widgets/breakpoints.dart';
 
 class PortfolioController extends GetxController with GetTickerProviderStateMixin {
   // Dashboard
@@ -41,111 +42,224 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
   PageController projectImagesController = PageController();
   RxBool isProjectImagesLoop = false.obs;
   List<Widget> projectIcons = [
-    Container(
+    Breakpoints(
       key: const ValueKey(0),
-      height: 70.h,
-      width: 70.h,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20.r),
+      web: Container(
+        height: 70.h,
+        width: 70.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.r),
+          child: SvgPicture.asset(
+            "assets/svg/BetaLife.svg",
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20.r),
-        child: SvgPicture.asset(
-          "assets/svg/BetaLife.svg",
-          fit: BoxFit.cover,
+      mobile: Container(
+        height: 50.h,
+        width: 50.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.r),
+          child: SvgPicture.asset(
+            "assets/svg/BetaLife.svg",
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     ),
-    Container(
+    Breakpoints(
       key: const ValueKey(1),
-      height: 70.h,
-      width: 70.h,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20.r),
+      web: Container(
+        height: 70.h,
+        width: 70.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.r),
+          child: SvgPicture.asset(
+            "assets/svg/Helt.svg",
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20.r),
-        child: SvgPicture.asset(
-          "assets/svg/Helt.svg",
-          fit: BoxFit.cover,
+      mobile: Container(
+        height: 50.h,
+        width: 50.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.r),
+          child: SvgPicture.asset(
+            "assets/svg/Helt.svg",
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     ),
-    Container(
+    Breakpoints(
       key: const ValueKey(2),
-      height: 70.h,
-      width: 70.h,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20.r),
+      web: Container(
+        height: 70.h,
+        width: 70.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.r),
+          child: SvgPicture.asset(
+            "assets/svg/Helt Vendor.svg",
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20.r),
-        child: SvgPicture.asset(
-          "assets/svg/Helt Vendor.svg",
-          fit: BoxFit.cover,
+      mobile: Container(
+        height: 50.h,
+        width: 50.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.r),
+          child: SvgPicture.asset(
+            "assets/svg/Helt Vendor.svg",
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     ),
   ];
   List<Widget> projectBadges = [
-    Row(
+    Breakpoints(
       key: const ValueKey(0),
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        SvgPicture.asset(
-          "assets/svg/PlayStore badge.svg",
-          height: 70.h,
-          fit: BoxFit.fitHeight,
-        ),
-        20.horizontalSpace,
-        SvgPicture.asset(
-          "assets/svg/AppStore badge.svg",
-          height: 70.h,
-          fit: BoxFit.fitHeight,
-        ),
-      ],
+      web: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SvgPicture.asset(
+            "assets/svg/PlayStore badge.svg",
+            height: 70.h,
+            fit: BoxFit.fitHeight,
+          ),
+          20.horizontalSpace,
+          SvgPicture.asset(
+            "assets/svg/AppStore badge.svg",
+            height: 70.h,
+            fit: BoxFit.fitHeight,
+          ),
+        ],
+      ),
+      mobile: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SvgPicture.asset(
+            "assets/svg/PlayStore badge.svg",
+            height: 30.h,
+            fit: BoxFit.fitHeight,
+          ),
+          20.horizontalSpace,
+          SvgPicture.asset(
+            "assets/svg/AppStore badge.svg",
+            height: 30.h,
+            fit: BoxFit.fitHeight,
+          ),
+        ],
+      ),
     ),
-    Row(
+    Breakpoints(
       key: const ValueKey(1),
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Stack(
-          alignment: Alignment.center,
-          children: [
-            SvgPicture.asset(
-              "assets/svg/PlayStore badge.svg",
-              height: 70.h,
-              fit: BoxFit.fitHeight,
-            ),
-            Container(
-              height: 70.h,
-              width: 200.w,
-              color: priColor.withOpacity(0.6),
-              alignment: Alignment.center,
-              child: Text(
-                "COMING SOON",
-                style: Get.textTheme.titleMedium!.copyWith(
-                  fontWeight: FontWeight.w700,
+      web: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              SvgPicture.asset(
+                "assets/svg/PlayStore badge.svg",
+                height: 70.h,
+                fit: BoxFit.fitHeight,
+              ),
+              Container(
+                height: 70.h,
+                width: 200.w,
+                color: priColor.withOpacity(0.6),
+                alignment: Alignment.center,
+                child: Text(
+                  "COMING SOON",
+                  style: Get.textTheme.titleMedium!.copyWith(
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
-      ],
+            ],
+          ),
+        ],
+      ),
+      mobile: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Opacity(
+                opacity: 0.6,
+                child: SvgPicture.asset(
+                  "assets/svg/PlayStore badge.svg",
+                  height: 30.h,
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+              Container(
+                height: 30.h,
+                width: 300.w,
+                alignment: Alignment.center,
+                child: Text(
+                  "COMING SOON",
+                  style: Get.textTheme.titleMedium!.copyWith(
+                    fontSize: 30.sp,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     ),
-    Row(
+    Breakpoints(
       key: const ValueKey(2),
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        SvgPicture.asset(
-          "assets/svg/Website badge.svg",
-          height: 70.h,
-          fit: BoxFit.fitHeight,
-        ),
-      ],
+      web: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SvgPicture.asset(
+            "assets/svg/Website badge.svg",
+            height: 70.h,
+            fit: BoxFit.fitHeight,
+          ),
+        ],
+      ),
+      mobile: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SvgPicture.asset(
+            "assets/svg/Website badge.svg",
+            height: 30.h,
+            fit: BoxFit.fitHeight,
+          ),
+        ],
+      ),
     ),
   ];
   List<String> projectTitles = ["betalife", "helt", "helt vendor"];
@@ -239,23 +353,41 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
   List<Widget> projectDescriptions = [
     SizedBox(
       key: const ValueKey(0),
-      child: Text(
-        "Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
-        style: Get.textTheme.titleMedium,
+      child: Breakpoints(
+        web: Text(
+          "Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
+          style: Get.textTheme.titleMedium,
+        ),
+        mobile: Text(
+          "Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
+          style: Get.textTheme.titleMedium!.copyWith(fontSize: 45.sp),
+        ),
       ),
     ),
     SizedBox(
       key: const ValueKey(1),
-      child: Text(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
-        style: Get.textTheme.titleMedium,
+      child: Breakpoints(
+        web: Text(
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
+          style: Get.textTheme.titleMedium,
+        ),
+        mobile: Text(
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
+          style: Get.textTheme.titleMedium!.copyWith(fontSize: 45.sp),
+        ),
       ),
     ),
     SizedBox(
       key: const ValueKey(2),
-      child: Text(
-        "Auctor pulvinar nunc sed est et arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
-        style: Get.textTheme.titleMedium,
+      child: Breakpoints(
+        web: Text(
+          "Auctor pulvinar nunc sed est et arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
+          style: Get.textTheme.titleMedium,
+        ),
+        mobile: Text(
+          "Auctor pulvinar nunc sed est et arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
+          style: Get.textTheme.titleMedium!.copyWith(fontSize: 45.sp),
+        ),
       ),
     ),
   ];

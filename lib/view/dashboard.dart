@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,6 +14,7 @@ import 'package:portfolio_update/view/pages/footer.dart';
 import 'package:portfolio_update/view/pages/home.dart';
 import 'package:portfolio_update/view/pages/projects.dart';
 import 'package:portfolio_update/view/pages/services.dart';
+import 'package:portfolio_update/view/widgets/breakpoints.dart';
 import 'package:portfolio_update/view/widgets/section_button.dart';
 import 'package:portfolio_update/view/widgets/stacked_button.dart';
 
@@ -70,104 +73,232 @@ class Dashboard extends GetWidget<PortfolioController> {
                   CrabController(),
                 ],
               ),
-              Container(
-                height: 124.h,
-                width: 1440.w,
-                padding: EdgeInsets.symmetric(horizontal: 50.w),
-                child: Row(
-                  children: [
-                    TextButton(
-                      style: ButtonStyle(
-                        overlayColor: MaterialStateProperty.all(Colors.transparent),
+              Breakpoints(
+                web: Container(
+                  height: 124.h,
+                  width: 1440.w,
+                  padding: EdgeInsets.symmetric(horizontal: 50.w),
+                  child: Row(
+                    children: [
+                      TextButton(
+                        style: ButtonStyle(
+                          overlayColor: MaterialStateProperty.all(Colors.transparent),
+                        ),
+                        onHover: (hover) {
+                          controller.stackLogo.value = hover;
+                        },
+                        onPressed: () {
+                          controller.coastController.animateTo(
+                            beach: 0,
+                            duration: const Duration(seconds: 1),
+                            curve: Curves.easeInOut,
+                          );
+                        },
+                        child: Obx(
+                          () {
+                            return AnimatedCrossFade(
+                              duration: const Duration(milliseconds: 200),
+                              crossFadeState:
+                                  controller.page % 2 == 0 ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+                              firstChild: Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/svg/E.svg",
+                                    width: 50.w,
+                                    fit: BoxFit.fitWidth,
+                                    colorFilter: const ColorFilter.mode(
+                                      secColor,
+                                      BlendMode.srcIn,
+                                    ),
+                                  ),
+                                  AnimatedPositioned(
+                                    duration: const Duration(milliseconds: 200),
+                                    top: controller.stackLogo.value ? 0 : -3.h,
+                                    left: controller.stackLogo.value ? 0 : -3.h,
+                                    child: SvgPicture.asset(
+                                      "assets/svg/E.svg",
+                                      width: 50.w,
+                                      fit: BoxFit.fitWidth,
+                                      colorFilter: const ColorFilter.mode(
+                                        priColor,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              secondChild: Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/svg/E.svg",
+                                    width: 50.w,
+                                    fit: BoxFit.fitWidth,
+                                    colorFilter: const ColorFilter.mode(
+                                      Colors.white,
+                                      BlendMode.srcIn,
+                                    ),
+                                  ),
+                                  AnimatedPositioned(
+                                    duration: const Duration(milliseconds: 200),
+                                    top: controller.stackLogo.value ? 0 : -3.h,
+                                    left: controller.stackLogo.value ? 0 : -3.h,
+                                    child: SvgPicture.asset(
+                                      "assets/svg/E.svg",
+                                      width: 50.w,
+                                      fit: BoxFit.fitWidth,
+                                      colorFilter: const ColorFilter.mode(
+                                        secColor,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
                       ),
-                      onHover: (hover) {
-                        controller.stackLogo.value = hover;
-                      },
-                      onPressed: () {
-                        controller.coastController.animateTo(
-                          beach: 0,
-                          duration: const Duration(seconds: 1),
-                          curve: Curves.easeInOut,
-                        );
-                      },
-                      child: Obx(
-                        () {
-                          return AnimatedCrossFade(
-                            duration: const Duration(milliseconds: 200),
-                            crossFadeState:
-                                controller.page % 2 == 0 ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-                            firstChild: Stack(
-                              clipBehavior: Clip.none,
-                              children: [
-                                SvgPicture.asset(
-                                  "assets/svg/E.svg",
-                                  color: secColor,
-                                  width: 50.w,
-                                  fit: BoxFit.fitWidth,
-                                ),
-                                AnimatedPositioned(
-                                  duration: const Duration(milliseconds: 200),
-                                  top: controller.stackLogo.value ? 0 : -3.h,
-                                  left: controller.stackLogo.value ? 0 : -3.h,
-                                  child: SvgPicture.asset(
-                                    "assets/svg/E.svg",
-                                    color: priColor,
-                                    width: 50.w,
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            secondChild: Stack(
-                              clipBehavior: Clip.none,
-                              children: [
-                                SvgPicture.asset(
-                                  "assets/svg/E.svg",
-                                  color: Colors.white,
-                                  width: 50.w,
-                                  fit: BoxFit.fitWidth,
-                                ),
-                                AnimatedPositioned(
-                                  duration: const Duration(milliseconds: 200),
-                                  top: controller.stackLogo.value ? 0 : -3.h,
-                                  left: controller.stackLogo.value ? 0 : -3.h,
-                                  child: SvgPicture.asset(
-                                    "assets/svg/E.svg",
-                                    color: secColor,
-                                    width: 50.w,
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                              ],
-                            ),
+                      const Spacer(),
+                      const SectionButton(title: "about", index: 0),
+                      SizedBox(width: 50.w),
+                      const SectionButton(title: "services", index: 1),
+                      SizedBox(width: 50.w),
+                      const SectionButton(title: "projects", index: 2),
+                      SizedBox(width: 50.w),
+                      StackedButton(
+                        height: 50.h,
+                        width: 170.w,
+                        title: Text(
+                          "contact me",
+                          style: Get.textTheme.bodyMedium,
+                        ),
+                        isHover: controller.stackContactUs,
+                        onTap: () {
+                          controller.coastController.animateTo(
+                            beach: 4,
+                            duration: const Duration(seconds: 1),
+                            curve: Curves.easeInOut,
                           );
                         },
                       ),
-                    ),
-                    const Spacer(),
-                    const SectionButton(title: "about", index: 0),
-                    SizedBox(width: 50.w),
-                    const SectionButton(title: "services", index: 1),
-                    SizedBox(width: 50.w),
-                    const SectionButton(title: "projects", index: 2),
-                    SizedBox(width: 50.w),
-                    StackedButton(
-                      height: 50.h,
-                      width: 170.w,
-                      title: Text(
-                        "contact me",
-                        style: Get.textTheme.bodyMedium,
+                    ],
+                  ),
+                ),
+                mobile: Container(
+                  height: 124.h,
+                  width: 1440.w,
+                  padding: EdgeInsets.symmetric(horizontal: 50.w),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.menu_rounded,
+                          color: Colors.white,
+                          size: 100.sp,
+                        ),
                       ),
-                      isHover: controller.stackContactUs,
-                      onTap: () {
-                        controller.coastController.animateTo(
-                          beach: 4,
-                          duration: const Duration(seconds: 1),
-                          curve: Curves.easeInOut,
-                        );
-                      },
-                    ),
-                  ],
+                      TextButton(
+                        style: ButtonStyle(
+                          overlayColor: MaterialStateProperty.all(Colors.transparent),
+                        ),
+                        onHover: (hover) {
+                          controller.stackLogo.value = hover;
+                        },
+                        onPressed: () {
+                          controller.stackLogo.value = true;
+                          Timer(
+                            const Duration(seconds: 1),
+                            () {
+                              controller.stackLogo.value = false;
+                            },
+                          );
+                          controller.coastController.animateTo(
+                            beach: 0,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeInOut,
+                          );
+                        },
+                        child: Obx(
+                          () {
+                            return AnimatedCrossFade(
+                              duration: const Duration(milliseconds: 200),
+                              crossFadeState:
+                                  controller.page % 2 == 0 ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+                              firstChild: Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/svg/E.svg",
+                                    width: 120.w,
+                                    fit: BoxFit.fitWidth,
+                                    colorFilter: const ColorFilter.mode(
+                                      secColor,
+                                      BlendMode.srcIn,
+                                    ),
+                                  ),
+                                  AnimatedPositioned(
+                                    duration: const Duration(milliseconds: 200),
+                                    top: controller.stackLogo.value ? 0 : -3.h,
+                                    left: controller.stackLogo.value ? 0 : -3.h,
+                                    child: SvgPicture.asset(
+                                      "assets/svg/E.svg",
+                                      width: 120.w,
+                                      fit: BoxFit.fitWidth,
+                                      colorFilter: const ColorFilter.mode(
+                                        priColor,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              secondChild: Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/svg/E.svg",
+                                    width: 120.w,
+                                    fit: BoxFit.fitWidth,
+                                    colorFilter: const ColorFilter.mode(
+                                      Colors.white,
+                                      BlendMode.srcIn,
+                                    ),
+                                  ),
+                                  AnimatedPositioned(
+                                    duration: const Duration(milliseconds: 200),
+                                    top: controller.stackLogo.value ? 0 : -3.h,
+                                    left: controller.stackLogo.value ? 0 : -3.h,
+                                    child: SvgPicture.asset(
+                                      "assets/svg/E.svg",
+                                      width: 120.w,
+                                      fit: BoxFit.fitWidth,
+                                      colorFilter: const ColorFilter.mode(
+                                        secColor,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: null,
+                        icon: Icon(
+                          Icons.menu_rounded,
+                          color: Colors.transparent,
+                          size: 100.sp,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
