@@ -86,7 +86,17 @@ class Footer extends GetWidget<PortfolioController> {
                               MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    controller.launchURL(
+                                      uri: Uri(
+                                        scheme: 'mailto',
+                                        path: 'olawoleaeo@gmail.com',
+                                        query: controller.encodeQueryParameters(<String, String>{
+                                          'subject': 'Request For Proposal',
+                                        }),
+                                      ),
+                                    );
+                                  },
                                   child: FaIcon(
                                     FontAwesomeIcons.solidEnvelope,
                                     color: secColor,
@@ -98,7 +108,17 @@ class Footer extends GetWidget<PortfolioController> {
                               MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    controller.launchURL(
+                                      uri: Uri(
+                                        scheme: 'mailto',
+                                        path: 'olawoleaeo@gmail.com',
+                                        query: controller.encodeQueryParameters(<String, String>{
+                                          'subject': 'Request For Proposal',
+                                        }),
+                                      ),
+                                    );
+                                  },
                                   child: Text(
                                     "olawoleaeo@gmail.com",
                                     style: Get.textTheme.titleMedium,
@@ -113,7 +133,9 @@ class Footer extends GetWidget<PortfolioController> {
                               MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    controller.launchURL(uri: Uri.parse("tel:+2348138313912"));
+                                  },
                                   child: FaIcon(
                                     FontAwesomeIcons.phone,
                                     color: secColor,
@@ -125,7 +147,9 @@ class Footer extends GetWidget<PortfolioController> {
                               MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    controller.launchURL(uri: Uri.parse("tel:+2348138313912"));
+                                  },
                                   child: Text(
                                     "+234 813 831 3912",
                                     style: Get.textTheme.titleMedium,
@@ -152,7 +176,11 @@ class Footer extends GetWidget<PortfolioController> {
                               MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    controller.launchURL(
+                                      uri: Uri.parse("https://www.linkedin.com/in/olawole-oyedele-931a14164/"),
+                                    );
+                                  },
                                   child: SvgPicture.asset(
                                     "assets/svg/LinkedIn front.svg",
                                     width: 50.w,
@@ -164,7 +192,11 @@ class Footer extends GetWidget<PortfolioController> {
                               MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    controller.launchURL(
+                                      uri: Uri.parse("https://www.linkedin.com/in/olawole-oyedele-931a14164/"),
+                                    );
+                                  },
                                   child: Text(
                                     "Olawole Oyedele Emmanuel",
                                     style: Get.textTheme.titleMedium,
@@ -179,7 +211,9 @@ class Footer extends GetWidget<PortfolioController> {
                               MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    controller.launchURL(uri: Uri.parse("https://github.com/ecode210"));
+                                  },
                                   child: SvgPicture.asset(
                                     "assets/svg/Github front.svg",
                                     width: 50.w,
@@ -191,7 +225,9 @@ class Footer extends GetWidget<PortfolioController> {
                               MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    controller.launchURL(uri: Uri.parse("https://github.com/ecode210"));
+                                  },
                                   child: Text(
                                     "@ecode210",
                                     style: Get.textTheme.titleMedium,
@@ -206,7 +242,9 @@ class Footer extends GetWidget<PortfolioController> {
                               MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    controller.launchURL(uri: Uri.parse("https://twitter.com/ecode210"));
+                                  },
                                   child: SvgPicture.asset(
                                     "assets/svg/Twitter front.svg",
                                     width: 50.w,
@@ -218,7 +256,9 @@ class Footer extends GetWidget<PortfolioController> {
                               MouseRegion(
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    controller.launchURL(uri: Uri.parse("https://twitter.com/ecode210"));
+                                  },
                                   child: Text(
                                     "@ecode210",
                                     style: Get.textTheme.titleMedium,
@@ -314,7 +354,17 @@ class Footer extends GetWidget<PortfolioController> {
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                controller.launchURL(
+                                  uri: Uri(
+                                    scheme: 'mailto',
+                                    path: 'olawoleaeo@gmail.com',
+                                    query: controller.encodeQueryParameters(<String, String>{
+                                      'subject': 'Request For Proposal',
+                                    }),
+                                  ),
+                                );
+                              },
                               child: FaIcon(
                                 FontAwesomeIcons.solidEnvelope,
                                 color: secColor,
@@ -326,7 +376,17 @@ class Footer extends GetWidget<PortfolioController> {
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                controller.launchURL(
+                                  uri: Uri(
+                                    scheme: 'mailto',
+                                    path: 'olawoleaeo@gmail.com',
+                                    query: controller.encodeQueryParameters(<String, String>{
+                                      'subject': 'Request For Proposal',
+                                    }),
+                                  ),
+                                );
+                              },
                               child: Text(
                                 "olawoleaeo@gmail.com",
                                 style: Get.textTheme.titleMedium!.copyWith(fontSize: 40.sp),
@@ -341,7 +401,9 @@ class Footer extends GetWidget<PortfolioController> {
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                controller.launchURL(uri: Uri.parse("tel:+2348138313912"));
+                              },
                               child: FaIcon(
                                 FontAwesomeIcons.phone,
                                 color: secColor,
@@ -353,7 +415,9 @@ class Footer extends GetWidget<PortfolioController> {
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                controller.launchURL(uri: Uri.parse("tel:+2348138313912"));
+                              },
                               child: Text(
                                 "+234 813 831 3912",
                                 style: Get.textTheme.titleMedium!.copyWith(fontSize: 40.sp),
@@ -373,7 +437,11 @@ class Footer extends GetWidget<PortfolioController> {
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                controller.launchURL(
+                                  uri: Uri.parse("https://www.linkedin.com/in/olawole-oyedele-931a14164/"),
+                                );
+                              },
                               child: SvgPicture.asset(
                                 "assets/svg/LinkedIn front.svg",
                                 width: 100.w,
@@ -385,7 +453,11 @@ class Footer extends GetWidget<PortfolioController> {
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                controller.launchURL(
+                                  uri: Uri.parse("https://www.linkedin.com/in/olawole-oyedele-931a14164/"),
+                                );
+                              },
                               child: Text(
                                 "Olawole Oyedele Emmanuel",
                                 style: Get.textTheme.titleMedium!.copyWith(fontSize: 40.sp),
@@ -400,7 +472,9 @@ class Footer extends GetWidget<PortfolioController> {
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                controller.launchURL(uri: Uri.parse("https://github.com/ecode210"));
+                              },
                               child: SvgPicture.asset(
                                 "assets/svg/Github front.svg",
                                 width: 100.w,
@@ -412,7 +486,9 @@ class Footer extends GetWidget<PortfolioController> {
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                controller.launchURL(uri: Uri.parse("https://github.com/ecode210"));
+                              },
                               child: Text(
                                 "@ecode210",
                                 style: Get.textTheme.titleMedium!.copyWith(fontSize: 40.sp),
@@ -427,7 +503,9 @@ class Footer extends GetWidget<PortfolioController> {
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                controller.launchURL(uri: Uri.parse("https://twitter.com/ecode210"));
+                              },
                               child: SvgPicture.asset(
                                 "assets/svg/Twitter front.svg",
                                 width: 100.w,
@@ -439,7 +517,9 @@ class Footer extends GetWidget<PortfolioController> {
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                controller.launchURL(uri: Uri.parse("https://twitter.com/ecode210"));
+                              },
                               child: Text(
                                 "@ecode210",
                                 style: Get.textTheme.titleMedium!.copyWith(fontSize: 40.sp),

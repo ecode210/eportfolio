@@ -14,6 +14,7 @@ import 'package:portfolio_update/view/game/game_constants.dart';
 import 'package:portfolio_update/view/game/game_object.dart';
 import 'package:portfolio_update/view/game/ground.dart';
 import 'package:portfolio_update/view/widgets/breakpoints.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioController extends GetxController with GetTickerProviderStateMixin {
   // Dashboard
@@ -602,6 +603,18 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
       await Future.delayed(const Duration(milliseconds: 500));
       newGame();
     }
+  }
+
+  Future<void> launchURL({required Uri uri}) async {
+    if (!await launchUrl(uri)) {
+      throw Exception('Could not launch $uri');
+    }
+  }
+
+  String encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map((MapEntry<String, String> e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
   }
 
   @override
