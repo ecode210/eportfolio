@@ -15,6 +15,7 @@ import 'package:portfolio_update/view/pages/home.dart';
 import 'package:portfolio_update/view/pages/projects.dart';
 import 'package:portfolio_update/view/pages/services.dart';
 import 'package:portfolio_update/view/widgets/breakpoints.dart';
+import 'package:portfolio_update/view/widgets/mobile_drawer.dart';
 import 'package:portfolio_update/view/widgets/section_button.dart';
 import 'package:portfolio_update/view/widgets/stacked_button.dart';
 
@@ -171,7 +172,7 @@ class Dashboard extends GetWidget<PortfolioController> {
                         height: 50.h,
                         width: 170.w,
                         title: Text(
-                          "contact me",
+                          "let's chat",
                           style: Get.textTheme.bodyMedium,
                         ),
                         isHover: controller.stackContactUs,
@@ -186,6 +187,122 @@ class Dashboard extends GetWidget<PortfolioController> {
                     ],
                   ),
                 ),
+                tablet: Container(
+                  height: 124.h,
+                  width: 1440.w,
+                  padding: EdgeInsets.symmetric(horizontal: 50.w),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          MobileDrawer.openDrawer();
+                        },
+                        icon: Icon(
+                          Icons.menu_rounded,
+                          color: Colors.white,
+                          size: 70.sp,
+                        ),
+                      ),
+                      TextButton(
+                        style: ButtonStyle(
+                          overlayColor: MaterialStateProperty.all(Colors.transparent),
+                        ),
+                        onHover: (hover) {
+                          controller.stackLogo.value = hover;
+                        },
+                        onPressed: () {
+                          controller.stackLogo.value = true;
+                          Timer(
+                            const Duration(seconds: 1),
+                            () {
+                              controller.stackLogo.value = false;
+                            },
+                          );
+                          controller.coastController.animateTo(
+                            beach: 0,
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeInOut,
+                          );
+                        },
+                        child: Obx(
+                          () {
+                            return AnimatedCrossFade(
+                              duration: const Duration(milliseconds: 200),
+                              crossFadeState:
+                                  controller.page % 2 == 0 ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+                              firstChild: Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/svg/E.svg",
+                                    width: 90.w,
+                                    fit: BoxFit.fitWidth,
+                                    colorFilter: const ColorFilter.mode(
+                                      secColor,
+                                      BlendMode.srcIn,
+                                    ),
+                                  ),
+                                  AnimatedPositioned(
+                                    duration: const Duration(milliseconds: 200),
+                                    top: controller.stackLogo.value ? 0 : -3.h,
+                                    left: controller.stackLogo.value ? 0 : -3.h,
+                                    child: SvgPicture.asset(
+                                      "assets/svg/E.svg",
+                                      width: 90.w,
+                                      fit: BoxFit.fitWidth,
+                                      colorFilter: const ColorFilter.mode(
+                                        priColor,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              secondChild: Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/svg/E.svg",
+                                    width: 90.w,
+                                    fit: BoxFit.fitWidth,
+                                    colorFilter: const ColorFilter.mode(
+                                      Colors.white,
+                                      BlendMode.srcIn,
+                                    ),
+                                  ),
+                                  AnimatedPositioned(
+                                    duration: const Duration(milliseconds: 200),
+                                    top: controller.stackLogo.value ? 0 : -3.h,
+                                    left: controller.stackLogo.value ? 0 : -3.h,
+                                    child: SvgPicture.asset(
+                                      "assets/svg/E.svg",
+                                      width: 90.w,
+                                      fit: BoxFit.fitWidth,
+                                      colorFilter: const ColorFilter.mode(
+                                        secColor,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: null,
+                        icon: Icon(
+                          Icons.menu_rounded,
+                          color: Colors.transparent,
+                          size: 70.sp,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 mobile: Container(
                   height: 124.h,
                   width: 1440.w,
@@ -195,7 +312,9 @@ class Dashboard extends GetWidget<PortfolioController> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          MobileDrawer.openDrawer();
+                        },
                         icon: Icon(
                           Icons.menu_rounded,
                           color: Colors.white,

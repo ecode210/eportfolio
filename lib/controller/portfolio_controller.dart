@@ -60,6 +60,21 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
           ),
         ),
       ),
+      tablet: Container(
+        height: 60.h,
+        width: 60.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.r),
+          child: SvgPicture.asset(
+            "assets/svg/BetaLife.svg",
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
       mobile: Container(
         height: 50.h,
         width: 50.h,
@@ -93,6 +108,21 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
           ),
         ),
       ),
+      tablet: Container(
+        height: 60.h,
+        width: 60.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.r),
+          child: SvgPicture.asset(
+            "assets/svg/Helt.svg",
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
       mobile: Container(
         height: 50.h,
         width: 50.h,
@@ -114,6 +144,21 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
       web: Container(
         height: 70.h,
         width: 70.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20.r),
+          child: SvgPicture.asset(
+            "assets/svg/Helt Vendor.svg",
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+      tablet: Container(
+        height: 60.h,
+        width: 60.h,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20.r),
@@ -162,18 +207,34 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
           ),
         ],
       ),
-      mobile: Row(
+      tablet: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           SvgPicture.asset(
             "assets/svg/PlayStore badge.svg",
-            height: 30.h,
+            height: 40.h,
             fit: BoxFit.fitHeight,
           ),
           20.horizontalSpace,
           SvgPicture.asset(
             "assets/svg/AppStore badge.svg",
-            height: 30.h,
+            height: 40.h,
+            fit: BoxFit.fitHeight,
+          ),
+        ],
+      ),
+      mobile: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SvgPicture.asset(
+            "assets/svg/PlayStore badge.svg",
+            height: 25.h,
+            fit: BoxFit.fitHeight,
+          ),
+          20.horizontalSpace,
+          SvgPicture.asset(
+            "assets/svg/AppStore badge.svg",
+            height: 25.h,
             fit: BoxFit.fitHeight,
           ),
         ],
@@ -208,6 +269,36 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
           ),
         ],
       ),
+      tablet: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Opacity(
+                opacity: 0.6,
+                child: SvgPicture.asset(
+                  "assets/svg/PlayStore badge.svg",
+                  height: 40.h,
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+              Container(
+                height: 40.h,
+                width: 300.w,
+                alignment: Alignment.center,
+                child: Text(
+                  "COMING SOON",
+                  style: Get.textTheme.titleMedium!.copyWith(
+                    fontSize: 30.sp,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
       mobile: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -218,18 +309,18 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
                 opacity: 0.6,
                 child: SvgPicture.asset(
                   "assets/svg/PlayStore badge.svg",
-                  height: 30.h,
+                  height: 25.h,
                   fit: BoxFit.fitHeight,
                 ),
               ),
               Container(
-                height: 30.h,
+                height: 25.h,
                 width: 300.w,
                 alignment: Alignment.center,
                 child: Text(
                   "COMING SOON",
                   style: Get.textTheme.titleMedium!.copyWith(
-                    fontSize: 30.sp,
+                    fontSize: 25.sp,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -251,12 +342,22 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
           ),
         ],
       ),
+      tablet: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SvgPicture.asset(
+            "assets/svg/Website badge.svg",
+            height: 40.h,
+            fit: BoxFit.fitHeight,
+          ),
+        ],
+      ),
       mobile: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           SvgPicture.asset(
             "assets/svg/Website badge.svg",
-            height: 30.h,
+            height: 25.h,
             fit: BoxFit.fitHeight,
           ),
         ],
@@ -359,6 +460,10 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
           "Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
           style: Get.textTheme.titleMedium,
         ),
+        tablet: Text(
+          "Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
+          style: Get.textTheme.titleMedium!.copyWith(fontSize: 35.sp),
+        ),
         mobile: Text(
           "Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
           style: Get.textTheme.titleMedium!.copyWith(fontSize: 45.sp),
@@ -372,6 +477,10 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
           style: Get.textTheme.titleMedium,
         ),
+        tablet: Text(
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
+          style: Get.textTheme.titleMedium!.copyWith(fontSize: 35.sp),
+        ),
         mobile: Text(
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
           style: Get.textTheme.titleMedium!.copyWith(fontSize: 45.sp),
@@ -384,6 +493,10 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
         web: Text(
           "Auctor pulvinar nunc sed est et arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
           style: Get.textTheme.titleMedium,
+        ),
+        tablet: Text(
+          "Auctor pulvinar nunc sed est et arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
+          style: Get.textTheme.titleMedium!.copyWith(fontSize: 35.sp),
         ),
         mobile: Text(
           "Auctor pulvinar nunc sed est et arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.\n\nAuctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",

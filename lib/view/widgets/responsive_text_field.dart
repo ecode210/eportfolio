@@ -38,6 +38,34 @@ class ResponsiveTextField extends StatelessWidget {
           filled: false,
         ),
       ),
+      tablet: TextField(
+        controller: controller,
+        cursorRadius: Radius.circular(20.r),
+        cursorColor: secColor,
+        style: Get.textTheme.titleSmall!.copyWith(fontSize: 35.sp),
+        maxLines: lines,
+        minLines: lines,
+        decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: secColor,
+              width: 2.h,
+            ),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: secColor,
+              width: 4.h,
+            ),
+          ),
+          hintText: hint,
+          hintStyle: Get.textTheme.titleSmall!.copyWith(
+            color: Colors.white,
+            fontSize: 35.sp,
+          ),
+          filled: false,
+        ),
+      ),
       mobile: TextField(
         controller: controller,
         cursorRadius: Radius.circular(20.r),
