@@ -38,9 +38,10 @@ class Projects extends GetWidget<PortfolioController> {
             web: Row(
               children: [
                 Stack(
+                  alignment: Alignment.center,
                   children: [
                     AspectRatio(
-                      aspectRatio: 2 / 3,
+                      aspectRatio: 9 / 16,
                       child: Container(
                         height: 1024.h,
                         color: priColor,
@@ -61,7 +62,7 @@ class Projects extends GetWidget<PortfolioController> {
                       ),
                     ),
                     AspectRatio(
-                      aspectRatio: 2 / 3,
+                      aspectRatio: 9 / 16,
                       child: Container(
                         height: 1024.h,
                         color: priColor.withOpacity(0.25),
@@ -177,7 +178,7 @@ class Projects extends GetWidget<PortfolioController> {
                               isHover: controller.previous,
                               onTap: () {
                                 if (controller.projectIndex.value <= 0) {
-                                  controller.projectIndex.value = 2;
+                                  controller.projectIndex.value = 4;
                                 } else {
                                   controller.projectIndex.value--;
                                 }
@@ -195,7 +196,7 @@ class Projects extends GetWidget<PortfolioController> {
                               ),
                               isHover: controller.next,
                               onTap: () {
-                                if (controller.projectIndex.value >= 2) {
+                                if (controller.projectIndex.value >= 4) {
                                   controller.projectIndex.value = 0;
                                 } else {
                                   controller.projectIndex.value++;
@@ -211,398 +212,466 @@ class Projects extends GetWidget<PortfolioController> {
                 )
               ],
             ),
-            tablet: Stack(
-              alignment: Alignment.center,
-              children: [
-                SizedBox(
-                  height: 1024.h,
-                  width: 1440.w,
-                  child: Obx(() {
-                    return PageView(
-                      controller: controller.projectImagesController,
-                      scrollDirection: Axis.horizontal,
-                      physics: const NeverScrollableScrollPhysics(),
-                      children: [
-                        controller.projectImages[0][controller.projectIndex.value],
-                        controller.projectImages[1][controller.projectIndex.value],
-                        controller.projectImages[2][controller.projectIndex.value],
-                        controller.projectImages[3][controller.projectIndex.value],
-                        controller.projectImages[4][controller.projectIndex.value],
-                      ],
-                    );
-                  }),
-                ),
-                Container(
-                  height: 1024.h,
-                  width: 1440.w,
-                  color: priColor.withOpacity(0.85),
-                  child: Image.asset(
-                    "assets/png/pattern.png",
-                    color: secColor.withOpacity(0.07),
+            tablet: Obx(() {
+              return Stack(
+                alignment: Alignment.center,
+                children: [
+                  SizedBox(
                     height: 1024.h,
                     width: 1440.w,
-                    fit: BoxFit.cover,
+                    child: Obx(() {
+                      return PageView(
+                        controller: controller.projectImagesController,
+                        scrollDirection: Axis.horizontal,
+                        physics: controller.viewImagesInMobileView.value
+                            ? const BouncingScrollPhysics()
+                            : const NeverScrollableScrollPhysics(),
+                        children: [
+                          controller.projectImages[0][controller.projectIndex.value],
+                          controller.projectImages[1][controller.projectIndex.value],
+                          controller.projectImages[2][controller.projectIndex.value],
+                          controller.projectImages[3][controller.projectIndex.value],
+                          controller.projectImages[4][controller.projectIndex.value],
+                        ],
+                      );
+                    }),
                   ),
-                ),
-                SizedBox(
-                  height: 1024.h,
-                  width: 1440.w,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 100.w),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        120.verticalSpace,
-                        SizedBox(
-                          width: 1440.w,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "<",
-                                style: Get.textTheme.displayMedium!.copyWith(
-                                  color: Colors.white,
-                                  fontSize: 40.sp,
-                                  fontWeight: FontWeight.w900,
-                                ),
+                  if (!controller.viewImagesInMobileView.value)
+                    Container(
+                      height: 1024.h,
+                      width: 1440.w,
+                      color: priColor.withOpacity(0.85),
+                      child: Image.asset(
+                        "assets/png/pattern.png",
+                        color: secColor.withOpacity(0.07),
+                        height: 1024.h,
+                        width: 1440.w,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  if (!controller.viewImagesInMobileView.value)
+                    SizedBox(
+                      height: 1024.h,
+                      width: 1440.w,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 100.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            120.verticalSpace,
+                            SizedBox(
+                              width: 1440.w,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "<",
+                                    style: Get.textTheme.displayMedium!.copyWith(
+                                      color: Colors.white,
+                                      fontSize: 40.sp,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                  5.horizontalSpace,
+                                  Text(
+                                    "projects",
+                                    style: Get.textTheme.bodyLarge!.copyWith(
+                                      color: Colors.white,
+                                      fontSize: 50.sp,
+                                    ),
+                                  ),
+                                  5.horizontalSpace,
+                                  Text(
+                                    ">",
+                                    style: Get.textTheme.displayMedium!.copyWith(
+                                      color: Colors.white,
+                                      fontSize: 40.sp,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                ],
                               ),
-                              5.horizontalSpace,
-                              Text(
-                                "projects",
-                                style: Get.textTheme.bodyLarge!.copyWith(
-                                  color: Colors.white,
-                                  fontSize: 50.sp,
-                                ),
-                              ),
-                              5.horizontalSpace,
-                              Text(
-                                ">",
-                                style: Get.textTheme.displayMedium!.copyWith(
-                                  color: Colors.white,
-                                  fontSize: 40.sp,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        20.verticalSpace,
-                        Obx(() {
-                          return Row(
-                            children: [
-                              AnimatedSwitcher(
+                            ),
+                            20.verticalSpace,
+                            Obx(() {
+                              return Row(
+                                children: [
+                                  AnimatedSwitcher(
+                                    duration: const Duration(milliseconds: 350),
+                                    switchInCurve: Curves.easeIn,
+                                    switchOutCurve: Curves.easeOut,
+                                    child: controller.projectIcons[controller.projectIndex.value],
+                                    transitionBuilder: (child, animation) {
+                                      return FadeTransition(
+                                        opacity: animation,
+                                        child: ScaleTransition(
+                                          scale: animation,
+                                          child: child,
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                  20.horizontalSpace,
+                                  AnimatedText(
+                                    controller.projectTitles[controller.projectIndex.value],
+                                    style: Get.textTheme.bodyLarge!.copyWith(
+                                      color: Colors.white,
+                                      fontSize: 40.sp,
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: AnimatedSwitcher(
+                                      duration: const Duration(milliseconds: 350),
+                                      switchInCurve: Curves.easeIn,
+                                      switchOutCurve: Curves.easeOut,
+                                      child: controller.projectBadges[controller.projectIndex.value],
+                                      transitionBuilder: (child, animation) {
+                                        return FadeTransition(
+                                          opacity: animation,
+                                          child: ScaleTransition(
+                                            scale: animation,
+                                            child: child,
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              );
+                            }),
+                            20.verticalSpace,
+                            Obx(() {
+                              return AnimatedSwitcher(
                                 duration: const Duration(milliseconds: 350),
                                 switchInCurve: Curves.easeIn,
                                 switchOutCurve: Curves.easeOut,
-                                child: controller.projectIcons[controller.projectIndex.value],
+                                child: controller.projectDescriptions[controller.projectIndex.value],
                                 transitionBuilder: (child, animation) {
                                   return FadeTransition(
                                     opacity: animation,
-                                    child: ScaleTransition(
-                                      scale: animation,
-                                      child: child,
-                                    ),
+                                    child: child,
                                   );
                                 },
-                              ),
-                              20.horizontalSpace,
-                              AnimatedText(
-                                controller.projectTitles[controller.projectIndex.value],
-                                style: Get.textTheme.bodyLarge!.copyWith(
-                                  color: Colors.white,
-                                  fontSize: 40.sp,
-                                ),
-                              ),
-                              Expanded(
-                                child: AnimatedSwitcher(
-                                  duration: const Duration(milliseconds: 350),
-                                  switchInCurve: Curves.easeIn,
-                                  switchOutCurve: Curves.easeOut,
-                                  child: controller.projectBadges[controller.projectIndex.value],
-                                  transitionBuilder: (child, animation) {
-                                    return FadeTransition(
-                                      opacity: animation,
-                                      child: ScaleTransition(
-                                        scale: animation,
-                                        child: child,
-                                      ),
+                              );
+                            }),
+                            const Spacer(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                StackedButton(
+                                  height: 50.h,
+                                  width: 300.w,
+                                  title: FaIcon(
+                                    FontAwesomeIcons.arrowLeftLong,
+                                    color: Colors.white,
+                                    size: 40.sp,
+                                  ),
+                                  isHover: controller.previous,
+                                  onTap: () {
+                                    controller.previous.value = true;
+                                    Timer(
+                                      const Duration(milliseconds: 500),
+                                      () => controller.previous.value = false,
                                     );
+                                    if (controller.projectIndex.value <= 0) {
+                                      controller.projectIndex.value = 4;
+                                    } else {
+                                      controller.projectIndex.value--;
+                                    }
+                                    controller.projectImagesController.jumpToPage(0);
                                   },
                                 ),
-                              ),
-                            ],
-                          );
-                        }),
-                        20.verticalSpace,
-                        Obx(() {
-                          return AnimatedSwitcher(
-                            duration: const Duration(milliseconds: 350),
-                            switchInCurve: Curves.easeIn,
-                            switchOutCurve: Curves.easeOut,
-                            child: controller.projectDescriptions[controller.projectIndex.value],
-                            transitionBuilder: (child, animation) {
-                              return FadeTransition(
-                                opacity: animation,
-                                child: child,
-                              );
-                            },
-                          );
-                        }),
-                        const Spacer(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            StackedButton(
-                              height: 50.h,
-                              width: 300.w,
-                              title: FaIcon(
-                                FontAwesomeIcons.arrowLeftLong,
-                                color: Colors.white,
-                                size: 40.sp,
-                              ),
-                              isHover: controller.previous,
-                              onTap: () {
-                                controller.previous.value = true;
-                                Timer(
-                                  const Duration(milliseconds: 500),
-                                  () => controller.previous.value = false,
-                                );
-                                if (controller.projectIndex.value <= 0) {
-                                  controller.projectIndex.value = 2;
-                                } else {
-                                  controller.projectIndex.value--;
-                                }
-                                controller.projectImagesController.jumpToPage(0);
-                              },
+                                StackedButton(
+                                  height: 50.h,
+                                  width: 300.w,
+                                  title: FaIcon(
+                                    FontAwesomeIcons.arrowRightLong,
+                                    color: Colors.white,
+                                    size: 40.sp,
+                                  ),
+                                  isHover: controller.next,
+                                  onTap: () {
+                                    controller.next.value = true;
+                                    Timer(
+                                      const Duration(milliseconds: 500),
+                                      () => controller.next.value = false,
+                                    );
+                                    if (controller.projectIndex.value >= 4) {
+                                      controller.projectIndex.value = 0;
+                                    } else {
+                                      controller.projectIndex.value++;
+                                    }
+                                    controller.projectImagesController.jumpToPage(0);
+                                  },
+                                ),
+                              ],
                             ),
-                            StackedButton(
-                              height: 50.h,
-                              width: 300.w,
-                              title: FaIcon(
-                                FontAwesomeIcons.arrowRightLong,
-                                color: Colors.white,
-                                size: 40.sp,
-                              ),
-                              isHover: controller.next,
-                              onTap: () {
-                                controller.next.value = true;
-                                Timer(
-                                  const Duration(milliseconds: 500),
-                                  () => controller.next.value = false,
-                                );
-                                if (controller.projectIndex.value >= 2) {
-                                  controller.projectIndex.value = 0;
-                                } else {
-                                  controller.projectIndex.value++;
-                                }
-                                controller.projectImagesController.jumpToPage(0);
-                              },
-                            ),
+                            50.verticalSpace,
                           ],
                         ),
-                        50.verticalSpace,
-                      ],
+                      ),
                     ),
-                  ),
-                ),
-              ],
-            ),
-            mobile: Stack(
-              alignment: Alignment.center,
-              children: [
-                SizedBox(
-                  height: 1024.h,
-                  width: 1440.w,
-                  child: Obx(() {
-                    return PageView(
-                      controller: controller.projectImagesController,
-                      scrollDirection: Axis.horizontal,
-                      physics: const NeverScrollableScrollPhysics(),
-                      children: [
-                        controller.projectImages[0][controller.projectIndex.value],
-                        controller.projectImages[1][controller.projectIndex.value],
-                        controller.projectImages[2][controller.projectIndex.value],
-                        controller.projectImages[3][controller.projectIndex.value],
-                        controller.projectImages[4][controller.projectIndex.value],
-                      ],
-                    );
-                  }),
-                ),
-                Container(
-                  height: 1024.h,
-                  width: 1440.w,
-                  color: priColor.withOpacity(0.85),
-                  child: Image.asset(
-                    "assets/png/pattern.png",
-                    color: secColor.withOpacity(0.07),
-                    height: 1024.h,
-                    width: 1440.w,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                SizedBox(
-                  height: 1024.h,
-                  width: 1440.w,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 100.w),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        120.verticalSpace,
-                        SizedBox(
-                          width: 1440.w,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "<",
-                                style: Get.textTheme.displayMedium!.copyWith(
-                                  color: Colors.white,
-                                  fontSize: 50.sp,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                              ),
-                              5.horizontalSpace,
-                              Text(
-                                "projects",
-                                style: Get.textTheme.bodyLarge!.copyWith(
-                                  color: Colors.white,
-                                  fontSize: 60.sp,
-                                ),
-                              ),
-                              5.horizontalSpace,
-                              Text(
-                                ">",
-                                style: Get.textTheme.displayMedium!.copyWith(
-                                  color: Colors.white,
-                                  fontSize: 50.sp,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                              ),
-                            ],
+                  Positioned(
+                    bottom: 50.h,
+                    child: GestureDetector(
+                      onTap: () {
+                        controller.viewImagesInMobileView.toggle();
+                        if (!controller.viewImagesInMobileView.value) {
+                          controller.projectSlideshow(3);
+                        }
+                      },
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 250),
+                        height: 50.h,
+                        width: controller.viewImagesInMobileView.value ? 500.w : 400.w,
+                        decoration: BoxDecoration(
+                          color: controller.getFrontColor.value,
+                          borderRadius: BorderRadius.circular(100.r),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          controller.viewImagesInMobileView.value ? "View Description" : "View Images",
+                          style: Get.textTheme.titleMedium!.copyWith(
+                            fontSize: 35.sp,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
-                        20.verticalSpace,
-                        Obx(() {
-                          return Row(
-                            children: [
-                              AnimatedSwitcher(
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            }),
+            mobile: Obx(() {
+              return Stack(
+                alignment: Alignment.center,
+                children: [
+                  SizedBox(
+                    height: 1024.h,
+                    width: 1440.w,
+                    child: Obx(() {
+                      return PageView(
+                        controller: controller.projectImagesController,
+                        scrollDirection: Axis.horizontal,
+                        physics: controller.viewImagesInMobileView.value
+                            ? const BouncingScrollPhysics()
+                            : const NeverScrollableScrollPhysics(),
+                        children: [
+                          controller.projectImages[0][controller.projectIndex.value],
+                          controller.projectImages[1][controller.projectIndex.value],
+                          controller.projectImages[2][controller.projectIndex.value],
+                          controller.projectImages[3][controller.projectIndex.value],
+                          controller.projectImages[4][controller.projectIndex.value],
+                        ],
+                      );
+                    }),
+                  ),
+                  if (!controller.viewImagesInMobileView.value)
+                    Container(
+                      height: 1024.h,
+                      width: 1440.w,
+                      color: priColor.withOpacity(0.85),
+                      child: Image.asset(
+                        "assets/png/pattern.png",
+                        color: secColor.withOpacity(0.07),
+                        height: 1024.h,
+                        width: 1440.w,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  if (!controller.viewImagesInMobileView.value)
+                    SizedBox(
+                      height: 1024.h,
+                      width: 1440.w,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 100.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            120.verticalSpace,
+                            SizedBox(
+                              width: 1440.w,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "<",
+                                    style: Get.textTheme.displayMedium!.copyWith(
+                                      color: Colors.white,
+                                      fontSize: 50.sp,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                  5.horizontalSpace,
+                                  Text(
+                                    "projects",
+                                    style: Get.textTheme.bodyLarge!.copyWith(
+                                      color: Colors.white,
+                                      fontSize: 60.sp,
+                                    ),
+                                  ),
+                                  5.horizontalSpace,
+                                  Text(
+                                    ">",
+                                    style: Get.textTheme.displayMedium!.copyWith(
+                                      color: Colors.white,
+                                      fontSize: 50.sp,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            20.verticalSpace,
+                            Obx(() {
+                              return Row(
+                                children: [
+                                  AnimatedSwitcher(
+                                    duration: const Duration(milliseconds: 350),
+                                    switchInCurve: Curves.easeIn,
+                                    switchOutCurve: Curves.easeOut,
+                                    child: controller.projectIcons[controller.projectIndex.value],
+                                    transitionBuilder: (child, animation) {
+                                      return FadeTransition(
+                                        opacity: animation,
+                                        child: ScaleTransition(
+                                          scale: animation,
+                                          child: child,
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                  20.horizontalSpace,
+                                  AnimatedText(
+                                    controller.projectTitles[controller.projectIndex.value],
+                                    style: Get.textTheme.bodyLarge!.copyWith(
+                                      color: Colors.white,
+                                      fontSize: 50.sp,
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: AnimatedSwitcher(
+                                      duration: const Duration(milliseconds: 350),
+                                      switchInCurve: Curves.easeIn,
+                                      switchOutCurve: Curves.easeOut,
+                                      child: controller.projectBadges[controller.projectIndex.value],
+                                      transitionBuilder: (child, animation) {
+                                        return FadeTransition(
+                                          opacity: animation,
+                                          child: ScaleTransition(
+                                            scale: animation,
+                                            child: child,
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              );
+                            }),
+                            20.verticalSpace,
+                            Obx(() {
+                              return AnimatedSwitcher(
                                 duration: const Duration(milliseconds: 350),
                                 switchInCurve: Curves.easeIn,
                                 switchOutCurve: Curves.easeOut,
-                                child: controller.projectIcons[controller.projectIndex.value],
+                                child: controller.projectDescriptions[controller.projectIndex.value],
                                 transitionBuilder: (child, animation) {
                                   return FadeTransition(
                                     opacity: animation,
-                                    child: ScaleTransition(
-                                      scale: animation,
-                                      child: child,
-                                    ),
+                                    child: child,
                                   );
                                 },
-                              ),
-                              20.horizontalSpace,
-                              AnimatedText(
-                                controller.projectTitles[controller.projectIndex.value],
-                                style: Get.textTheme.bodyLarge!.copyWith(
-                                  color: Colors.white,
-                                  fontSize: 50.sp,
-                                ),
-                              ),
-                              Expanded(
-                                child: AnimatedSwitcher(
-                                  duration: const Duration(milliseconds: 350),
-                                  switchInCurve: Curves.easeIn,
-                                  switchOutCurve: Curves.easeOut,
-                                  child: controller.projectBadges[controller.projectIndex.value],
-                                  transitionBuilder: (child, animation) {
-                                    return FadeTransition(
-                                      opacity: animation,
-                                      child: ScaleTransition(
-                                        scale: animation,
-                                        child: child,
-                                      ),
+                              );
+                            }),
+                            const Spacer(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                StackedButton(
+                                  height: 50.h,
+                                  width: 300.w,
+                                  title: FaIcon(
+                                    FontAwesomeIcons.arrowLeftLong,
+                                    color: Colors.white,
+                                    size: 50.sp,
+                                  ),
+                                  isHover: controller.previous,
+                                  onTap: () {
+                                    controller.previous.value = true;
+                                    Timer(
+                                      const Duration(milliseconds: 500),
+                                      () => controller.previous.value = false,
                                     );
+                                    if (controller.projectIndex.value <= 0) {
+                                      controller.projectIndex.value = 4;
+                                    } else {
+                                      controller.projectIndex.value--;
+                                    }
+                                    controller.projectImagesController.jumpToPage(0);
                                   },
                                 ),
-                              ),
-                            ],
-                          );
-                        }),
-                        20.verticalSpace,
-                        Obx(() {
-                          return AnimatedSwitcher(
-                            duration: const Duration(milliseconds: 350),
-                            switchInCurve: Curves.easeIn,
-                            switchOutCurve: Curves.easeOut,
-                            child: controller.projectDescriptions[controller.projectIndex.value],
-                            transitionBuilder: (child, animation) {
-                              return FadeTransition(
-                                opacity: animation,
-                                child: child,
-                              );
-                            },
-                          );
-                        }),
-                        const Spacer(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            StackedButton(
-                              height: 50.h,
-                              width: 300.w,
-                              title: FaIcon(
-                                FontAwesomeIcons.arrowLeftLong,
-                                color: Colors.white,
-                                size: 50.sp,
-                              ),
-                              isHover: controller.previous,
-                              onTap: () {
-                                controller.previous.value = true;
-                                Timer(
-                                  const Duration(milliseconds: 500),
-                                  () => controller.previous.value = false,
-                                );
-                                if (controller.projectIndex.value <= 0) {
-                                  controller.projectIndex.value = 2;
-                                } else {
-                                  controller.projectIndex.value--;
-                                }
-                                controller.projectImagesController.jumpToPage(0);
-                              },
+                                StackedButton(
+                                  height: 50.h,
+                                  width: 300.w,
+                                  title: FaIcon(
+                                    FontAwesomeIcons.arrowRightLong,
+                                    color: Colors.white,
+                                    size: 50.sp,
+                                  ),
+                                  isHover: controller.next,
+                                  onTap: () {
+                                    controller.next.value = true;
+                                    Timer(
+                                      const Duration(milliseconds: 500),
+                                      () => controller.next.value = false,
+                                    );
+                                    if (controller.projectIndex.value >= 4) {
+                                      controller.projectIndex.value = 0;
+                                    } else {
+                                      controller.projectIndex.value++;
+                                    }
+                                    controller.projectImagesController.jumpToPage(0);
+                                  },
+                                ),
+                              ],
                             ),
-                            StackedButton(
-                              height: 50.h,
-                              width: 300.w,
-                              title: FaIcon(
-                                FontAwesomeIcons.arrowRightLong,
-                                color: Colors.white,
-                                size: 50.sp,
-                              ),
-                              isHover: controller.next,
-                              onTap: () {
-                                controller.next.value = true;
-                                Timer(
-                                  const Duration(milliseconds: 500),
-                                  () => controller.next.value = false,
-                                );
-                                if (controller.projectIndex.value >= 2) {
-                                  controller.projectIndex.value = 0;
-                                } else {
-                                  controller.projectIndex.value++;
-                                }
-                                controller.projectImagesController.jumpToPage(0);
-                              },
-                            ),
+                            50.verticalSpace,
                           ],
                         ),
-                        50.verticalSpace,
-                      ],
+                      ),
+                    ),
+                  Positioned(
+                    bottom: 50.h,
+                    child: GestureDetector(
+                      onTap: () {
+                        controller.viewImagesInMobileView.toggle();
+                        if (!controller.viewImagesInMobileView.value) {
+                          controller.projectSlideshow(3);
+                        }
+                      },
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 250),
+                        height: 50.h,
+                        width: controller.viewImagesInMobileView.value ? 500.w : 400.w,
+                        decoration: BoxDecoration(
+                          color: controller.getFrontColor.value,
+                          borderRadius: BorderRadius.circular(100.r),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          controller.viewImagesInMobileView.value ? "View Description" : "View Images",
+                          style: Get.textTheme.titleMedium!.copyWith(
+                            fontSize: 45.sp,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
+                ],
+              );
+            }),
           ),
         ),
       ],
