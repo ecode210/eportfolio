@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:portfolio_update/constants.dart';
 import 'package:portfolio_update/view/widgets/breakpoints.dart';
 
@@ -50,6 +51,7 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     children: [
+                      140.verticalSpace,
                       Text(
                         "Hi! I'm Olawole Oyedele Emmanuel",
                         style: Get.textTheme.displayMedium!.copyWith(color: Colors.white),
@@ -82,9 +84,17 @@ class Home extends StatelessWidget {
                       SizedBox(
                         width: 500.w,
                         child: Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.",
+                          "Experienced software engineer and versatile designer from Abuja, Nigeria, committed to developing interfaces and scalable software solutions & delivering accessible and visually stunning digital solutions.",
                           style: Get.textTheme.titleMedium,
                         ),
+                      ),
+                      20.verticalSpace,
+                      Lottie.asset(
+                        "assets/lottie/scroll down.json",
+                        height: 120.h,
+                        fit: BoxFit.fitHeight,
+                        alignment: Alignment.center,
+                        repeat: true,
                       ),
                     ],
                   ),
@@ -145,13 +155,13 @@ class Home extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 100.w),
             child: Column(
               children: [
-                120.verticalSpace,
+                100.verticalSpace,
                 Stack(
                   clipBehavior: Clip.none,
                   alignment: Alignment.center,
                   children: [
                     SizedBox(
-                      height: 500.h,
+                      height: 600.h,
                       width: 400.w,
                     ),
                     Positioned(
@@ -159,7 +169,7 @@ class Home extends StatelessWidget {
                       child: Blob.animatedRandom(
                         duration: const Duration(milliseconds: 1500),
                         loop: true,
-                        size: 500.h,
+                        size: 600.h,
                         styles: BlobStyles(
                           color: secColor,
                           fillType: BlobFillType.stroke,
@@ -172,7 +182,7 @@ class Home extends StatelessWidget {
                       child: Blob.animatedRandom(
                         duration: const Duration(milliseconds: 1500),
                         loop: true,
-                        size: 500.h,
+                        size: 600.h,
                         styles: BlobStyles(
                           color: priColor,
                           fillType: BlobFillType.fill,
@@ -184,7 +194,7 @@ class Home extends StatelessWidget {
                         tag: "header",
                         child: Image.asset(
                           "assets/png/header shot.png",
-                          height: 500.h,
+                          height: 600.h,
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -265,9 +275,20 @@ class Home extends StatelessWidget {
                       SizedBox(
                         width: 1440.w,
                         child: Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.",
+                          "Experienced software engineer and versatile designer from Abuja, Nigeria, committed to developing interfaces and scalable software solutions & delivering accessible and visually stunning digital solutions.",
                           textAlign: TextAlign.center,
                           style: Get.textTheme.titleMedium!.copyWith(fontSize: 35.sp),
+                        ),
+                      ),
+                      10.verticalSpace,
+                      SizedBox(
+                        width: 1440.w,
+                        child: Lottie.asset(
+                          "assets/lottie/swipe down.json",
+                          height: 70.h,
+                          fit: BoxFit.fitHeight,
+                          alignment: Alignment.center,
+                          repeat: true,
                         ),
                       ),
                     ],
@@ -401,9 +422,20 @@ class Home extends StatelessWidget {
                       SizedBox(
                         width: 1440.w,
                         child: Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.",
+                          "Experienced software engineer and versatile designer from Abuja, Nigeria, committed to developing interfaces and scalable software solutions & delivering accessible and visually stunning digital solutions.",
                           textAlign: TextAlign.center,
                           style: Get.textTheme.titleMedium!.copyWith(fontSize: 50.sp),
+                        ),
+                      ),
+                      10.verticalSpace,
+                      SizedBox(
+                        width: 1440.w,
+                        child: Lottie.asset(
+                          "assets/lottie/swipe down.json",
+                          height: 70.h,
+                          fit: BoxFit.fitHeight,
+                          alignment: Alignment.center,
+                          repeat: true,
                         ),
                       ),
                     ],
