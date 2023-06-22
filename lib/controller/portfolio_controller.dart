@@ -25,6 +25,10 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
   Rx<int> page = 0.obs;
   Rx<Color> getFrontColor = priColor.obs;
   Rx<Color> getBackColor = secColor.obs;
+  RxDouble mouseXPosition = 0.0.obs;
+  RxDouble mouseYPosition = 0.0.obs;
+  RxBool mouseVisible = false.obs;
+  RxBool cursorIsClick = false.obs;
 
   void changeColor(int page) {
     if (page % 2 == 0) {
@@ -34,6 +38,25 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
       getFrontColor.value = secColor;
       getBackColor.value = Colors.white;
     }
+  }
+
+  bool removeTrail() {
+    if (stackLogo.value ||
+        stackContactUs.value ||
+        stackHeader[0] ||
+        stackHeader[1] ||
+        stackHeader[2] ||
+        stackHeader[3] ||
+        previous.value ||
+        next.value ||
+        stackConnect.value ||
+        cursorIsClick.value) {
+      return false;
+    }
+    if (mouseVisible.value) {
+      return true;
+    }
+    return false;
   }
 
   // Project
@@ -47,6 +70,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
   List<Widget> get projectIcons => [
         MouseRegion(
           key: const ValueKey(0),
+          onExit: (event) {
+            cursorIsClick.value = false;
+          },
+          onEnter: (event) {
+            cursorIsClick.value = true;
+          },
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
             onTap: () {
@@ -103,6 +132,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
         ),
         MouseRegion(
           key: const ValueKey(1),
+          onExit: (event) {
+            cursorIsClick.value = false;
+          },
+          onEnter: (event) {
+            cursorIsClick.value = true;
+          },
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
             onTap: () {
@@ -159,6 +194,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
         ),
         MouseRegion(
           key: const ValueKey(2),
+          onExit: (event) {
+            cursorIsClick.value = false;
+          },
+          onEnter: (event) {
+            cursorIsClick.value = true;
+          },
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
             onTap: () {
@@ -330,6 +371,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -345,6 +392,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
               ),
               20.horizontalSpace,
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -363,6 +416,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -378,6 +437,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
               ),
               20.horizontalSpace,
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -396,6 +461,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -411,6 +482,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
               ),
               20.horizontalSpace,
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -432,6 +509,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -448,6 +531,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
               ),
               20.horizontalSpace,
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -466,6 +555,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -482,6 +577,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
               ),
               20.horizontalSpace,
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -500,6 +601,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -516,6 +623,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
               ),
               20.horizontalSpace,
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -537,6 +650,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -556,6 +675,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
@@ -575,6 +700,12 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               MouseRegion(
+                onExit: (event) {
+                  cursorIsClick.value = false;
+                },
+                onEnter: (event) {
+                  cursorIsClick.value = true;
+                },
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {

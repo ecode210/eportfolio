@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:portfolio_update/constants.dart';
+import 'package:portfolio_update/controller/portfolio_controller.dart';
 import 'package:portfolio_update/view/widgets/breakpoints.dart';
 
 class ResponsiveTextField extends StatelessWidget {
@@ -13,29 +14,37 @@ class ResponsiveTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Breakpoints(
-      web: TextField(
-        controller: controller,
-        cursorRadius: Radius.circular(20.r),
-        cursorColor: secColor,
-        style: Get.textTheme.titleSmall,
-        maxLines: lines,
-        minLines: lines,
-        decoration: InputDecoration(
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: secColor,
-              width: 2.h,
+      web: MouseRegion(
+        onExit: (event) {
+          Get.find<PortfolioController>().cursorIsClick.value = false;
+        },
+        onEnter: (event) {
+          Get.find<PortfolioController>().cursorIsClick.value = true;
+        },
+        child: TextField(
+          controller: controller,
+          cursorRadius: Radius.circular(20.r),
+          cursorColor: secColor,
+          style: Get.textTheme.titleSmall,
+          maxLines: lines,
+          minLines: lines,
+          decoration: InputDecoration(
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: secColor,
+                width: 2.h,
+              ),
             ),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: secColor,
-              width: 4.h,
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: secColor,
+                width: 4.h,
+              ),
             ),
+            hintText: hint,
+            hintStyle: Get.textTheme.titleSmall!.copyWith(color: Colors.white),
+            filled: false,
           ),
-          hintText: hint,
-          hintStyle: Get.textTheme.titleSmall!.copyWith(color: Colors.white),
-          filled: false,
         ),
       ),
       tablet: TextField(

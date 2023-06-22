@@ -84,6 +84,12 @@ class Footer extends GetWidget<PortfolioController> {
                           Row(
                             children: [
                               MouseRegion(
+                                onExit: (event) {
+                                  controller.cursorIsClick.value = false;
+                                },
+                                onEnter: (event) {
+                                  controller.cursorIsClick.value = true;
+                                },
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
                                   onTap: () {
@@ -106,6 +112,12 @@ class Footer extends GetWidget<PortfolioController> {
                               ),
                               10.horizontalSpace,
                               MouseRegion(
+                                onExit: (event) {
+                                  controller.cursorIsClick.value = false;
+                                },
+                                onEnter: (event) {
+                                  controller.cursorIsClick.value = true;
+                                },
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
                                   onTap: () {
@@ -131,6 +143,12 @@ class Footer extends GetWidget<PortfolioController> {
                           Row(
                             children: [
                               MouseRegion(
+                                onExit: (event) {
+                                  controller.cursorIsClick.value = false;
+                                },
+                                onEnter: (event) {
+                                  controller.cursorIsClick.value = true;
+                                },
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
                                   onTap: () {
@@ -145,6 +163,12 @@ class Footer extends GetWidget<PortfolioController> {
                               ),
                               10.horizontalSpace,
                               MouseRegion(
+                                onExit: (event) {
+                                  controller.cursorIsClick.value = false;
+                                },
+                                onEnter: (event) {
+                                  controller.cursorIsClick.value = true;
+                                },
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
                                   onTap: () {
@@ -174,6 +198,12 @@ class Footer extends GetWidget<PortfolioController> {
                           Row(
                             children: [
                               MouseRegion(
+                                onExit: (event) {
+                                  controller.cursorIsClick.value = false;
+                                },
+                                onEnter: (event) {
+                                  controller.cursorIsClick.value = true;
+                                },
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
                                   onTap: () {
@@ -190,6 +220,12 @@ class Footer extends GetWidget<PortfolioController> {
                               ),
                               10.horizontalSpace,
                               MouseRegion(
+                                onExit: (event) {
+                                  controller.cursorIsClick.value = false;
+                                },
+                                onEnter: (event) {
+                                  controller.cursorIsClick.value = true;
+                                },
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
                                   onTap: () {
@@ -209,6 +245,12 @@ class Footer extends GetWidget<PortfolioController> {
                           Row(
                             children: [
                               MouseRegion(
+                                onExit: (event) {
+                                  controller.cursorIsClick.value = false;
+                                },
+                                onEnter: (event) {
+                                  controller.cursorIsClick.value = true;
+                                },
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
                                   onTap: () {
@@ -223,6 +265,12 @@ class Footer extends GetWidget<PortfolioController> {
                               ),
                               10.horizontalSpace,
                               MouseRegion(
+                                onExit: (event) {
+                                  controller.cursorIsClick.value = false;
+                                },
+                                onEnter: (event) {
+                                  controller.cursorIsClick.value = true;
+                                },
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
                                   onTap: () {
@@ -240,6 +288,12 @@ class Footer extends GetWidget<PortfolioController> {
                           Row(
                             children: [
                               MouseRegion(
+                                onExit: (event) {
+                                  controller.cursorIsClick.value = false;
+                                },
+                                onEnter: (event) {
+                                  controller.cursorIsClick.value = true;
+                                },
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
                                   onTap: () {
@@ -254,6 +308,12 @@ class Footer extends GetWidget<PortfolioController> {
                               ),
                               10.horizontalSpace,
                               MouseRegion(
+                                onExit: (event) {
+                                  controller.cursorIsClick.value = false;
+                                },
+                                onEnter: (event) {
+                                  controller.cursorIsClick.value = true;
+                                },
                                 cursor: SystemMouseCursors.click,
                                 child: GestureDetector(
                                   onTap: () {
@@ -352,6 +412,12 @@ class Footer extends GetWidget<PortfolioController> {
                       Row(
                         children: [
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -374,6 +440,12 @@ class Footer extends GetWidget<PortfolioController> {
                           ),
                           30.horizontalSpace,
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -399,6 +471,12 @@ class Footer extends GetWidget<PortfolioController> {
                       Row(
                         children: [
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -413,6 +491,12 @@ class Footer extends GetWidget<PortfolioController> {
                           ),
                           30.horizontalSpace,
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -435,6 +519,12 @@ class Footer extends GetWidget<PortfolioController> {
                       Row(
                         children: [
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -451,6 +541,12 @@ class Footer extends GetWidget<PortfolioController> {
                           ),
                           30.horizontalSpace,
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -470,6 +566,12 @@ class Footer extends GetWidget<PortfolioController> {
                       Row(
                         children: [
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -484,6 +586,12 @@ class Footer extends GetWidget<PortfolioController> {
                           ),
                           30.horizontalSpace,
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -501,6 +609,12 @@ class Footer extends GetWidget<PortfolioController> {
                       Row(
                         children: [
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -515,6 +629,12 @@ class Footer extends GetWidget<PortfolioController> {
                           ),
                           30.horizontalSpace,
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -610,6 +730,12 @@ class Footer extends GetWidget<PortfolioController> {
                       Row(
                         children: [
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -632,6 +758,12 @@ class Footer extends GetWidget<PortfolioController> {
                           ),
                           30.horizontalSpace,
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -657,6 +789,12 @@ class Footer extends GetWidget<PortfolioController> {
                       Row(
                         children: [
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -671,6 +809,12 @@ class Footer extends GetWidget<PortfolioController> {
                           ),
                           30.horizontalSpace,
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -693,6 +837,12 @@ class Footer extends GetWidget<PortfolioController> {
                       Row(
                         children: [
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -709,6 +859,12 @@ class Footer extends GetWidget<PortfolioController> {
                           ),
                           30.horizontalSpace,
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -728,6 +884,12 @@ class Footer extends GetWidget<PortfolioController> {
                       Row(
                         children: [
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -742,6 +904,12 @@ class Footer extends GetWidget<PortfolioController> {
                           ),
                           30.horizontalSpace,
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -759,6 +927,12 @@ class Footer extends GetWidget<PortfolioController> {
                       Row(
                         children: [
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {
@@ -773,6 +947,12 @@ class Footer extends GetWidget<PortfolioController> {
                           ),
                           30.horizontalSpace,
                           MouseRegion(
+                            onExit: (event) {
+                              controller.cursorIsClick.value = false;
+                            },
+                            onEnter: (event) {
+                              controller.cursorIsClick.value = true;
+                            },
                             cursor: SystemMouseCursors.click,
                             child: GestureDetector(
                               onTap: () {

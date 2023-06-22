@@ -70,6 +70,12 @@ class Projects extends GetWidget<PortfolioController> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             MouseRegion(
+                              onExit: (event) {
+                                controller.cursorIsClick.value = false;
+                              },
+                              onEnter: (event) {
+                                controller.cursorIsClick.value = true;
+                              },
                               cursor: SystemMouseCursors.click,
                               child: SmoothPageIndicator(
                                 controller: controller.projectImagesController,
