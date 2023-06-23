@@ -13,25 +13,66 @@ class ResponsiveTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Breakpoints(
-      web: MouseRegion(
-        onExit: (event) {
-          Get.find<PortfolioController>().cursorIsClick.value = false;
-        },
-        onEnter: (event) {
-          Get.find<PortfolioController>().cursorIsClick.value = true;
-        },
-        child: TextField(
+    return Obx(() {
+      return Breakpoints(
+        web: MouseRegion(
+          onExit: (event) {
+            Get.find<PortfolioController>().cursorIsClick.value = false;
+          },
+          onEnter: (event) {
+            Get.find<PortfolioController>().cursorIsClick.value = true;
+          },
+          child: TextField(
+            controller: controller,
+            cursorRadius: Radius.circular(20.r),
+            cursorColor: secColor,
+            style: Get.textTheme.titleSmall,
+            maxLines: lines,
+            minLines: lines,
+            enabled: Get.find<PortfolioController>().sendEmailStatus.value == 2 ? false : true,
+            decoration: InputDecoration(
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: secColor,
+                  width: 2.h,
+                ),
+              ),
+              disabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.white,
+                  width: 2.h,
+                ),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: secColor,
+                  width: 4.h,
+                ),
+              ),
+              hintText: hint,
+              hintStyle: Get.textTheme.titleSmall!.copyWith(color: Colors.white),
+              filled: false,
+            ),
+          ),
+        ),
+        tablet: TextField(
           controller: controller,
           cursorRadius: Radius.circular(20.r),
           cursorColor: secColor,
-          style: Get.textTheme.titleSmall,
+          style: Get.textTheme.titleSmall!.copyWith(fontSize: 35.sp),
           maxLines: lines,
           minLines: lines,
+          enabled: Get.find<PortfolioController>().sendEmailStatus.value == 2 ? false : true,
           decoration: InputDecoration(
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: secColor,
+                width: 2.h,
+              ),
+            ),
+            disabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
                 width: 2.h,
               ),
             ),
@@ -42,67 +83,49 @@ class ResponsiveTextField extends StatelessWidget {
               ),
             ),
             hintText: hint,
-            hintStyle: Get.textTheme.titleSmall!.copyWith(color: Colors.white),
+            hintStyle: Get.textTheme.titleSmall!.copyWith(
+              color: Colors.white,
+              fontSize: 35.sp,
+            ),
             filled: false,
           ),
         ),
-      ),
-      tablet: TextField(
-        controller: controller,
-        cursorRadius: Radius.circular(20.r),
-        cursorColor: secColor,
-        style: Get.textTheme.titleSmall!.copyWith(fontSize: 35.sp),
-        maxLines: lines,
-        minLines: lines,
-        decoration: InputDecoration(
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: secColor,
-              width: 2.h,
+        mobile: TextField(
+          controller: controller,
+          cursorRadius: Radius.circular(20.r),
+          cursorColor: secColor,
+          style: Get.textTheme.titleSmall!.copyWith(fontSize: 40.sp),
+          maxLines: lines,
+          minLines: lines,
+          enabled: Get.find<PortfolioController>().sendEmailStatus.value == 2 ? false : true,
+          decoration: InputDecoration(
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: secColor,
+                width: 2.h,
+              ),
             ),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: secColor,
-              width: 4.h,
+            disabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+                width: 2.h,
+              ),
             ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: secColor,
+                width: 4.h,
+              ),
+            ),
+            hintText: hint,
+            hintStyle: Get.textTheme.titleSmall!.copyWith(
+              color: Colors.white,
+              fontSize: 40.sp,
+            ),
+            filled: false,
           ),
-          hintText: hint,
-          hintStyle: Get.textTheme.titleSmall!.copyWith(
-            color: Colors.white,
-            fontSize: 35.sp,
-          ),
-          filled: false,
         ),
-      ),
-      mobile: TextField(
-        controller: controller,
-        cursorRadius: Radius.circular(20.r),
-        cursorColor: secColor,
-        style: Get.textTheme.titleSmall!.copyWith(fontSize: 40.sp),
-        maxLines: lines,
-        minLines: lines,
-        decoration: InputDecoration(
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: secColor,
-              width: 2.h,
-            ),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: secColor,
-              width: 4.h,
-            ),
-          ),
-          hintText: hint,
-          hintStyle: Get.textTheme.titleSmall!.copyWith(
-            color: Colors.white,
-            fontSize: 40.sp,
-          ),
-          filled: false,
-        ),
-      ),
-    );
+      );
+    });
   }
 }

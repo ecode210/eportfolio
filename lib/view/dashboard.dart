@@ -28,7 +28,7 @@ class Dashboard extends GetWidget<PortfolioController> {
     //   const Duration(milliseconds: 100),
     //   () {
     //     controller.coastController.animateTo(
-    //       beach: 5,
+    //       beach: 4,
     //       duration: const Duration(seconds: 2),
     //     );
     //   },
@@ -442,7 +442,7 @@ class Dashboard extends GetWidget<PortfolioController> {
                         height: 40.h,
                         width: 40.h,
                         decoration: BoxDecoration(
-                          color: controller.removeTrail() ? Colors.white : Colors.transparent,
+                          color: controller.removeTrail() ? Colors.white : Colors.white.withOpacity(0),
                           shape: BoxShape.circle,
                         ),
                       ),

@@ -104,7 +104,7 @@ class Services extends GetWidget<PortfolioController> {
                                     ),
                                     20.verticalSpace,
                                     Text(
-                                      "I build mobile, web, and desktop apps that fit seamlessly with your desired project. My focus is on performance, design, responsiveness, and animations.",
+                                      "I build mobile, web, and desktop apps that fit seamlessly with your desired project. My focus is on performance, design, responsiveness, and security.",
                                       textAlign: TextAlign.center,
                                       style: Get.textTheme.titleMedium,
                                     ),
@@ -330,7 +330,7 @@ class Services extends GetWidget<PortfolioController> {
                                       ),
                                       10.verticalSpace,
                                       Text(
-                                        "I build mobile, web, and desktop apps that fit seamlessly with your desired project. My focus is on performance, design, responsiveness, and animations.",
+                                        "I build mobile, web, and desktop apps that fit seamlessly with your desired project. My focus is on performance, design, responsiveness, and security.",
                                         textAlign: TextAlign.center,
                                         style: Get.textTheme.titleMedium!.copyWith(
                                           fontSize: 30.sp,
@@ -547,7 +547,7 @@ class Services extends GetWidget<PortfolioController> {
                                       ),
                                       10.verticalSpace,
                                       Text(
-                                        "I build mobile, web, and desktop apps that fit seamlessly with your desired project. My focus is on performance, design, responsiveness, and animations.",
+                                        "I build mobile, web, and desktop apps that fit seamlessly with your desired project. My focus is on performance, design, responsiveness, and security.",
                                         textAlign: TextAlign.center,
                                         style: Get.textTheme.titleMedium!.copyWith(
                                           fontSize: 40.sp,

@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:coast/coast.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -14,6 +15,7 @@ import 'package:portfolio_update/view/game/game_constants.dart';
 import 'package:portfolio_update/view/game/game_object.dart';
 import 'package:portfolio_update/view/game/ground.dart';
 import 'package:portfolio_update/view/widgets/breakpoints.dart';
+import 'package:portfolio_update/view/widgets/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioController extends GetxController with GetTickerProviderStateMixin {
@@ -1369,6 +1371,51 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
   TextEditingController emailController = TextEditingController();
   TextEditingController messageController = TextEditingController();
   Rx<bool> stackConnect = false.obs;
+  Rx<bool> stackDownloadCV = false.obs;
+  RxInt sendEmailStatus = 0.obs;
+
+  String sendEmailValidation() {
+    if (nameController.text.trim().length < 3) {
+      return "Name too short";
+    }
+    if (!emailController.text.trim().isEmail) {
+      return "Email address is not valid";
+    }
+    if (messageController.text.trim().length < 10) {
+      return "Message too short";
+    }
+    return "";
+  }
+
+  void sendEmail(BuildContext context) async {
+    String message = sendEmailValidation();
+    if (message.isNotEmpty) {
+      Utils.snackBar(context, message: message);
+      return;
+    }
+
+    sendEmailStatus.value = 1;
+    await Dio().post(
+      "https://api.emailjs.com/api/v1.0/email/send",
+      data: {
+        "service_id": "service_ga660xe",
+        "template_id": "template_y84nwto",
+        "user_id": "QHSOq_Anbfk2jBsnb",
+        "template_params": {
+          "full_name": nameController.text.trim(),
+          "email": emailController.text.trim(),
+          "message": messageController.text.trim(),
+        },
+      },
+    ).then((value) {
+      sendEmailStatus.value = 2;
+      debugPrint("${value.data}");
+    }).catchError((err) {
+      sendEmailStatus.value = 0;
+      Utils.snackBar(context, message: "Something went wrong");
+      debugPrint("$err");
+    });
+  }
 
   // Footer
   Rx<Dino> dino = Dino().obs;

@@ -34,7 +34,7 @@ class ContactUs extends GetWidget<PortfolioController> {
           web: Container(
             height: 1024.h,
             width: 1440.w,
-            padding: EdgeInsets.fromLTRB(100.w, 200.h, 100.w, 50.h),
+            padding: EdgeInsets.fromLTRB(100.w, 170.h, 100.w, 50.h),
             child: Column(
               children: AnimationConfiguration.toStaggeredList(
                 duration: const Duration(milliseconds: 1000),
@@ -135,15 +135,95 @@ class ContactUs extends GetWidget<PortfolioController> {
                     ),
                   ),
                   100.verticalSpace,
+                  Obx(() {
+                    if (controller.sendEmailStatus.value == 2) {
+                      return Text(
+                        "thanks, i'll reply asap",
+                        style: Get.textTheme.bodyMedium!.copyWith(fontSize: 18.sp),
+                      );
+                    } else {
+                      return TextButton(
+                        style: ButtonStyle(
+                          overlayColor: MaterialStateProperty.all(Colors.transparent),
+                        ),
+                        onHover: (hover) {
+                          controller.stackConnect.value = hover;
+                        },
+                        onPressed: () {
+                          if (controller.sendEmailStatus.value == 0) {
+                            controller.sendEmail(context);
+                          }
+                        },
+                        child: Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            AnimatedContainer(
+                              duration: const Duration(milliseconds: 200),
+                              height: 70.h,
+                              width: 170.w,
+                              decoration: BoxDecoration(
+                                color: controller.getBackColor.value,
+                                borderRadius: BorderRadius.circular(100.r),
+                              ),
+                            ),
+                            AnimatedPositioned(
+                              duration: const Duration(milliseconds: 200),
+                              top: controller.stackConnect.value ? 0 : -3.h,
+                              left: controller.stackConnect.value ? 0 : -3.h,
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 200),
+                                height: 70.h,
+                                width: 170.w,
+                                decoration: BoxDecoration(
+                                  color: controller.getFrontColor.value,
+                                  borderRadius: BorderRadius.circular(100.r),
+                                ),
+                                alignment: Alignment.center,
+                                child: controller.sendEmailStatus.value == 0
+                                    ? Text(
+                                        "send",
+                                        style: Get.textTheme.bodyMedium!.copyWith(fontSize: 16.sp),
+                                      )
+                                    : Padding(
+                                        padding: EdgeInsets.all(15.w),
+                                        child: AspectRatio(
+                                          aspectRatio: 1,
+                                          child: CircularProgressIndicator(
+                                            color: Colors.white,
+                                            strokeWidth: 5.w,
+                                          ),
+                                        ),
+                                      ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
+                  }),
+                  20.verticalSpace,
                   StackedButton(
                     height: 70.h,
-                    width: 170.w,
-                    title: Text(
-                      "send",
-                      style: Get.textTheme.bodyMedium!.copyWith(fontSize: 16.sp),
+                    width: 300.w,
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.cloud_download_rounded,
+                          color: Colors.white,
+                          size: 30.sp,
+                        ),
+                        20.horizontalSpace,
+                        Text(
+                          "download cv",
+                          style: Get.textTheme.bodyMedium!.copyWith(fontSize: 16.sp),
+                        ),
+                      ],
                     ),
-                    isHover: controller.stackConnect,
-                    onTap: () {},
+                    isHover: controller.stackDownloadCV,
+                    onTap: () {
+                      controller.launchURL(uri: Uri.parse(cvLink));
+                    },
                   ),
                 ],
               ),
@@ -261,19 +341,105 @@ class ContactUs extends GetWidget<PortfolioController> {
                     ),
                   ),
                   100.verticalSpace,
+                  Obx(() {
+                    if (controller.sendEmailStatus.value == 2) {
+                      return Text(
+                        "thanks, i'll reply asap",
+                        style: Get.textTheme.bodyMedium!.copyWith(fontSize: 40.sp),
+                      );
+                    } else {
+                      return TextButton(
+                        style: ButtonStyle(
+                          overlayColor: MaterialStateProperty.all(Colors.transparent),
+                        ),
+                        onHover: (hover) {
+                          controller.stackConnect.value = hover;
+                        },
+                        onPressed: () {
+                          if (controller.sendEmailStatus.value == 0) {
+                            controller.stackConnect.value = true;
+                            Timer(
+                              const Duration(milliseconds: 500),
+                              () => controller.stackConnect.value = false,
+                            );
+                            controller.sendEmail(context);
+                          }
+                        },
+                        child: Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            AnimatedContainer(
+                              duration: const Duration(milliseconds: 200),
+                              height: 60.h,
+                              width: 400.w,
+                              decoration: BoxDecoration(
+                                color: controller.getBackColor.value,
+                                borderRadius: BorderRadius.circular(100.r),
+                              ),
+                            ),
+                            AnimatedPositioned(
+                              duration: const Duration(milliseconds: 200),
+                              top: controller.stackConnect.value ? 0 : -3.h,
+                              left: controller.stackConnect.value ? 0 : -3.h,
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 200),
+                                height: 60.h,
+                                width: 400.w,
+                                decoration: BoxDecoration(
+                                  color: controller.getFrontColor.value,
+                                  borderRadius: BorderRadius.circular(100.r),
+                                ),
+                                alignment: Alignment.center,
+                                child: controller.sendEmailStatus.value == 0
+                                    ? Text(
+                                        "send",
+                                        style: Get.textTheme.bodyMedium!.copyWith(fontSize: 40.sp),
+                                      )
+                                    : Padding(
+                                        padding: EdgeInsets.all(30.w),
+                                        child: AspectRatio(
+                                          aspectRatio: 1,
+                                          child: CircularProgressIndicator(
+                                            color: Colors.white,
+                                            strokeWidth: 10.w,
+                                          ),
+                                        ),
+                                      ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
+                  }),
+                  30.verticalSpace,
                   StackedButton(
                     height: 60.h,
-                    width: 400.w,
-                    title: Text(
-                      "send",
-                      style: Get.textTheme.bodyMedium!.copyWith(fontSize: 40.sp),
+                    width: 700.w,
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.cloud_download_rounded,
+                          color: Colors.white,
+                          size: 50.sp,
+                        ),
+                        20.horizontalSpace,
+                        Text(
+                          "download cv",
+                          style: Get.textTheme.bodyMedium!.copyWith(fontSize: 40.sp),
+                        ),
+                      ],
                     ),
-                    isHover: controller.stackConnect,
+                    isHover: controller.stackDownloadCV,
                     onTap: () {
-                      controller.stackConnect.value = true;
+                      controller.stackDownloadCV.value = true;
                       Timer(
                         const Duration(milliseconds: 500),
-                        () => controller.stackConnect.value = false,
+                        () {
+                          controller.stackDownloadCV.value = false;
+                          controller.launchURL(uri: Uri.parse(cvLink));
+                        },
                       );
                     },
                   ),
@@ -393,19 +559,105 @@ class ContactUs extends GetWidget<PortfolioController> {
                     ),
                   ),
                   100.verticalSpace,
+                  Obx(() {
+                    if (controller.sendEmailStatus.value == 2) {
+                      return Text(
+                        "thanks, i'll reply asap",
+                        style: Get.textTheme.bodyMedium!.copyWith(fontSize: 40.sp),
+                      );
+                    } else {
+                      return TextButton(
+                        style: ButtonStyle(
+                          overlayColor: MaterialStateProperty.all(Colors.transparent),
+                        ),
+                        onHover: (hover) {
+                          controller.stackConnect.value = hover;
+                        },
+                        onPressed: () {
+                          if (controller.sendEmailStatus.value == 0) {
+                            controller.stackConnect.value = true;
+                            Timer(
+                              const Duration(milliseconds: 500),
+                              () => controller.stackConnect.value = false,
+                            );
+                            controller.sendEmail(context);
+                          }
+                        },
+                        child: Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            AnimatedContainer(
+                              duration: const Duration(milliseconds: 200),
+                              height: 60.h,
+                              width: 500.w,
+                              decoration: BoxDecoration(
+                                color: controller.getBackColor.value,
+                                borderRadius: BorderRadius.circular(100.r),
+                              ),
+                            ),
+                            AnimatedPositioned(
+                              duration: const Duration(milliseconds: 200),
+                              top: controller.stackConnect.value ? 0 : -3.h,
+                              left: controller.stackConnect.value ? 0 : -3.h,
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 200),
+                                height: 60.h,
+                                width: 500.w,
+                                decoration: BoxDecoration(
+                                  color: controller.getFrontColor.value,
+                                  borderRadius: BorderRadius.circular(100.r),
+                                ),
+                                alignment: Alignment.center,
+                                child: controller.sendEmailStatus.value == 0
+                                    ? Text(
+                                        "send",
+                                        style: Get.textTheme.bodyMedium!.copyWith(fontSize: 40.sp),
+                                      )
+                                    : Padding(
+                                        padding: EdgeInsets.all(50.w),
+                                        child: AspectRatio(
+                                          aspectRatio: 1,
+                                          child: CircularProgressIndicator(
+                                            color: Colors.white,
+                                            strokeWidth: 15.w,
+                                          ),
+                                        ),
+                                      ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
+                  }),
+                  30.verticalSpace,
                   StackedButton(
-                    height: 70.h,
-                    width: 500.w,
-                    title: Text(
-                      "send",
-                      style: Get.textTheme.bodyMedium!.copyWith(fontSize: 40.sp),
+                    height: 60.h,
+                    width: 700.w,
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.cloud_download_rounded,
+                          color: Colors.white,
+                          size: 50.sp,
+                        ),
+                        20.horizontalSpace,
+                        Text(
+                          "download cv",
+                          style: Get.textTheme.bodyMedium!.copyWith(fontSize: 40.sp),
+                        ),
+                      ],
                     ),
-                    isHover: controller.stackConnect,
+                    isHover: controller.stackDownloadCV,
                     onTap: () {
-                      controller.stackConnect.value = true;
+                      controller.stackDownloadCV.value = true;
                       Timer(
                         const Duration(milliseconds: 500),
-                        () => controller.stackConnect.value = false,
+                        () {
+                          controller.stackDownloadCV.value = false;
+                          controller.launchURL(uri: Uri.parse(cvLink));
+                        },
                       );
                     },
                   ),
