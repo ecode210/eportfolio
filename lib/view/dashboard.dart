@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:coast/coast.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,9 +19,23 @@ import 'package:portfolio_update/view/widgets/breakpoints.dart';
 import 'package:portfolio_update/view/widgets/mobile_drawer.dart';
 import 'package:portfolio_update/view/widgets/section_button.dart';
 import 'package:portfolio_update/view/widgets/stacked_button.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class Dashboard extends GetWidget<PortfolioController> {
+class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
+
+  @override
+  State<Dashboard> createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> {
+  final controller = Get.find<PortfolioController>();
+
+  @override
+  void initState() {
+    if (!kDebugMode) controller.recordVisits();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -430,6 +445,34 @@ class Dashboard extends GetWidget<PortfolioController> {
                       ],
                     ),
                   ),
+                ),
+                Positioned(
+                  top: 420.h,
+                  right: 30.w,
+                  child: Obx(() {
+                    return AnimatedSmoothIndicator(
+                      activeIndex: controller.page.value,
+                      count: 6,
+                      effect: CustomizableEffect(
+                        activeDotDecoration: DotDecoration(
+                          width: 40.h,
+                          height: 15.h,
+                          color: controller.getColor,
+                          borderRadius: BorderRadius.circular(100.r),
+                        ),
+                        dotDecoration: DotDecoration(
+                          width: 20.h,
+                          height: 20.h,
+                          color: controller.getColor.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(100.r),
+                          rotationAngle: 90,
+                        ),
+                        spacing: 20.h,
+                      ),
+                      axisDirection: Axis.vertical,
+                      onDotClicked: (index) {},
+                    );
+                  }),
                 ),
                 Obx(() {
                   return AnimatedPositioned(

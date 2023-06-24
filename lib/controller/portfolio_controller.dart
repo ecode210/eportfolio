@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coast/coast.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +40,14 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
     } else {
       getFrontColor.value = secColor;
       getBackColor.value = Colors.white;
+    }
+  }
+
+  Color get getColor {
+    if (page % 2 == 0) {
+      return secColor;
+    } else {
+      return Colors.white;
     }
   }
 
@@ -1601,6 +1610,28 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
     return params.entries
         .map((MapEntry<String, String> e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
         .join('&');
+  }
+
+  void recordVisits() {
+    CollectionReference portfolio = FirebaseFirestore.instance.collection("portfolio");
+    Map<String, dynamic> data = {
+      "visits": FieldValue.increment(1),
+      "last_visit": FieldValue.serverTimestamp(),
+    };
+
+    if (Get.size.width <= 450) {
+      data["mobile_visits"] = FieldValue.increment(1);
+    } else if (Get.size.width <= 990) {
+      data["tablet_visits"] = FieldValue.increment(1);
+    } else {
+      data["desktop_visits"] = FieldValue.increment(1);
+    }
+
+    portfolio
+        .doc("U0HAAYpUe0p8m89hGn5A")
+        .update(data)
+        .then((value) => debugPrint("+1 Visit"))
+        .catchError((err) => debugPrint("Update Visits: $err"));
   }
 
   @override
