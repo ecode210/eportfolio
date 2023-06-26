@@ -425,7 +425,9 @@ class Home extends StatelessWidget {
                         child: Text(
                           "Experienced software engineer and versatile designer from Abuja, Nigeria, committed to developing interfaces and scalable software solutions & delivering accessible and visually stunning digital solutions.",
                           textAlign: TextAlign.center,
-                          style: Get.textTheme.titleMedium!.copyWith(fontSize: 50.sp),
+                          style: Get.textTheme.titleMedium!.copyWith(
+                            fontSize: Get.size.width >= 400 ? 50.sp : 45.sp,
+                          ),
                         ),
                       ),
                       10.verticalSpace,

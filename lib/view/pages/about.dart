@@ -135,7 +135,7 @@ class About extends StatelessWidget {
                       SizedBox(
                         width: 600.w,
                         child: Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu.",
+                          "Experienced software engineer with a strong background in Flutter and Golang, equipped with a Bachelor's degree in Computer Science. With over 3 years of industrial experience in the field, I have a proven track record of designing and developing exceptional applications across various platforms, including mobile, web, and desktop.\n\nAs a creative problem-solver, I thrive in demanding situations where I can leverage my technical knowledge to devise innovative solutions. In addition to my technical skills, I also possess a strong UI/UX and Graphics design background. This allows me to create visually appealing interfaces that enhance the overall user experience, ensuring that the software I develop not only performs flawlessly but also delights users.\n\nOutside of work, I enjoy playing video games, discovering new culinary experiences, and spending quality time with friends. These hobbies provide me with opportunities for relaxation, cultural exploration, and meaningful connections, all of which contribute to my personal growth and creativity.",
                           style: Get.textTheme.titleMedium,
                         ),
                       ),
@@ -270,7 +270,7 @@ class About extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 100.w),
             child: Column(
               children: [
-                120.verticalSpace,
+                100.verticalSpace,
                 Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -324,7 +324,7 @@ class About extends StatelessWidget {
                       SizedBox(
                         width: 1440.w,
                         child: Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.",
+                          "Experienced software engineer with a strong background in Flutter and Golang, equipped with a Bachelor's degree in Computer Science. With over 3 years of industrial experience in the field, I have a proven track record of designing and developing exceptional applications across various platforms, including mobile, web, and desktop.\n\nAs a creative problem-solver, I thrive in demanding situations where I can leverage my technical knowledge to devise innovative solutions. In addition to my technical skills, I also possess a strong UI/UX and Graphics design background. This allows me to create visually appealing interfaces that enhance the overall user experience, ensuring that the software I develop not only performs flawlessly but also delights users.\n\nOutside of work, I enjoy playing video games, discovering new culinary experiences, and spending quality time with friends. These hobbies provide me with opportunities for relaxation, cultural exploration, and meaningful connections, all of which contribute to my personal growth and creativity.",
                           textAlign: TextAlign.left,
                           style: Get.textTheme.titleMedium!.copyWith(fontSize: 35.sp),
                         ),
@@ -332,266 +332,7 @@ class About extends StatelessWidget {
                     ],
                   ),
                 ),
-                80.verticalSpace,
-                Expanded(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Stack(
-                        clipBehavior: Clip.none,
-                        alignment: Alignment.center,
-                        children: [
-                          SizedBox(
-                            height: 500.h,
-                            width: 700.w,
-                          ),
-                          Positioned(
-                            bottom: -50.h,
-                            left: -150.h,
-                            child: Blob.animatedRandom(
-                              duration: const Duration(milliseconds: 1500),
-                              loop: true,
-                              size: 500.h,
-                              styles: BlobStyles(
-                                color: Colors.white,
-                                fillType: BlobFillType.stroke,
-                                strokeWidth: 4,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            bottom: -50.h,
-                            left: -150.h,
-                            child: Blob.animatedRandom(
-                              duration: const Duration(milliseconds: 1500),
-                              loop: true,
-                              size: 500.h,
-                              styles: BlobStyles(
-                                color: secColor,
-                                fillType: BlobFillType.stroke,
-                                strokeWidth: 4,
-                              ),
-                            ),
-                          ),
-                          Positioned(
-                            bottom: -50.h,
-                            left: -150.h,
-                            child: Crab(
-                              tag: "header",
-                              child: Image.asset(
-                                "assets/png/header shot.png",
-                                height: 600.h,
-                                fit: BoxFit.fitHeight,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: AnimationConfiguration.toStaggeredList(
-                            duration: const Duration(milliseconds: 2000),
-                            delay: const Duration(milliseconds: 200),
-                            childAnimationBuilder: (child) => SlideAnimation(
-                              horizontalOffset: 100.w,
-                              curve: Curves.easeOut,
-                              child: FadeInAnimation(
-                                curve: Curves.easeOut,
-                                child: child,
-                              ),
-                            ),
-                            children: [
-                              SizedBox(
-                                width: 1440.w,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "<",
-                                      style: Get.textTheme.displayMedium!.copyWith(
-                                        color: secColor,
-                                        fontSize: 40.sp,
-                                        fontWeight: FontWeight.w900,
-                                      ),
-                                    ),
-                                    5.horizontalSpace,
-                                    Text(
-                                      "skills",
-                                      style: Get.textTheme.bodyLarge!.copyWith(
-                                        color: secColor,
-                                        fontSize: 50.sp,
-                                      ),
-                                    ),
-                                    5.horizontalSpace,
-                                    Text(
-                                      ">",
-                                      style: Get.textTheme.displayMedium!.copyWith(
-                                        color: secColor,
-                                        fontSize: 40.sp,
-                                        fontWeight: FontWeight.w900,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              20.verticalSpace,
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      SvgPicture.asset(
-                                        "assets/svg/Flutter.svg",
-                                        height: 40.h,
-                                        fit: BoxFit.fitHeight,
-                                      ),
-                                      25.verticalSpace,
-                                      SvgPicture.asset(
-                                        "assets/svg/Firebase.svg",
-                                        height: 40.h,
-                                        fit: BoxFit.fitHeight,
-                                      ),
-                                      25.verticalSpace,
-                                      SvgPicture.asset(
-                                        "assets/svg/Photoshop.svg",
-                                        height: 40.h,
-                                        fit: BoxFit.fitHeight,
-                                      ),
-                                      25.verticalSpace,
-                                      SvgPicture.asset(
-                                        "assets/svg/MongoDB.svg",
-                                        height: 40.h,
-                                        fit: BoxFit.fitHeight,
-                                      ),
-                                      25.verticalSpace,
-                                      SvgPicture.asset(
-                                        "assets/svg/Postman.svg",
-                                        height: 40.h,
-                                        fit: BoxFit.fitHeight,
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      SizedBox(
-                                        height: 40.h,
-                                        child: SvgPicture.asset(
-                                          "assets/svg/Golang.svg",
-                                          width: 200.w,
-                                          fit: BoxFit.fitWidth,
-                                        ),
-                                      ),
-                                      25.verticalSpace,
-                                      SvgPicture.asset(
-                                        "assets/svg/Figma.svg",
-                                        height: 40.h,
-                                        fit: BoxFit.fitHeight,
-                                      ),
-                                      25.verticalSpace,
-                                      SvgPicture.asset(
-                                        "assets/svg/Illustrator.svg",
-                                        height: 40.h,
-                                        fit: BoxFit.fitHeight,
-                                      ),
-                                      25.verticalSpace,
-                                      SvgPicture.asset(
-                                        "assets/svg/Postgresql.svg",
-                                        height: 40.h,
-                                        fit: BoxFit.fitHeight,
-                                      ),
-                                      25.verticalSpace,
-                                      SvgPicture.asset(
-                                        "assets/svg/Github.svg",
-                                        height: 40.h,
-                                        fit: BoxFit.fitHeight,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          mobile: Container(
-            height: 1024.h,
-            width: 1440.w,
-            padding: EdgeInsets.symmetric(horizontal: 100.w),
-            child: Column(
-              children: [
-                120.verticalSpace,
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: AnimationConfiguration.toStaggeredList(
-                    duration: const Duration(milliseconds: 1500),
-                    delay: const Duration(milliseconds: 100),
-                    childAnimationBuilder: (child) => SlideAnimation(
-                      horizontalOffset: 100.w,
-                      curve: Curves.easeOut,
-                      child: FadeInAnimation(
-                        curve: Curves.easeOut,
-                        child: child,
-                      ),
-                    ),
-                    children: [
-                      SizedBox(
-                        width: 1440.w,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              "<",
-                              style: Get.textTheme.displayMedium!.copyWith(
-                                color: secColor,
-                                fontSize: 50.sp,
-                                fontWeight: FontWeight.w900,
-                              ),
-                            ),
-                            5.horizontalSpace,
-                            Text(
-                              "bio",
-                              style: Get.textTheme.bodyLarge!.copyWith(
-                                color: secColor,
-                                fontSize: 60.sp,
-                              ),
-                            ),
-                            5.horizontalSpace,
-                            Text(
-                              ">",
-                              style: Get.textTheme.displayMedium!.copyWith(
-                                color: secColor,
-                                fontSize: 50.sp,
-                                fontWeight: FontWeight.w900,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      10.verticalSpace,
-                      SizedBox(
-                        width: 1440.w,
-                        child: Text(
-                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nArcu nibh suspendisse fermentum massa velit nunc. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.\n\nLorem id purus purus, consectetur adipiscing elit. Auctor pulvinar nunc sed est et arcu. Lorem id purus purus, velit arcu ut facilisis sit. Nulla vitae lorem mauris, venenatis orci, ac tempor non.",
-                          textAlign: TextAlign.left,
-                          style: Get.textTheme.titleMedium!.copyWith(fontSize: 50.sp),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                100.verticalSpace,
+                30.verticalSpace,
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -605,11 +346,11 @@ class About extends StatelessWidget {
                         ),
                         Positioned(
                           bottom: -50.h,
-                          left: -150.h,
+                          left: -80.h,
                           child: Blob.animatedRandom(
                             duration: const Duration(milliseconds: 1500),
                             loop: true,
-                            size: 400.h,
+                            size: 420.h,
                             styles: BlobStyles(
                               color: Colors.white,
                               fillType: BlobFillType.stroke,
@@ -619,11 +360,11 @@ class About extends StatelessWidget {
                         ),
                         Positioned(
                           bottom: -50.h,
-                          left: -150.h,
+                          left: -80.h,
                           child: Blob.animatedRandom(
                             duration: const Duration(milliseconds: 1500),
                             loop: true,
-                            size: 400.h,
+                            size: 420.h,
                             styles: BlobStyles(
                               color: secColor,
                               fillType: BlobFillType.stroke,
@@ -633,7 +374,7 @@ class About extends StatelessWidget {
                         ),
                         Positioned(
                           bottom: -50.h,
-                          left: -120.h,
+                          left: -30.h,
                           child: Crab(
                             tag: "header",
                             child: Image.asset(
@@ -670,7 +411,7 @@ class About extends StatelessWidget {
                                     "<",
                                     style: Get.textTheme.displayMedium!.copyWith(
                                       color: secColor,
-                                      fontSize: 50.sp,
+                                      fontSize: 40.sp,
                                       fontWeight: FontWeight.w900,
                                     ),
                                   ),
@@ -679,7 +420,7 @@ class About extends StatelessWidget {
                                     "skills",
                                     style: Get.textTheme.bodyLarge!.copyWith(
                                       color: secColor,
-                                      fontSize: 60.sp,
+                                      fontSize: 50.sp,
                                     ),
                                   ),
                                   5.horizontalSpace,
@@ -687,7 +428,7 @@ class About extends StatelessWidget {
                                     ">",
                                     style: Get.textTheme.displayMedium!.copyWith(
                                       color: secColor,
-                                      fontSize: 50.sp,
+                                      fontSize: 40.sp,
                                       fontWeight: FontWeight.w900,
                                     ),
                                   ),
@@ -764,6 +505,270 @@ class About extends StatelessWidget {
                                     25.verticalSpace,
                                     SvgPicture.asset(
                                       "assets/svg/Github.svg",
+                                      height: 40.h,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          mobile: Container(
+            height: 1024.h,
+            width: 1440.w,
+            padding: EdgeInsets.symmetric(horizontal: 100.w),
+            child: Column(
+              children: [
+                100.verticalSpace,
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: AnimationConfiguration.toStaggeredList(
+                    duration: const Duration(milliseconds: 1500),
+                    delay: const Duration(milliseconds: 100),
+                    childAnimationBuilder: (child) => SlideAnimation(
+                      horizontalOffset: 100.w,
+                      curve: Curves.easeOut,
+                      child: FadeInAnimation(
+                        curve: Curves.easeOut,
+                        child: child,
+                      ),
+                    ),
+                    children: [
+                      SizedBox(
+                        width: 1440.w,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              "<",
+                              style: Get.textTheme.displayMedium!.copyWith(
+                                color: secColor,
+                                fontSize: 50.sp,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                            5.horizontalSpace,
+                            Text(
+                              "bio",
+                              style: Get.textTheme.bodyLarge!.copyWith(
+                                color: secColor,
+                                fontSize: 60.sp,
+                              ),
+                            ),
+                            5.horizontalSpace,
+                            Text(
+                              ">",
+                              style: Get.textTheme.displayMedium!.copyWith(
+                                color: secColor,
+                                fontSize: 50.sp,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      10.verticalSpace,
+                      SizedBox(
+                        width: 1440.w,
+                        child: Text(
+                          "Experienced software engineer with a strong background in Flutter and Golang, equipped with a Bachelor's degree in Computer Science. With over 3 years of industrial experience in the field, I have a proven track record of designing and developing exceptional applications across various platforms, including mobile, web, and desktop.\n\nAs a creative problem-solver, I thrive in demanding situations where I can leverage my technical knowledge to devise innovative solutions. In addition to my technical skills, I also possess a strong UI/UX and Graphics design background. This allows me to create visually appealing interfaces that enhance the overall user experience, ensuring that the software I develop not only performs flawlessly but also delights users.\n\nOutside of work, I enjoy playing video games, discovering new culinary experiences, and spending quality time with friends. These hobbies provide me with opportunities for relaxation, cultural exploration, and meaningful connections, all of which contribute to my personal growth and creativity.",
+                          textAlign: TextAlign.left,
+                          style: Get.textTheme.titleMedium!.copyWith(
+                            fontSize: Get.size.width >= 400 ? 50.sp : 45.sp,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                30.verticalSpace,
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Stack(
+                      clipBehavior: Clip.none,
+                      alignment: Alignment.center,
+                      children: [
+                        SizedBox(
+                          height: 300.h,
+                          width: 700.w,
+                        ),
+                        Positioned(
+                          bottom: -80.h,
+                          left: -120.h,
+                          child: Blob.animatedRandom(
+                            duration: const Duration(milliseconds: 1500),
+                            loop: true,
+                            size: 350.h,
+                            styles: BlobStyles(
+                              color: Colors.white,
+                              fillType: BlobFillType.stroke,
+                              strokeWidth: 4,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: -80.h,
+                          left: -120.h,
+                          child: Blob.animatedRandom(
+                            duration: const Duration(milliseconds: 1500),
+                            loop: true,
+                            size: 350.h,
+                            styles: BlobStyles(
+                              color: secColor,
+                              fillType: BlobFillType.stroke,
+                              strokeWidth: 4,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: -90.h,
+                          left: -110.h,
+                          child: Crab(
+                            tag: "header",
+                            child: Image.asset(
+                              "assets/png/header shot.png",
+                              height: 400.h,
+                              fit: BoxFit.fitHeight,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: AnimationConfiguration.toStaggeredList(
+                          duration: const Duration(milliseconds: 2000),
+                          delay: const Duration(milliseconds: 200),
+                          childAnimationBuilder: (child) => SlideAnimation(
+                            horizontalOffset: 100.w,
+                            curve: Curves.easeOut,
+                            child: FadeInAnimation(
+                              curve: Curves.easeOut,
+                              child: child,
+                            ),
+                          ),
+                          children: [
+                            SizedBox(
+                              width: 1440.w,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "<",
+                                    style: Get.textTheme.displayMedium!.copyWith(
+                                      color: secColor,
+                                      fontSize: 50.sp,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                  5.horizontalSpace,
+                                  Text(
+                                    "skills",
+                                    style: Get.textTheme.bodyLarge!.copyWith(
+                                      color: secColor,
+                                      fontSize: 60.sp,
+                                    ),
+                                  ),
+                                  5.horizontalSpace,
+                                  Text(
+                                    ">",
+                                    style: Get.textTheme.displayMedium!.copyWith(
+                                      color: secColor,
+                                      fontSize: 50.sp,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            20.verticalSpace,
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.asset(
+                                      "assets/svg/Flutter.svg",
+                                      height: 40.h,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                    25.verticalSpace,
+                                    SvgPicture.asset(
+                                      "assets/svg/Firebase.svg",
+                                      height: 40.h,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                    25.verticalSpace,
+                                    SvgPicture.asset(
+                                      "assets/svg/MongoDB.svg",
+                                      height: 40.h,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    SizedBox(
+                                      height: 40.h,
+                                      child: SvgPicture.asset(
+                                        "assets/svg/Golang.svg",
+                                        width: 200.w,
+                                        fit: BoxFit.fitWidth,
+                                      ),
+                                    ),
+                                    25.verticalSpace,
+                                    SvgPicture.asset(
+                                      "assets/svg/Photoshop.svg",
+                                      height: 40.h,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                    25.verticalSpace,
+                                    SvgPicture.asset(
+                                      "assets/svg/Postgresql.svg",
+                                      height: 40.h,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                    25.verticalSpace,
+                                    SvgPicture.asset(
+                                      "assets/svg/Github.svg",
+                                      height: 40.h,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.asset(
+                                      "assets/svg/Figma.svg",
+                                      height: 40.h,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                    25.verticalSpace,
+                                    SvgPicture.asset(
+                                      "assets/svg/Illustrator.svg",
+                                      height: 40.h,
+                                      fit: BoxFit.fitHeight,
+                                    ),
+                                    25.verticalSpace,
+                                    SvgPicture.asset(
+                                      "assets/svg/Postman.svg",
                                       height: 40.h,
                                       fit: BoxFit.fitHeight,
                                     ),

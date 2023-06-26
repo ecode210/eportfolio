@@ -1266,7 +1266,7 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
         ),
         mobile: Text(
           "PariVest is a mobile app offering hassle-free real estate investment in the UK and Nigeria. With a minimum investment of N5,000, users can invest in UK real estate starting from £10 and earn fixed returns in pounds. Choose from three, six, twelve, or twenty-four-month tenors, make payments from your wallet, and watch your money grow. The app also allows investment in Nigerian fixed-income products with flexible tenors. PariVest protects investments from inflation and currency devaluation while providing a choice between pound or naira returns. With a secure and diversified asset mix, professionally managed properties, and easy accessibility, PariVest simplifies real estate investing.\n\nMy responsibilities in this role include, but are not limited to;\n📍 Collaborated with the backend development team to optimize REST API calls, ensuring efficient data retrieval and transmission, and improving overall app performance.\n📍 Implemented the Facebook SDK - App Events to provide the marketing team with valuable insights into user engagement and app usage.\n📍 Conducted extensive testing to identify and eliminate UI flaws, and conducted regular A/B testing to optimize app features and improve user engagement.\n📍 Documented technical specifications, code changes, and UI enhancements to facilitate knowledge sharing, collaboration, and future app updates.",
-          style: Get.textTheme.titleMedium!.copyWith(fontSize: 45.sp),
+          style: Get.textTheme.titleMedium!.copyWith(fontSize: Get.size.width >= 400 ? 45.sp : 40.sp),
         ),
       ),
     ),
@@ -1283,7 +1283,7 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
         ),
         mobile: Text(
           "BetaLife is a health-tech mobile app that aims to improve life expectancy and healthcare processes in Africa. The app simplifies blood donation, allowing users to sign up, book appointments, and receive test results. Donors are rewarded for their contributions. Patients can share blood request cases and quickly connect with compatible donors. BetaLife's mission is to provide convenient access to quality healthcare, saving time and costs. By promoting healthier lifestyles and enhancing patient safety, the app strives to make a positive impact on African communities.\n\nMy responsibilities in this role include, but are not limited to;\n📍 Designed, Implemented, and Tested Flutter & Dart code using the MVC architecture and GetX state management for Android & iOS.\n📍 Facilitated discussions with the development team to determine the expectations of the consumer and translated the Figma UI into code.\n📍 Worked with Version Control System (Github) and CI/CD (Codemagic) to organize app releases and channels.\n📍 Conducted performance optimization techniques, including app size reduction, network optimization, and memory management, to ensure efficient app operation.",
-          style: Get.textTheme.titleMedium!.copyWith(fontSize: 45.sp),
+          style: Get.textTheme.titleMedium!.copyWith(fontSize: Get.size.width >= 400 ? 45.sp : 40.sp),
         ),
       ),
     ),
@@ -1300,7 +1300,7 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
         ),
         mobile: Text(
           "Helt is a health-tech mobile app that revolutionizes the way you access primary healthcare and wellness services. With a user-friendly interface, Helt offers seamless navigation and a comprehensive range of healthcare solutions at your fingertips. Through metered subscription plans, you can enjoy cost-effective access to pharmacies, hospitals, and wellness vendors, empowering you to prioritize your health with ease. The app goes beyond traditional services, providing an array of resources and tools designed to support your journey toward a healthier lifestyle.\n\nMy responsibilities in this role include, but are not limited to;\n📍 Responsible for Designing (Figma), Developing, Testing, and Publishing 3 Flutter apps: Helt(Android), Helt Vendor(Web), and Helt Admin(Android).\n📍 Developed secure REST APIs utilizing Golang and Firebase services SDKs such as Cloud Firestore, Storage, and Messaging to enhance app functionality and data management.\n📍 Implemented serverless functions using Golang and AWS Lambda functions, including cron jobs, to automate tasks and improve the app's efficiency and scalability.\n📍 Enhanced the application's monolithic back-end to handle more subscriptions with low latency and minimal delivery error rate.",
-          style: Get.textTheme.titleMedium!.copyWith(fontSize: 45.sp),
+          style: Get.textTheme.titleMedium!.copyWith(fontSize: Get.size.width >= 400 ? 45.sp : 40.sp),
         ),
       ),
     ),
@@ -1317,7 +1317,7 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
         ),
         mobile: Text(
           "Resup is a dynamic B2B e-commerce app connecting businesses with suppliers, offering a comprehensive range of functionalities including an extensive product catalog, streamlined ordering process, personalized user accounts, real-time inventory updates, secure payment options, and reliable order tracking, ensuring a seamless wholesale purchasing experience for businesses. Currently, in the final stages of internal testing, the app is on the brink of release, promising to provide businesses with a seamless and reliable solution for their wholesale purchasing needs.\n\nMy responsibilities in this role include, but are not limited to;\n📍 Structured, Developed, and Managed the backend system for an e-commerce app using Golang and Gin framework creating JWT secure REST APIs.\n📍 Developed and Tested 2 Flutter apps, both User & Admin, using the MVC architecture and GetX state management for Android & iOS.\n📍 Implemented caching to reduce the frequency of database querying, increasing efficiency. Using aggregator functions and indexing foreign keys, query times to the database were reduced.\n📍 Modeling of JSON data retrieved from REST API endpoints, allowing for the cohesive frontend to backend integration.",
-          style: Get.textTheme.titleMedium!.copyWith(fontSize: 45.sp),
+          style: Get.textTheme.titleMedium!.copyWith(fontSize: Get.size.width >= 400 ? 45.sp : 40.sp),
         ),
       ),
     ),
@@ -1334,7 +1334,7 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
         ),
         mobile: Text(
           "Dilivar is a comprehensive logistics app that empowers users to seamlessly request package pickups and deliveries within the same state or through courier services. With a range of transportation options including cars, bikes, vans, and bicycles, Dilivar ensures efficient and reliable transportation. Users can also rely on Dilivar to facilitate the movement of large-scale items during home or office relocations. Throughout the entire process, all relevant parties can track the movement of packages in real time, providing transparency and peace of mind. Simplify your logistics needs with Dilivar and experience hassle-free package transportation and delivery. Stay tuned for the official launch of Dilivar!\n\nMy responsibilities in this role include, but are not limited to;\n📍Developed and implemented complex app features such as real-time location tracking, route optimization, and QR scanning, resulting in a more efficient and streamlined logistics process.\n📍 Developed and Tested 2 Flutter apps, both User & Rider, with all core features using the MVC architecture and GetX state management for Android & iOS.\n📍 Collaborated with team members such as backend developer, UI/UX designer, and QA tester to prioritize and deliver new features in a timely manner.\n📍 Developed and maintained detailed documentation, including technical specifications and user manuals, to ensure seamless app deployment and user adoption.",
-          style: Get.textTheme.titleMedium!.copyWith(fontSize: 45.sp),
+          style: Get.textTheme.titleMedium!.copyWith(fontSize: Get.size.width >= 400 ? 45.sp : 40.sp),
         ),
       ),
     ),

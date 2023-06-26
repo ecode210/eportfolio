@@ -668,7 +668,7 @@ class Projects extends GetWidget<PortfolioController> {
                         child: Text(
                           controller.viewImagesInMobileView.value ? "View Description" : "View Images",
                           style: Get.textTheme.titleMedium!.copyWith(
-                            fontSize: 45.sp,
+                            fontSize: Get.size.width >= 400 ? 45.sp : 40.sp,
                             fontWeight: FontWeight.w700,
                           ),
                         ),

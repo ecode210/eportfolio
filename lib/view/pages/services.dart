@@ -541,7 +541,7 @@ class Services extends GetWidget<PortfolioController> {
                                       Text(
                                         "software developer",
                                         style: Get.textTheme.bodyMedium!.copyWith(
-                                          fontSize: 50.sp,
+                                          fontSize: Get.size.width >= 400 ? 50.sp : 45.sp,
                                           color: secColor,
                                         ),
                                       ),
@@ -559,7 +559,7 @@ class Services extends GetWidget<PortfolioController> {
                               ],
                             ),
                             Positioned(
-                              top: -90.h,
+                              top: Get.size.width >= 400 ? -90.h : -100.h,
                               child: Image.asset(
                                 "assets/png/app developer.png",
                                 height: 150.h,
@@ -594,7 +594,7 @@ class Services extends GetWidget<PortfolioController> {
                                       Text(
                                         "ui/ux design",
                                         style: Get.textTheme.bodyMedium!.copyWith(
-                                          fontSize: 50.sp,
+                                          fontSize: Get.size.width >= 400 ? 50.sp : 45.sp,
                                           color: secColor,
                                         ),
                                       ),
@@ -612,7 +612,7 @@ class Services extends GetWidget<PortfolioController> {
                               ],
                             ),
                             Positioned(
-                              top: -90.h,
+                              top: Get.size.width >= 400 ? -90.h : -100.h,
                               child: Image.asset(
                                 "assets/png/ui ux design.png",
                                 height: 140.h,
@@ -647,7 +647,7 @@ class Services extends GetWidget<PortfolioController> {
                                       Text(
                                         "backend developer",
                                         style: Get.textTheme.bodyMedium!.copyWith(
-                                          fontSize: 50.sp,
+                                          fontSize: Get.size.width >= 400 ? 50.sp : 45.sp,
                                           color: secColor,
                                         ),
                                       ),
@@ -665,7 +665,7 @@ class Services extends GetWidget<PortfolioController> {
                               ],
                             ),
                             Positioned(
-                              top: -90.h,
+                              top: Get.size.width >= 400 ? -90.h : -100.h,
                               child: Image.asset(
                                 "assets/png/api developer.png",
                                 height: 150.h,
