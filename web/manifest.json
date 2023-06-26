@@ -1,11 +1,11 @@
 {
-    "name": "portfolio_update",
-    "short_name": "portfolio_update",
+    "name": "Ecode",
+    "short_name": "Ecode",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "My personal portfolio 2022",
+    "description": "Experienced software engineer and versatile designer from Abuja, Nigeria, committed to developing interfaces and scalable software solutions & delivering accessible and visually stunning digital solutions.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

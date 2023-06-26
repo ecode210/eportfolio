@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(1440, 1024),
       builder: (context, child) {
         return GetMaterialApp(
+          title: "Ecode",
           debugShowCheckedModeBanner: false,
           defaultTransition: Transition.native,
           initialBinding: PortfolioBinding(),
