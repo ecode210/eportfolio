@@ -109,7 +109,7 @@ class Home extends StatelessWidget {
                       width: 400.w,
                     ),
                     Positioned(
-                      bottom: 0,
+                      bottom: -50.h,
                       child: Blob.animatedRandom(
                         duration: const Duration(milliseconds: 1500),
                         loop: true,
@@ -122,7 +122,7 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      bottom: 0,
+                      bottom: -50.h,
                       child: Blob.animatedRandom(
                         duration: const Duration(milliseconds: 1500),
                         loop: true,
@@ -134,11 +134,12 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     Positioned(
+                      bottom: 0,
                       child: Crab(
                         tag: "header",
                         child: Image.asset(
                           "assets/png/header shot.png",
-                          height: 900.h,
+                          height: 800.h,
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -303,7 +304,7 @@ class Home extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 100.w),
             child: Column(
               children: [
-                70.verticalSpace,
+                150.verticalSpace,
                 Stack(
                   clipBehavior: Clip.none,
                   alignment: Alignment.center,
@@ -313,7 +314,7 @@ class Home extends StatelessWidget {
                       width: 400.w,
                     ),
                     Positioned(
-                      bottom: 0,
+                      bottom: -20.h,
                       child: Blob.animatedRandom(
                         duration: const Duration(milliseconds: 1500),
                         loop: true,
@@ -326,7 +327,7 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      bottom: 0,
+                      bottom: -20.h,
                       child: Blob.animatedRandom(
                         duration: const Duration(milliseconds: 1500),
                         loop: true,
@@ -342,7 +343,7 @@ class Home extends StatelessWidget {
                         tag: "header",
                         child: Image.asset(
                           "assets/png/header shot.png",
-                          height: 600.h,
+                          height: 500.h,
                           fit: BoxFit.fitHeight,
                         ),
                       ),

@@ -48,7 +48,7 @@ class About extends StatelessWidget {
                       child: Blob.animatedRandom(
                         duration: const Duration(milliseconds: 1500),
                         loop: true,
-                        size: 700.h,
+                        size: 800.h,
                         styles: BlobStyles(
                           color: Colors.white,
                           fillType: BlobFillType.stroke,
@@ -61,7 +61,7 @@ class About extends StatelessWidget {
                       child: Blob.animatedRandom(
                         duration: const Duration(milliseconds: 1500),
                         loop: true,
-                        size: 700.h,
+                        size: 800.h,
                         styles: BlobStyles(
                           color: secColor,
                           fillType: BlobFillType.stroke,
@@ -74,7 +74,7 @@ class About extends StatelessWidget {
                         tag: "header",
                         child: Image.asset(
                           "assets/png/header shot.png",
-                          height: 900.h,
+                          height: 800.h,
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -333,190 +333,192 @@ class About extends StatelessWidget {
                   ),
                 ),
                 80.verticalSpace,
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Stack(
-                      clipBehavior: Clip.none,
-                      alignment: Alignment.center,
-                      children: [
-                        SizedBox(
-                          height: 400.h,
-                          width: 700.w,
-                        ),
-                        Positioned(
-                          bottom: 0,
-                          left: -200.h,
-                          child: Blob.animatedRandom(
-                            duration: const Duration(milliseconds: 1500),
-                            loop: true,
-                            size: 400.h,
-                            styles: BlobStyles(
-                              color: Colors.white,
-                              fillType: BlobFillType.stroke,
-                              strokeWidth: 4,
+                Expanded(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Stack(
+                        clipBehavior: Clip.none,
+                        alignment: Alignment.center,
+                        children: [
+                          SizedBox(
+                            height: 500.h,
+                            width: 700.w,
+                          ),
+                          Positioned(
+                            bottom: -50.h,
+                            left: -150.h,
+                            child: Blob.animatedRandom(
+                              duration: const Duration(milliseconds: 1500),
+                              loop: true,
+                              size: 500.h,
+                              styles: BlobStyles(
+                                color: Colors.white,
+                                fillType: BlobFillType.stroke,
+                                strokeWidth: 4,
+                              ),
                             ),
                           ),
-                        ),
-                        Positioned(
-                          bottom: 0,
-                          left: -200.h,
-                          child: Blob.animatedRandom(
-                            duration: const Duration(milliseconds: 1500),
-                            loop: true,
-                            size: 400.h,
-                            styles: BlobStyles(
-                              color: secColor,
-                              fillType: BlobFillType.stroke,
-                              strokeWidth: 4,
+                          Positioned(
+                            bottom: -50.h,
+                            left: -150.h,
+                            child: Blob.animatedRandom(
+                              duration: const Duration(milliseconds: 1500),
+                              loop: true,
+                              size: 500.h,
+                              styles: BlobStyles(
+                                color: secColor,
+                                fillType: BlobFillType.stroke,
+                                strokeWidth: 4,
+                              ),
                             ),
                           ),
-                        ),
-                        Positioned(
-                          bottom: 0,
-                          left: -150.h,
-                          child: Crab(
-                            tag: "header",
-                            child: Image.asset(
-                              "assets/png/header shot.png",
-                              height: 500.h,
-                              fit: BoxFit.fitHeight,
+                          Positioned(
+                            bottom: -50.h,
+                            left: -150.h,
+                            child: Crab(
+                              tag: "header",
+                              child: Image.asset(
+                                "assets/png/header shot.png",
+                                height: 600.h,
+                                fit: BoxFit.fitHeight,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: AnimationConfiguration.toStaggeredList(
-                          duration: const Duration(milliseconds: 2000),
-                          delay: const Duration(milliseconds: 200),
-                          childAnimationBuilder: (child) => SlideAnimation(
-                            horizontalOffset: 100.w,
-                            curve: Curves.easeOut,
-                            child: FadeInAnimation(
+                        ],
+                      ),
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: AnimationConfiguration.toStaggeredList(
+                            duration: const Duration(milliseconds: 2000),
+                            delay: const Duration(milliseconds: 200),
+                            childAnimationBuilder: (child) => SlideAnimation(
+                              horizontalOffset: 100.w,
                               curve: Curves.easeOut,
-                              child: child,
+                              child: FadeInAnimation(
+                                curve: Curves.easeOut,
+                                child: child,
+                              ),
                             ),
-                          ),
-                          children: [
-                            SizedBox(
-                              width: 1440.w,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 1440.w,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "<",
+                                      style: Get.textTheme.displayMedium!.copyWith(
+                                        color: secColor,
+                                        fontSize: 40.sp,
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                    ),
+                                    5.horizontalSpace,
+                                    Text(
+                                      "skills",
+                                      style: Get.textTheme.bodyLarge!.copyWith(
+                                        color: secColor,
+                                        fontSize: 50.sp,
+                                      ),
+                                    ),
+                                    5.horizontalSpace,
+                                    Text(
+                                      ">",
+                                      style: Get.textTheme.displayMedium!.copyWith(
+                                        color: secColor,
+                                        fontSize: 40.sp,
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              20.verticalSpace,
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 children: [
-                                  Text(
-                                    "<",
-                                    style: Get.textTheme.displayMedium!.copyWith(
-                                      color: secColor,
-                                      fontSize: 40.sp,
-                                      fontWeight: FontWeight.w900,
-                                    ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      SvgPicture.asset(
+                                        "assets/svg/Flutter.svg",
+                                        height: 40.h,
+                                        fit: BoxFit.fitHeight,
+                                      ),
+                                      25.verticalSpace,
+                                      SvgPicture.asset(
+                                        "assets/svg/Firebase.svg",
+                                        height: 40.h,
+                                        fit: BoxFit.fitHeight,
+                                      ),
+                                      25.verticalSpace,
+                                      SvgPicture.asset(
+                                        "assets/svg/Photoshop.svg",
+                                        height: 40.h,
+                                        fit: BoxFit.fitHeight,
+                                      ),
+                                      25.verticalSpace,
+                                      SvgPicture.asset(
+                                        "assets/svg/MongoDB.svg",
+                                        height: 40.h,
+                                        fit: BoxFit.fitHeight,
+                                      ),
+                                      25.verticalSpace,
+                                      SvgPicture.asset(
+                                        "assets/svg/Postman.svg",
+                                        height: 40.h,
+                                        fit: BoxFit.fitHeight,
+                                      ),
+                                    ],
                                   ),
-                                  5.horizontalSpace,
-                                  Text(
-                                    "skills",
-                                    style: Get.textTheme.bodyLarge!.copyWith(
-                                      color: secColor,
-                                      fontSize: 50.sp,
-                                    ),
-                                  ),
-                                  5.horizontalSpace,
-                                  Text(
-                                    ">",
-                                    style: Get.textTheme.displayMedium!.copyWith(
-                                      color: secColor,
-                                      fontSize: 40.sp,
-                                      fontWeight: FontWeight.w900,
-                                    ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        height: 40.h,
+                                        child: SvgPicture.asset(
+                                          "assets/svg/Golang.svg",
+                                          width: 200.w,
+                                          fit: BoxFit.fitWidth,
+                                        ),
+                                      ),
+                                      25.verticalSpace,
+                                      SvgPicture.asset(
+                                        "assets/svg/Figma.svg",
+                                        height: 40.h,
+                                        fit: BoxFit.fitHeight,
+                                      ),
+                                      25.verticalSpace,
+                                      SvgPicture.asset(
+                                        "assets/svg/Illustrator.svg",
+                                        height: 40.h,
+                                        fit: BoxFit.fitHeight,
+                                      ),
+                                      25.verticalSpace,
+                                      SvgPicture.asset(
+                                        "assets/svg/Postgresql.svg",
+                                        height: 40.h,
+                                        fit: BoxFit.fitHeight,
+                                      ),
+                                      25.verticalSpace,
+                                      SvgPicture.asset(
+                                        "assets/svg/Github.svg",
+                                        height: 40.h,
+                                        fit: BoxFit.fitHeight,
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
-                            ),
-                            20.verticalSpace,
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    SvgPicture.asset(
-                                      "assets/svg/Flutter.svg",
-                                      height: 40.h,
-                                      fit: BoxFit.fitHeight,
-                                    ),
-                                    25.verticalSpace,
-                                    SvgPicture.asset(
-                                      "assets/svg/Firebase.svg",
-                                      height: 40.h,
-                                      fit: BoxFit.fitHeight,
-                                    ),
-                                    25.verticalSpace,
-                                    SvgPicture.asset(
-                                      "assets/svg/Photoshop.svg",
-                                      height: 40.h,
-                                      fit: BoxFit.fitHeight,
-                                    ),
-                                    25.verticalSpace,
-                                    SvgPicture.asset(
-                                      "assets/svg/MongoDB.svg",
-                                      height: 40.h,
-                                      fit: BoxFit.fitHeight,
-                                    ),
-                                    25.verticalSpace,
-                                    SvgPicture.asset(
-                                      "assets/svg/Postman.svg",
-                                      height: 40.h,
-                                      fit: BoxFit.fitHeight,
-                                    ),
-                                  ],
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                      height: 40.h,
-                                      child: SvgPicture.asset(
-                                        "assets/svg/Golang.svg",
-                                        width: 200.w,
-                                        fit: BoxFit.fitWidth,
-                                      ),
-                                    ),
-                                    25.verticalSpace,
-                                    SvgPicture.asset(
-                                      "assets/svg/Figma.svg",
-                                      height: 40.h,
-                                      fit: BoxFit.fitHeight,
-                                    ),
-                                    25.verticalSpace,
-                                    SvgPicture.asset(
-                                      "assets/svg/Illustrator.svg",
-                                      height: 40.h,
-                                      fit: BoxFit.fitHeight,
-                                    ),
-                                    25.verticalSpace,
-                                    SvgPicture.asset(
-                                      "assets/svg/Postgresql.svg",
-                                      height: 40.h,
-                                      fit: BoxFit.fitHeight,
-                                    ),
-                                    25.verticalSpace,
-                                    SvgPicture.asset(
-                                      "assets/svg/Github.svg",
-                                      height: 40.h,
-                                      fit: BoxFit.fitHeight,
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -602,8 +604,8 @@ class About extends StatelessWidget {
                           width: 700.w,
                         ),
                         Positioned(
-                          bottom: 0,
-                          left: -200.h,
+                          bottom: -50.h,
+                          left: -150.h,
                           child: Blob.animatedRandom(
                             duration: const Duration(milliseconds: 1500),
                             loop: true,
@@ -616,8 +618,8 @@ class About extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          bottom: 0,
-                          left: -200.h,
+                          bottom: -50.h,
+                          left: -150.h,
                           child: Blob.animatedRandom(
                             duration: const Duration(milliseconds: 1500),
                             loop: true,
@@ -630,13 +632,13 @@ class About extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          bottom: 0,
-                          left: -150.h,
+                          bottom: -50.h,
+                          left: -120.h,
                           child: Crab(
                             tag: "header",
                             child: Image.asset(
                               "assets/png/header shot.png",
-                              height: 500.h,
+                              height: 450.h,
                               fit: BoxFit.fitHeight,
                             ),
                           ),

@@ -446,52 +446,55 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                 ),
-                Positioned(
-                  top: 420.h,
-                  right: 30.w,
-                  child: Obx(() {
-                    return AnimatedSmoothIndicator(
-                      activeIndex: controller.page.value,
-                      count: 6,
-                      effect: CustomizableEffect(
-                        activeDotDecoration: DotDecoration(
+                Breakpoints(
+                  web: Positioned(
+                    top: 420.h,
+                    right: 30.w,
+                    child: Obx(() {
+                      return AnimatedSmoothIndicator(
+                        activeIndex: controller.page.value,
+                        count: 6,
+                        effect: CustomizableEffect(
+                          activeDotDecoration: DotDecoration(
+                            width: 40.h,
+                            height: 15.h,
+                            color: controller.getColor,
+                            borderRadius: BorderRadius.circular(100.r),
+                          ),
+                          dotDecoration: DotDecoration(
+                            width: 20.h,
+                            height: 20.h,
+                            color: controller.getColor.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(100.r),
+                            rotationAngle: 90,
+                          ),
+                          spacing: 20.h,
+                        ),
+                        axisDirection: Axis.vertical,
+                        onDotClicked: (index) {},
+                      );
+                    }),
+                  ),
+                ),
+                if (MediaQuery.of(context).size.width > 990)
+                  Obx(() {
+                    return AnimatedPositioned(
+                      top: controller.mouseYPosition.value,
+                      left: controller.mouseXPosition.value,
+                      duration: const Duration(milliseconds: 200),
+                      child: IgnorePointer(
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 500),
+                          height: 40.h,
                           width: 40.h,
-                          height: 15.h,
-                          color: controller.getColor,
-                          borderRadius: BorderRadius.circular(100.r),
+                          decoration: BoxDecoration(
+                            color: controller.removeTrail() ? Colors.white : Colors.white.withOpacity(0),
+                            shape: BoxShape.circle,
+                          ),
                         ),
-                        dotDecoration: DotDecoration(
-                          width: 20.h,
-                          height: 20.h,
-                          color: controller.getColor.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(100.r),
-                          rotationAngle: 90,
-                        ),
-                        spacing: 20.h,
                       ),
-                      axisDirection: Axis.vertical,
-                      onDotClicked: (index) {},
                     );
                   }),
-                ),
-                Obx(() {
-                  return AnimatedPositioned(
-                    top: controller.mouseYPosition.value,
-                    left: controller.mouseXPosition.value,
-                    duration: const Duration(milliseconds: 200),
-                    child: IgnorePointer(
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 500),
-                        height: 40.h,
-                        width: 40.h,
-                        decoration: BoxDecoration(
-                          color: controller.removeTrail() ? Colors.white : Colors.white.withOpacity(0),
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                    ),
-                  );
-                }),
               ],
             ),
           ),
