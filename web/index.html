@@ -34,13 +34,94 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <style>
+    body {
+      background-color: #000B15;
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+    }
+
+    .main-content {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity .4s ease-out;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+    }
+
+    .loader {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: linear-gradient(#0062C2, #00C0FD, #0091E0);
+      animation: animate 1.2s linear infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loader span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 60%;
+      background: linear-gradient(#0062C2, #00C0FD, #0091E0);
+    }
+
+    .loader span:nth-child(1) {
+      filter: blur(5px);
+    }
+
+    .loader span:nth-child(2) {
+      filter: blur(10px);
+    }
+
+    .loader span:nth-child(3) {
+      filter: blur(25px);
+    }
+
+    .loader span:nth-child(4) {
+      filter: blur(50px);
+    }
+
+    .loader:after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      background: #000B15;
+      border-radius: 50%;
+    }
+  </style>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
+    function delay(time) {
+      return new Promise(resolve => setTimeout(resolve, time));
+    }
+
     var serviceWorkerVersion = null;
     var scriptLoaded = false;
-    function loadMainDartJs() {
+    async function loadMainDartJs() {
       if (scriptLoaded) {
         return;
       }
@@ -101,5 +182,14 @@
       loadMainDartJs();
     }
   </script>
+  <div class="main-content" id="loader-content">
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <img src="main-icon.svg" alt="Ecode">
+  </div>
 </body>
 </html>

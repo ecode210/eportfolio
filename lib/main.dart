@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
 import 'package:get_storage/get_storage.dart';
@@ -76,7 +77,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-        );
+        ).animate().fadeIn(duration: 1000.ms);
       },
     );
   }
