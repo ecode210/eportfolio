@@ -20,12 +20,22 @@ class About extends StatelessWidget {
           height: 1024.h,
           width: 1440.w,
           color: priColor,
-          child: Image.asset(
-            "assets/png/pattern.png",
+          child: Image(
+            image: const AssetImage("assets/png/pattern.png"),
             color: secColor.withOpacity(0.07),
-            height: 1324.h,
-            width: 2040.w,
+            height: 1024.h,
+            width: 1440.w,
             fit: BoxFit.cover,
+            frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+              if (wasSynchronouslyLoaded == true) {
+                return child;
+              } else {
+                return AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 500),
+                  child: frame != null ? child : 0.verticalSpace,
+                );
+              }
+            },
           ),
         ),
         Breakpoints(
@@ -72,10 +82,20 @@ class About extends StatelessWidget {
                     Positioned(
                       child: Crab(
                         tag: "header",
-                        child: Image.asset(
-                          "assets/png/header shot.png",
+                        child: Image(
+                          image: const AssetImage("assets/png/header shot.png"),
                           height: 800.h,
                           fit: BoxFit.fitHeight,
+                          frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+                            if (wasSynchronouslyLoaded == true) {
+                              return child;
+                            } else {
+                              return AnimatedSwitcher(
+                                duration: const Duration(seconds: 1),
+                                child: frame != null ? child : 0.verticalSpace,
+                              );
+                            }
+                          },
                         ),
                       ),
                     ),
@@ -377,10 +397,20 @@ class About extends StatelessWidget {
                           left: -30.h,
                           child: Crab(
                             tag: "header",
-                            child: Image.asset(
-                              "assets/png/header shot.png",
+                            child: Image(
+                              image: const AssetImage("assets/png/header shot.png"),
                               height: 450.h,
                               fit: BoxFit.fitHeight,
+                              frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+                                if (wasSynchronouslyLoaded == true) {
+                                  return child;
+                                } else {
+                                  return AnimatedSwitcher(
+                                    duration: const Duration(seconds: 1),
+                                    child: frame != null ? child : 0.verticalSpace,
+                                  );
+                                }
+                              },
                             ),
                           ),
                         ),
@@ -636,10 +666,20 @@ class About extends StatelessWidget {
                           left: -110.h,
                           child: Crab(
                             tag: "header",
-                            child: Image.asset(
-                              "assets/png/header shot.png",
+                            child: Image(
+                              image: const AssetImage("assets/png/header shot.png"),
                               height: 400.h,
                               fit: BoxFit.fitHeight,
+                              frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+                                if (wasSynchronouslyLoaded == true) {
+                                  return child;
+                                } else {
+                                  return AnimatedSwitcher(
+                                    duration: const Duration(seconds: 1),
+                                    child: frame != null ? child : 0.verticalSpace,
+                                  );
+                                }
+                              },
                             ),
                           ),
                         ),

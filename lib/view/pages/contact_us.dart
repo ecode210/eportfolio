@@ -22,12 +22,22 @@ class ContactUs extends GetWidget<PortfolioController> {
           height: 1024.h,
           width: 1440.w,
           color: terColor,
-          child: Image.asset(
-            "assets/png/pattern.png",
+          child: Image(
+            image: const AssetImage("assets/png/pattern.png"),
             color: secColor.withOpacity(0.07),
             height: 1024.h,
             width: 1440.w,
             fit: BoxFit.cover,
+            frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+              if (wasSynchronouslyLoaded == true) {
+                return child;
+              } else {
+                return AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 500),
+                  child: frame != null ? child : 0.verticalSpace,
+                );
+              }
+            },
           ),
         ),
         Breakpoints(

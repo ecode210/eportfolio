@@ -16,6 +16,7 @@ import 'package:portfolio_update/view/game/game_constants.dart';
 import 'package:portfolio_update/view/game/game_object.dart';
 import 'package:portfolio_update/view/game/ground.dart';
 import 'package:portfolio_update/view/widgets/breakpoints.dart';
+import 'package:portfolio_update/view/widgets/project_images.dart';
 import 'package:portfolio_update/view/widgets/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -1095,162 +1096,39 @@ class PortfolioController extends GetxController with GetTickerProviderStateMixi
       ];
   List<String> projectTitles = ["parivest", "betalife", "helt", "resup", "dilivar"];
   List<List<Widget>> projectImages = [
-    [
-      Image.asset(
-        "assets/png/Parivest-01.png",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
+    List.generate(5, (index) => ProjectImages(index: index, number: 1)),
+    List.generate(
+      5,
+      (index) => ProjectImages(
+        index: index,
+        number: 2,
+        alignment: index == 1 ? Alignment.bottomCenter : Alignment.topCenter,
       ),
-      Image.asset(
-        "assets/jpg/Betalife-01.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
+    ),
+    List.generate(
+      5,
+      (index) => ProjectImages(
+        index: index,
+        number: 3,
+        alignment: index == 4 ? Alignment.center : Alignment.topCenter,
       ),
-      Image.asset(
-        "assets/jpg/Helt-01.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
+    ),
+    List.generate(
+      5,
+      (index) => ProjectImages(
+        index: index,
+        number: 4,
+        alignment: index == 1 || index == 4 ? Alignment.center : Alignment.topCenter,
       ),
-      Image.asset(
-        "assets/jpg/Resup-01.jpeg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
+    ),
+    List.generate(
+      5,
+      (index) => ProjectImages(
+        index: index,
+        number: 5,
+        alignment: index == 0 ? Alignment.center : Alignment.topCenter,
       ),
-      Image.asset(
-        "assets/jpg/Dilivar-01.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-    ],
-    [
-      Image.asset(
-        "assets/png/Parivest-03.png",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Betalife-02.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.bottomCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Helt-02.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Resup-02.jpeg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Dilivar-02.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-    ],
-    [
-      Image.asset(
-        "assets/png/Parivest-05.png",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Betalife-03.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Helt-03.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Resup-03.jpeg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Dilivar-03.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-      ),
-    ],
-    [
-      Image.asset(
-        "assets/png/Parivest-06.png",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Betalife-04.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-      ),
-      Image.asset(
-        "assets/jpg/Helt-04.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Resup-04.jpeg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Dilivar-04.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-      ),
-    ],
-    [
-      Image.asset(
-        "assets/png/Parivest-09.png",
-        height: 1024.h,
-        fit: BoxFit.cover,
-      ),
-      Image.asset(
-        "assets/jpg/Betalife-05.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Helt-05.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Resup-05.jpeg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-      Image.asset(
-        "assets/jpg/Dilivar-05.jpg",
-        height: 1024.h,
-        fit: BoxFit.cover,
-        alignment: Alignment.topCenter,
-      ),
-    ],
+    ),
   ];
   List<Widget> projectDescriptions = [
     SizedBox(

@@ -21,12 +21,22 @@ class Footer extends GetWidget<PortfolioController> {
           height: 1024.h,
           width: 1440.w,
           color: priColor,
-          child: Image.asset(
-            "assets/png/pattern.png",
+          child: Image(
+            image: const AssetImage("assets/png/pattern.png"),
             color: secColor.withOpacity(0.07),
             height: 1024.h,
             width: 1440.w,
             fit: BoxFit.cover,
+            frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+              if (wasSynchronouslyLoaded == true) {
+                return child;
+              } else {
+                return AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 500),
+                  child: frame != null ? child : 0.verticalSpace,
+                );
+              }
+            },
           ),
         ),
         Breakpoints(
@@ -215,6 +225,21 @@ class Footer extends GetWidget<PortfolioController> {
                                     "assets/svg/LinkedIn front.svg",
                                     width: 50.w,
                                     fit: BoxFit.fitWidth,
+                                    placeholderBuilder: (context) {
+                                      return Container(
+                                        height: 50.w,
+                                        width: 50.w,
+                                        alignment: Alignment.center,
+                                        child: SizedBox(
+                                          height: 20.w,
+                                          width: 20.w,
+                                          child: CircularProgressIndicator(
+                                            color: Colors.white,
+                                            strokeWidth: 3.w,
+                                          ),
+                                        ),
+                                      );
+                                    },
                                   ),
                                 ),
                               ),
@@ -260,6 +285,21 @@ class Footer extends GetWidget<PortfolioController> {
                                     "assets/svg/Github front.svg",
                                     width: 50.w,
                                     fit: BoxFit.fitWidth,
+                                    placeholderBuilder: (context) {
+                                      return Container(
+                                        height: 50.w,
+                                        width: 50.w,
+                                        alignment: Alignment.center,
+                                        child: SizedBox(
+                                          height: 20.w,
+                                          width: 20.w,
+                                          child: CircularProgressIndicator(
+                                            color: Colors.white,
+                                            strokeWidth: 3.w,
+                                          ),
+                                        ),
+                                      );
+                                    },
                                   ),
                                 ),
                               ),
@@ -303,6 +343,21 @@ class Footer extends GetWidget<PortfolioController> {
                                     "assets/svg/Twitter front.svg",
                                     width: 50.w,
                                     fit: BoxFit.fitWidth,
+                                    placeholderBuilder: (context) {
+                                      return Container(
+                                        height: 50.w,
+                                        width: 50.w,
+                                        alignment: Alignment.center,
+                                        child: SizedBox(
+                                          height: 20.w,
+                                          width: 20.w,
+                                          child: CircularProgressIndicator(
+                                            color: Colors.white,
+                                            strokeWidth: 3.w,
+                                          ),
+                                        ),
+                                      );
+                                    },
                                   ),
                                 ),
                               ),
@@ -536,6 +591,21 @@ class Footer extends GetWidget<PortfolioController> {
                                 "assets/svg/LinkedIn front.svg",
                                 width: 100.w,
                                 fit: BoxFit.fitWidth,
+                                placeholderBuilder: (context) {
+                                  return Container(
+                                    height: 100.w,
+                                    width: 100.w,
+                                    alignment: Alignment.center,
+                                    child: SizedBox(
+                                      height: 50.w,
+                                      width: 50.w,
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                        strokeWidth: 7.w,
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
                             ),
                           ),
@@ -581,6 +651,21 @@ class Footer extends GetWidget<PortfolioController> {
                                 "assets/svg/Github front.svg",
                                 width: 100.w,
                                 fit: BoxFit.fitWidth,
+                                placeholderBuilder: (context) {
+                                  return Container(
+                                    height: 100.w,
+                                    width: 100.w,
+                                    alignment: Alignment.center,
+                                    child: SizedBox(
+                                      height: 50.w,
+                                      width: 50.w,
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                        strokeWidth: 7.w,
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
                             ),
                           ),
@@ -624,6 +709,21 @@ class Footer extends GetWidget<PortfolioController> {
                                 "assets/svg/Twitter front.svg",
                                 width: 100.w,
                                 fit: BoxFit.fitWidth,
+                                placeholderBuilder: (context) {
+                                  return Container(
+                                    height: 100.w,
+                                    width: 100.w,
+                                    alignment: Alignment.center,
+                                    child: SizedBox(
+                                      height: 50.w,
+                                      width: 50.w,
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                        strokeWidth: 7.w,
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
                             ),
                           ),
@@ -854,6 +954,21 @@ class Footer extends GetWidget<PortfolioController> {
                                 "assets/svg/LinkedIn front.svg",
                                 width: 100.w,
                                 fit: BoxFit.fitWidth,
+                                placeholderBuilder: (context) {
+                                  return Container(
+                                    height: 100.w,
+                                    width: 100.w,
+                                    alignment: Alignment.center,
+                                    child: SizedBox(
+                                      height: 50.w,
+                                      width: 50.w,
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                        strokeWidth: 7.w,
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
                             ),
                           ),
@@ -899,6 +1014,21 @@ class Footer extends GetWidget<PortfolioController> {
                                 "assets/svg/Github front.svg",
                                 width: 100.w,
                                 fit: BoxFit.fitWidth,
+                                placeholderBuilder: (context) {
+                                  return Container(
+                                    height: 100.w,
+                                    width: 100.w,
+                                    alignment: Alignment.center,
+                                    child: SizedBox(
+                                      height: 50.w,
+                                      width: 50.w,
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                        strokeWidth: 7.w,
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
                             ),
                           ),
@@ -942,6 +1072,21 @@ class Footer extends GetWidget<PortfolioController> {
                                 "assets/svg/Twitter front.svg",
                                 width: 100.w,
                                 fit: BoxFit.fitWidth,
+                                placeholderBuilder: (context) {
+                                  return Container(
+                                    height: 100.w,
+                                    width: 100.w,
+                                    alignment: Alignment.center,
+                                    child: SizedBox(
+                                      height: 50.w,
+                                      width: 50.w,
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                        strokeWidth: 7.w,
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
                             ),
                           ),
