@@ -7,27 +7,27 @@ import 'package:portfolio_update/view/game/sprite.dart';
 
 List<Sprite> dino = [
   Sprite()
-    ..imagePath = "assets/game/dino/dino_1.png"
+    ..imagePath = "assets/game/dash/dash_1.png"
     ..imageWidth = 88.w.toInt()
     ..imageHeight = 60.h.toInt(),
   Sprite()
-    ..imagePath = "assets/game/dino/dino_2.png"
+    ..imagePath = "assets/game/dash/dash_2.png"
     ..imageWidth = 88.w.toInt()
     ..imageHeight = 60.h.toInt(),
   Sprite()
-    ..imagePath = "assets/game/dino/dino_3.png"
+    ..imagePath = "assets/game/dash/dash_3.png"
     ..imageWidth = 88.w.toInt()
     ..imageHeight = 60.h.toInt(),
   Sprite()
-    ..imagePath = "assets/game/dino/dino_4.png"
+    ..imagePath = "assets/game/dash/dash_4.png"
     ..imageWidth = 88.w.toInt()
     ..imageHeight = 60.h.toInt(),
   Sprite()
-    ..imagePath = "assets/game/dino/dino_5.png"
+    ..imagePath = "assets/game/dash/dash_5.png"
     ..imageWidth = 88.w.toInt()
     ..imageHeight = 60.h.toInt(),
   Sprite()
-    ..imagePath = "assets/game/dino/dino_6.png"
+    ..imagePath = "assets/game/dash/dash_6.png"
     ..imageWidth = 88.w.toInt()
     ..imageHeight = 60.h.toInt(),
 ];

@@ -52,6 +52,7 @@ flutter:
     - assets/game/
     - assets/game/cacti/
     - assets/game/dino/
+    - assets/game/dash/
     - assets/game/ptera/
 
   fonts:

@@ -5,7 +5,7 @@ import 'package:portfolio_update/view/game/game_object.dart';
 import 'package:portfolio_update/view/game/sprite.dart';
 
 Sprite groundSprite = Sprite()
-  ..imagePath = "assets/game/road.png"
+  ..imagePath = "assets/game/road copy.png"
   ..imageWidth = 1240.w.toInt()
   ..imageHeight = 24.h.toInt();
 
